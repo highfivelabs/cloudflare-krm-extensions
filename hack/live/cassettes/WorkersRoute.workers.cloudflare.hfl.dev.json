@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:57Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/{{cred:zoneId}}/workers/routes",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/*\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/two/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/two/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/three/*\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/three/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/three/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/two/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\",\n    \"pattern\": \"{{name}}.{{cred:zoneName}}/two/*\",\n    \"script\": null,\n    \"request_limit_fail_open\": false\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"0c359c7b0afe4f72837d02e92f2ffd38\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/0c359c7b0afe4f72837d02e92f2ffd38",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10007,\n      \"message\": \"This Worker does not exist on your account.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

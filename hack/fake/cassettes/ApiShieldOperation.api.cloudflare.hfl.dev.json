@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/api_gateway/operations/item",
+      "body": "{\"endpoint\":\"/api/v1/users/{var1}\",\"host\":\"www.example.com\",\"method\":\"GET\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"endpoint\":\"/api/v1/users/{var1}\",\"features\":{},\"host\":\"www.example.com\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"method\":\"GET\",\"operation_id\":270000034,\"schemas\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/api_gateway/operations/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"endpoint\":\"/api/v1/users/{var1}\",\"features\":{},\"host\":\"www.example.com\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"method\":\"GET\",\"operation_id\":270000034,\"schemas\":{}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/api_gateway/operations/270000034",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/api_gateway/operations/270000034",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

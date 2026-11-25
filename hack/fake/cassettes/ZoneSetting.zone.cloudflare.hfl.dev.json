@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":7200}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":7200}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":7200}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":7200}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":3600}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":3600}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":3600}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":1800}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":1800}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":1800}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":3600}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":3600}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":3600}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"time_remaining\":3600,\"value\":3600}}\n"
+    }
+  ]
+}

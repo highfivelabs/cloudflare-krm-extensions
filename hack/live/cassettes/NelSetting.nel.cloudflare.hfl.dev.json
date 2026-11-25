@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:56:16Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-17T01:35:21.269421Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-17T01:35:21.269421Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":false}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": false\n    },\n    \"modified_on\": \"2026-11-20T23:56:14.262779Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": false\n    },\n    \"modified_on\": \"2026-11-20T23:56:14.262779Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": false\n    },\n    \"modified_on\": \"2026-11-20T23:56:14.262779Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":true}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-20T23:56:14.952628Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-20T23:56:14.952628Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":false}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": false\n    },\n    \"modified_on\": \"2026-11-20T23:56:15.398765Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": false\n    },\n    \"modified_on\": \"2026-11-20T23:56:15.398765Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":true}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-20T23:56:15.807978Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-20T23:56:15.807978Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":true}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"nel\",\n    \"editable\": true,\n    \"value\": {\n      \"enabled\": true\n    },\n    \"modified_on\": \"2026-11-20T23:56:16.329238Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

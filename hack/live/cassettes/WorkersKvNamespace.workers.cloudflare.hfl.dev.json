@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:41Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces",
+      "body": "{\"title\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "body": "{\"title\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}-2\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}-2\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "body": "{\"title\":\"{{name}}-3\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}-3\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}-3\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "body": "{\"title\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}-2\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"84184442bf564b10bfd16f79f3a3abb5\",\"title\":\"{{name}}-2\",\"supports_url_encoding\":true},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":null,\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/84184442bf564b10bfd16f79f3a3abb5",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":null,\"errors\":[{\"code\":10013,\"message\":\"get namespace: 'namespace not found'\"}],\"messages\":[],\"success\":false}"
+    }
+  ]
+}

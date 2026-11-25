@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types",
+      "body": "{\"applies_to_all_integrations\":true,\"asset_class\":\"GoogleWorkspaceFile\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"name\":\"Excessive File Sharing\",\"severity\":\"High\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"GoogleWorkspaceFile\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"GoogleWorkspaceFile\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"GoogleWorkspaceFile\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "body": "{\"applies_to_all_integrations\":true,\"asset_class\":\"changed-asset_class\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"name\":\"Excessive File Sharing\",\"severity\":\"High\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"changed-asset_class\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"changed-asset_class\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "body": "{\"asset_class\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"hfl-live-drift\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"hfl-live-drift\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "body": "{\"applies_to_all_integrations\":true,\"asset_class\":\"changed-asset_class\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"name\":\"Excessive File Sharing\",\"severity\":\"High\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"changed-asset_class\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"applies_to_all_integrations\":true,\"asset_class\":\"changed-asset_class\",\"asset_vendor\":\"GOOGLE_WORKSPACE\",\"category\":{\"observation\":\"Issue\",\"product\":\"SaaS\",\"type\":\"Content\"},\"created_at\":\"2024-01-15T10:30:00Z\",\"description\":\"Detects files shared with too many users\",\"expression\":\"default result := \\\"pass\\\"\\n\\nresult := \\\"fail\\\" if input.asset.publicLinkDisabled == false\\n\",\"id\":270000116,\"match_count\":142,\"name\":\"Excessive File Sharing\",\"origin\":\"system\",\"quarantined\":true,\"severity\":\"High\",\"updated_at\":\"2024-01-15T10:30:00Z\",\"vendor\":\"Google Workspace\",\"version\":1}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/finding_types/270000116",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

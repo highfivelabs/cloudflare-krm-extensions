@@ -1,0 +1,36 @@
+terraform: [cloudflare_authenticated_origin_pulls]
+shape: upsert
+envelope: result
+bodyEnvelope: config
+bodyArray: true
+params:
+  zone_id:
+    description: Identifier.
+  hostname: {field: hostname}
+  cert_id: {field: cert_id}
+fields:
+  hostname:
+    type: string
+    description: The hostname on the origin for which the client certificate uploaded will be used.
+  cert_id:
+    type: string
+    description: Certificate identifier tag.
+  enabled:
+    type: boolean
+    description: Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
+required: [hostname, cert_id]
+sample: {zone_id: example-zone-id, hostname: app.example.com, cert_id: 2458ce5a-0c35-4c7f-82c7-8e9487d3ff60, enabled: true}
+serverFields:
+  cert_status: active
+  status: active
+read:
+  method: GET
+  path: /zones/{zone_id}/origin_tls_client_auth/hostnames/{hostname}
+update:
+  method: PUT
+  path: /zones/{zone_id}/origin_tls_client_auth/hostnames
+  envelope: result/0
+delete:
+  method: PUT
+  path: /zones/{zone_id}/origin_tls_client_auth/hostnames
+  body: {hostname: "{hostname}", cert_id: "{cert_id}", enabled: null}

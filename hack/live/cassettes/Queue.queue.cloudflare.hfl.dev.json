@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:31Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/queues",
+      "body": "{\"queue_name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 0,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:27.634827Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 0,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"producers_total_count\": 0,\n    \"producers\": [],\n    \"consumers_total_count\": 0,\n    \"consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 0,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"producers_total_count\": 0,\n    \"producers\": [],\n    \"consumers_total_count\": 0,\n    \"consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "body": "{\"queue_name\":\"{{name}}\",\"settings\":{\"delivery_delay\":5}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 5,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:28.726768Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 5,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:28.726768Z\",\n    \"producers_total_count\": 0,\n    \"producers\": [],\n    \"consumers_total_count\": 0,\n    \"consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "body": "{\"settings\":{\"delivery_delay\":10}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 10,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:29.245156Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 10,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:29.245156Z\",\n    \"producers_total_count\": 0,\n    \"producers\": [],\n    \"consumers_total_count\": 0,\n    \"consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "body": "{\"queue_name\":\"{{name}}\",\"settings\":{\"delivery_delay\":5}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 5,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:30.282962Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"queue_id\": \"3a37ba149245494cbfdfff018eb3d9cd\",\n    \"queue_name\": \"{{name}}\",\n    \"settings\": {\n      \"delivery_delay\": 5,\n      \"message_retention_period\": 86400\n    },\n    \"created_on\": \"2026-11-20T23:55:27.634827Z\",\n    \"modified_on\": \"2026-11-20T23:55:30.282962Z\",\n    \"producers_total_count\": 0,\n    \"producers\": [],\n    \"consumers_total_count\": 0,\n    \"consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/queues/3a37ba149245494cbfdfff018eb3d9cd",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 11000,\n      \"message\": \"Queue '3a37ba149245494cbfdfff018eb3d9cd' not found. Please verify it exists and try again.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

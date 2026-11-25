@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:54:45Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules",
+      "body": "{\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"mode\":\"challenge\",\"notes\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:44.039813021Z\",\"notes\":\"{{name}}\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:44.039355Z\",\"notes\":\"{{name}}\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:44.039355Z\",\"notes\":\"{{name}}\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "body": "{\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"mode\":\"challenge\",\"notes\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:44.039355Z\",\"notes\":\"{{name}}-2\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:44.620201Z\",\"notes\":\"{{name}}-2\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "body": "{\"notes\":\"{{name}}-3\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:44.620201Z\",\"notes\":\"{{name}}-3\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:45.05489Z\",\"notes\":\"{{name}}-3\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "body": "{\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"mode\":\"challenge\",\"notes\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:45.05489Z\",\"notes\":\"{{name}}-2\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"allowed_modes\":[\"whitelist\",\"block\",\"challenge\",\"js_challenge\",\"managed_challenge\"],\"configuration\":{\"target\":\"ip\",\"value\":\"192.0.2.77\"},\"created_on\":\"2026-11-20T23:54:44.039813021Z\",\"id\":\"d4b7eac021d4499dac6171cd7b515798\",\"mode\":\"challenge\",\"modified_on\":\"2026-11-20T23:54:45.441665Z\",\"notes\":\"{{name}}-2\",\"paused\":false,\"scope\":{\"email\":\"{{redacted}}\",\"id\":\"feffd22544afa752089c7efd57119eb8\",\"type\":\"user\"}},\"success\":true}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"d4b7eac021d4499dac6171cd7b515798\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/firewall/access_rules/rules/d4b7eac021d4499dac6171cd7b515798",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10001,\n      \"message\": \"firewallaccessrules.api.not_found\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

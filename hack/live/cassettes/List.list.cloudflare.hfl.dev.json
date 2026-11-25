@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:20Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/rules/lists",
+      "body": "{\"description\":\"first\",\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"first\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:18Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"first\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:18Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"first\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:18Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "body": "{\"description\":\"second\",\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"second\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:18Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"second\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:18Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"hfl-live-drift\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:19Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"hfl-live-drift\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:19Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "body": "{\"description\":\"second\",\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"second\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:19Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\",\n    \"name\": \"{{name_}}\",\n    \"description\": \"second\",\n    \"kind\": \"ip\",\n    \"num_items\": 0,\n    \"num_referencing_filters\": 0,\n    \"created_on\": \"2026-11-20T23:55:18Z\",\n    \"modified_on\": \"2026-11-20T23:55:19Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"f2d7ec40d3974446a6b614e4eb079f3d\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/f2d7ec40d3974446a6b614e4eb079f3d",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10001,\n      \"message\": \"filters.api.not_found: could not find list f2d7ec40d3974446a6b614e4eb079f3d\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

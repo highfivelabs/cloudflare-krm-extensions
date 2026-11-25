@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes",
+      "body": "{\"native_id\":\"example-native-id\",\"node_kind\":\"example-node-kind\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"example-node-kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"example-node-kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"example-node-kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "body": "{\"native_id\":\"example-native-id\",\"node_kind\":\"changed-node_kind\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"changed-node_kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"changed-node_kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "body": "{\"node_kind\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"hfl-live-drift\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"hfl-live-drift\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "body": "{\"native_id\":\"example-native-id\",\"node_kind\":\"changed-node_kind\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"changed-node_kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"id\":270000129,\"native_id\":\"example-native-id\",\"node_kind\":\"changed-node_kind\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/tenant-structures/example-structure-id/nodes/270000129",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

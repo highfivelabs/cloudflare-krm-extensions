@@ -1,0 +1,63 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas",
+      "body": "{\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":false}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"schema_id\":270000022,\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"schema_id\":270000022,\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"schema_id\":270000022,\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":false}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas/270000022",
+      "body": "{\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"schema_id\":270000022,\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":true}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"kind\":\"openapi_v3\",\"name\":\"{{name}}\",\"schema_id\":270000022,\"source\":\"{\\\"openapi\\\":\\\"3.0.0\\\",\\\"info\\\":{\\\"title\\\":\\\"hfl-live\\\",\\\"version\\\":\\\"1\\\"},\\\"servers\\\":[{\\\"url\\\":\\\"https://hfl-live.{{cred:zoneName}}\\\"}],\\\"paths\\\":{\\\"/ping\\\":{\\\"get\\\":{\\\"responses\\\":{\\\"200\\\":{\\\"description\\\":\\\"ok\\\"}}}}}}\",\"validation_enabled\":true}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas/270000022",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/schemas/270000022",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

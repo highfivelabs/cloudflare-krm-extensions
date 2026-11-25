@@ -1,0 +1,500 @@
+{
+  "AccessRule.access.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:54:45Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:54:45Z"
+  },
+  "AiGateway.ai.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:01Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:01Z"
+  },
+  "AiSearchNamespace.ai.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:06Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:06Z"
+  },
+  "ArgoTieredCaching.argo.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:04Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:04Z"
+  },
+  "BotManagement.bot.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:08Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:08Z"
+  },
+  "ClientCertificate.client.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:47Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:47Z"
+  },
+  "CloudConnectorRules.cloud.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:33Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:33Z"
+  },
+  "CtAlerting.ct.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:11Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:11Z"
+  },
+  "D1Database.d1.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:10Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:10Z"
+  },
+  "EmailRoutingCatchAll.email.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:13Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:13Z"
+  },
+  "EmailRoutingRule.email.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:50Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:50Z"
+  },
+  "FlagshipApp.flagship.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:13Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:13Z"
+  },
+  "FlagshipFlag.flagship.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:17Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:17Z"
+  },
+  "List.list.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:20Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:20Z"
+  },
+  "MoqRelay.moq.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:23Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:23Z"
+  },
+  "MtlsCertificate.mtls.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:24Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:24Z"
+  },
+  "NelSetting.nel.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:16Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:16Z"
+  },
+  "OauthClient.oauth.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:27Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:27Z"
+  },
+  "OriginCloudRegion.origin.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:53Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:53Z"
+  },
+  "OriginTlsComplianceModes.origin.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:18Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:18Z"
+  },
+  "Precursor.precursor.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:20Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:20Z"
+  },
+  "Queue.queue.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:31Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:31Z"
+  },
+  "SchemaValidationSchemas.schema.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:54Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:54Z"
+  },
+  "SchemaValidationSettings.schema.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:22Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:22Z"
+  },
+  "SecretsStore.secrets.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:33Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:33Z"
+  },
+  "UserGroup.user.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:35Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:35Z"
+  },
+  "Worker.worker.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:38Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:38Z"
+  },
+  "WorkersKvNamespace.workers.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:41Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:41Z"
+  },
+  "WorkersRoute.workers.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:57Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:57Z"
+  },
+  "WorkersScript.workers.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:36Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:36Z"
+  },
+  "Workflow.workflow.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:55:46Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:55:46Z"
+  },
+  "ZoneDnsSettings.zone.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:24Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:24Z"
+  },
+  "ZoneLockdown.zone.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:00Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:00Z"
+  },
+  "ZoneSetting.zone.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:27Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:27Z"
+  },
+  "ZoneTracingRules.zone.cloudflare.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete"
+    ],
+    "run": "hfl-live-2611202354-d540",
+    "date": "2026-11-20T23:56:28Z",
+    "target": "Cloudflare free account (Free Website zone)",
+    "lastPass": "2026-11-20T23:56:28Z"
+  }
+}

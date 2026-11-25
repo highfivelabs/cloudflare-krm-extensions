@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "body": "{\"ha_mode\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"aws\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"aws\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"aws\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "body": "{\"ha_mode\":\"changed-ha_mode\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"changed-ha_mode\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"changed-ha_mode\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "body": "{\"ha_mode\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"hfl-live-drift\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"hfl-live-drift\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "body": "{\"ha_mode\":\"changed-ha_mode\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"changed-ha_mode\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"changed-ha_mode\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/warp_connector/example-tunnel-id/configurations",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"configuration_version\":1,\"created_at\":\"2021-01-25T18:22:34.317854Z\",\"ha_mode\":\"changed-ha_mode\",\"tunnel_id\":\"f70ff985-a4ef-4643-bbbc-4a0ed4fc8415\",\"updated_at\":\"2021-01-25T18:22:34.317854Z\"}}\n"
+    }
+  ]
+}

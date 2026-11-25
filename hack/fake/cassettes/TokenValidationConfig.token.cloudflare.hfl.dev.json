@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/token_validation/config",
+      "body": "{\"credentials\":{\"keys\":[]},\"description\":\"Long description for Token Validation Configuration\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"Long description for Token Validation Configuration\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"Long description for Token Validation Configuration\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"Long description for Token Validation Configuration\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "body": "{\"credentials\":{\"keys\":[]},\"description\":\"changed-description\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"changed-description\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"changed-description\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"hfl-live-drift\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"hfl-live-drift\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "body": "{\"credentials\":{\"keys\":[]},\"description\":\"changed-description\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"changed-description\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"credentials\":{\"keys\":[]},\"description\":\"changed-description\",\"id\":270000100,\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"title\":\"Example Token Validation Configuration\",\"token_sources\":[],\"token_type\":\"JWT\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/token_validation/config/270000100",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

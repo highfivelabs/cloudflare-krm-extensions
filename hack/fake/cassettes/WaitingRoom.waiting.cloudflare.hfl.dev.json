@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/waiting_rooms",
+      "body": "{\"host\":\"shop.example.com\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"total_active_users\":1}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"shop.example.com\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"shop.example.com\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"shop.example.com\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "body": "{\"host\":\"changed-host\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"total_active_users\":1}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"changed-host\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"changed-host\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "body": "{\"host\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"hfl-live-drift\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"hfl-live-drift\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "body": "{\"host\":\"changed-host\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"total_active_users\":1}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"changed-host\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"host\":\"changed-host\",\"id\":270000106,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"production_webinar\",\"new_users_per_minute\":1,\"next_event_prequeue_start_time\":\"2021-09-28T15:00:00Z\",\"next_event_start_time\":\"2021-09-28T15:00:00Z\",\"total_active_users\":1}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/waiting_rooms/270000106",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

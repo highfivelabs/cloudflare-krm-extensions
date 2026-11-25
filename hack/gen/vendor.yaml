@@ -1,0 +1,424 @@
+# Inputs to krm-rest-runtime/gen/krmgen.py. Specs are pinned to the commit in each url;
+# hack/gen/fetch-specs.sh downloads them. overrides: map (Terraform type -> API item path),
+# exclude (Terraform types), excludePaths (API item paths).
+vendor: cloudflare
+title: Cloudflare
+groupSuffix: cloudflare.hfl.dev
+connectionKind: Connection
+credentialKeys:
+- apiToken
+baseURLHelp: Cloudflare API base URL; default https://api.cloudflare.com/client/v4.
+terraform:
+  provider: cloudflare/cloudflare
+  prefix: cloudflare
+  gaps: terraform-gaps.json
+specs:
+- file: specs/cloudflare.json
+  url: https://raw.githubusercontent.com/cloudflare/api-schemas/8b1a451819bc546d410e41cca71a86bcc2779808/openapi.json
+envelope:
+  response:
+  - result
+# Resources whose calls no OpenAPI path pairing finds (a hostname's
+# authenticated origin pull: written in bulk on .../hostnames, read at
+# .../hostnames/{hostname}; an R2 data catalog, turned on and off by POSTs
+# to .../enable and .../disable): one hand-written file each in kinds/,
+# citing its sources.
+handwritten:
+  dir: kinds
+overrides:
+  map:
+    cloudflare_zone_hold: /zones/{zone_id}/hold
+    cloudflare_workers_custom_domain: /accounts/{account_id}/workers/domains/{domain_id}
+    cloudflare_api_shield: /zones/{zone_id}/api_gateway/configuration
+    cloudflare_load_balancer_monitor: /accounts/{account_id}/load_balancers/monitors/{monitor_id}
+    cloudflare_load_balancer_pool: /accounts/{account_id}/load_balancers/pools/{pool_id}
+    cloudflare_access_rule: /accounts/{account_id}/firewall/access_rules/rules/{rule_id}
+    cloudflare_workers_kv_namespace: /accounts/{account_id}/storage/kv/namespaces/{namespace_id}
+    cloudflare_page_rule: /zones/{zone_id}/pagerules/{pagerule_id}
+    cloudflare_zone_setting: /zones/{zone_id}/settings/{setting_id}
+    # Terraform types whose words differ from their API path's; each path is the one
+    # the provider (v5, internal/services/<name>/resource.go) reads.
+    cloudflare_account_dns_settings_internal_view: /accounts/{account_id}/dns_settings/views/{view_id}
+    cloudflare_ai_gateway_dynamic_routing: /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}
+    cloudflare_api_shield_discovery_operation: /zones/{zone_id}/api_gateway/discovery/operations/{discovery_id}
+    cloudflare_api_shield_operation_schema_validation_settings: /zones/{zone_id}/api_gateway/operations/{operation_id}/schema_validation
+    cloudflare_api_shield_schema: /zones/{zone_id}/api_gateway/user_schemas/{schema_id}
+    cloudflare_api_shield_schema_validation_settings: /zones/{zone_id}/api_gateway/settings/schema_validation
+    cloudflare_authenticated_origin_pulls_certificate: /zones/{zone_id}/origin_tls_client_auth/{certificate_id}
+    cloudflare_authenticated_origin_pulls_hostname_certificate: /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}
+    cloudflare_authenticated_origin_pulls_settings: /zones/{zone_id}/origin_tls_client_auth/settings
+    cloudflare_byo_ip_prefix: /accounts/{account_id}/addressing/prefixes/{prefix_id}
+    cloudflare_calls_sfu_app: /accounts/{account_id}/calls/apps/{app_id}
+    cloudflare_calls_turn_app: /accounts/{account_id}/calls/turn_keys/{key_id}
+    cloudflare_content_scanning: /zones/{zone_id}/content-upload-scan/settings
+    cloudflare_custom_origin_trust_store: /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}
+    cloudflare_custom_ssl: /zones/{zone_id}/custom_certificates/{custom_certificate_id}
+    cloudflare_dns_zone_transfers_acl: /accounts/{account_id}/secondary_dns/acls/{acl_id}
+    cloudflare_dns_zone_transfers_peer: /accounts/{account_id}/secondary_dns/peers/{peer_id}
+    cloudflare_dns_zone_transfers_tsig: /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}
+    # The provider turns routing on and off with POST .../enable and .../disable;
+    # the same settings' PATCH takes "enabled" too.
+    cloudflare_email_routing_settings: /zones/{zone_id}/email/routing
+    cloudflare_hostname_tls_setting: /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}
+    cloudflare_leaked_credential_check_rule: /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}
+    cloudflare_magic_transit_connector: /accounts/{account_id}/magic/connectors/{connector_id}
+    cloudflare_magic_transit_site: /accounts/{account_id}/magic/sites/{site_id}
+    cloudflare_magic_transit_site_acl: /accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}
+    cloudflare_magic_transit_site_lan: /accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}
+    cloudflare_magic_transit_site_wan: /accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}
+    cloudflare_magic_wan_bgp_filter_profile: /accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}
+    cloudflare_notification_policy: /accounts/{account_id}/alerting/v3/policies/{policy_id}
+    cloudflare_notification_policy_webhooks: /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}
+    cloudflare_spectrum_application: /zones/{zone_id}/spectrum/apps/{app_id}
+    cloudflare_turnstile_widget: /accounts/{account_id}/challenges/widgets/{sitekey}
+    cloudflare_url_normalization_settings: /zones/{zone_id}/url_normalization
+    cloudflare_user_agent_blocking_rule: /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}
+    cloudflare_vulnerability_scanner_credential: /accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}
+    cloudflare_vulnerability_scanner_credential_set: /accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}
+    cloudflare_vulnerability_scanner_target_environment: /accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}
+    cloudflare_web_analytics_site: /accounts/{account_id}/rum/site_info/{site_id}
+    cloudflare_workers_for_platforms_dispatch_namespace: /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}
+    cloudflare_zero_trust_access_ai_controls_mcp_portal: /accounts/{account_id}/access/ai-controls/mcp/portals/{id}
+    cloudflare_zero_trust_access_ai_controls_mcp_server: /accounts/{account_id}/access/ai-controls/mcp/servers/{id}
+    cloudflare_zero_trust_access_custom_page: /accounts/{account_id}/access/custom_pages/{custom_page_id}
+    cloudflare_zero_trust_access_infrastructure_target: /accounts/{account_id}/infrastructure/targets/{target_id}
+    cloudflare_zero_trust_access_key_configuration: /accounts/{account_id}/access/keys
+    cloudflare_zero_trust_access_mtls_certificate: /accounts/{account_id}/access/certificates/{certificate_id}
+    cloudflare_zero_trust_access_mtls_hostname_settings: /accounts/{account_id}/access/certificates/settings
+    cloudflare_zero_trust_access_tag: /accounts/{account_id}/access/tags/{tag_name}
+    cloudflare_zero_trust_casb_finding_type: /accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}
+    cloudflare_zero_trust_casb_integration: /accounts/{account_id}/one/integrations/{id}
+    cloudflare_zero_trust_casb_policy: /accounts/{account_id}/data-security/posture/policies/{policy_id}
+    cloudflare_zero_trust_casb_webhook: /accounts/{account_id}/data-security/posture/webhooks/{webhook_id}
+    cloudflare_zero_trust_connectivity_settings: /accounts/{account_id}/zerotrust/connectivity_settings
+    cloudflare_zero_trust_cws_basic_auth_credential: /accounts/{account_id}/cws/basic-auth-credentials/{credential_id}
+    cloudflare_zero_trust_cws_basic_auth_secret: /accounts/{account_id}/cws/basic-auth-credentials/{credential_id}/secrets/{secret_id}
+    cloudflare_zero_trust_cws_deployment: /accounts/{account_id}/cws/deployments/{deployment_id}
+    cloudflare_zero_trust_cws_domain_acl: /accounts/{account_id}/cws/domain-acls/{domain_acl_id}
+    cloudflare_zero_trust_cws_policy: /accounts/{account_id}/cws/policies/{policy_id}
+    cloudflare_zero_trust_cws_policy_set: /accounts/{account_id}/cws/policy-sets/{policy_set_id}
+    cloudflare_zero_trust_cws_rego_metadata: /accounts/{account_id}/cws/rego-metadata/{rego_metadata_id}
+    cloudflare_zero_trust_cws_rego_module: /accounts/{account_id}/cws/rego-modules/{rego_module_id}
+    cloudflare_zero_trust_cws_tenant_structure: /accounts/{account_id}/cws/tenant-structures/{structure_id}
+    cloudflare_zero_trust_cws_tenant_structure_node: /accounts/{account_id}/cws/tenant-structures/{structure_id}/nodes/{node_id}
+    cloudflare_zero_trust_cws_workload: /accounts/{account_id}/cws/workloads/{workload_id}
+    cloudflare_zero_trust_device_custom_profile_local_domain_fallback: /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains
+    cloudflare_zero_trust_device_default_profile_certificates: /zones/{zone_id}/devices/policy/certificates
+    cloudflare_zero_trust_device_default_profile_local_domain_fallback: /accounts/{account_id}/devices/policy/fallback_domains
+    cloudflare_zero_trust_device_deployment_groups: /accounts/{account_id}/devices/deployment-groups/{group_id}
+    cloudflare_zero_trust_device_ip_profile: /accounts/{account_id}/devices/ip-profiles/{profile_id}
+    cloudflare_zero_trust_device_managed_networks: /accounts/{account_id}/devices/networks/{network_id}
+    cloudflare_zero_trust_device_posture_integration: /accounts/{account_id}/devices/posture/integration/{integration_id}
+    cloudflare_zero_trust_device_settings: /accounts/{account_id}/devices/settings
+    cloudflare_zero_trust_device_subnet: /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}
+    cloudflare_zero_trust_dex_rule: /accounts/{account_id}/dex/rules/{rule_id}
+    cloudflare_zero_trust_dex_test: /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}
+    # A custom entry is the generic entry (POST .../dlp/entries makes one; the
+    # provider updates it at .../entries/custom/{entry_id}, the same object).
+    cloudflare_zero_trust_dlp_custom_entry: /accounts/{account_id}/dlp/entries/{entry_id}
+    cloudflare_zero_trust_dlp_entry: /accounts/{account_id}/dlp/entries/{entry_id}
+    cloudflare_zero_trust_dlp_custom_profile: /accounts/{account_id}/dlp/profiles/custom/{profile_id}
+    cloudflare_zero_trust_dlp_data_class: /accounts/{account_id}/dlp/data_classes/{data_class_id}
+    cloudflare_zero_trust_dlp_data_tag: /accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}
+    cloudflare_zero_trust_dlp_data_tag_category: /accounts/{account_id}/dlp/data_tag_categories/{category_id}
+    cloudflare_zero_trust_dlp_dataset: /accounts/{account_id}/dlp/datasets/{dataset_id}
+    cloudflare_zero_trust_dlp_proximity_validator: /accounts/{account_id}/dlp/validators/proximity_words/{validator_id}
+    cloudflare_zero_trust_dlp_sensitivity_group: /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}
+    cloudflare_zero_trust_dlp_sensitivity_level: /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}
+    cloudflare_zero_trust_dlp_sensitivity_level_order: /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order
+    cloudflare_zero_trust_dlp_settings: /accounts/{account_id}/dlp/settings
+    cloudflare_zero_trust_dns_location: /accounts/{account_id}/gateway/locations/{location_id}
+    cloudflare_zero_trust_gateway_certificate: /accounts/{account_id}/gateway/certificates/{certificate_id}
+    cloudflare_zero_trust_gateway_logging: /accounts/{account_id}/gateway/logging
+    cloudflare_zero_trust_gateway_pacfile: /accounts/{account_id}/gateway/pacfiles/{pacfile_id}
+    cloudflare_zero_trust_gateway_proxy_endpoint: /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}
+    cloudflare_zero_trust_network_hostname_route: /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}
+    cloudflare_zero_trust_organization_trust_settings: /accounts/{account_id}/access/organizations/trust_settings
+    cloudflare_zero_trust_resource_library_application: /accounts/{account_id}/resource-library/applications/{id}
+    cloudflare_zero_trust_risk_behavior: /accounts/{account_id}/zt_risk_scoring/behaviors
+    cloudflare_zero_trust_risk_scoring_integration: /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}
+    cloudflare_zero_trust_tunnel_warp_connector_config: /accounts/{account_id}/warp_connector/{tunnel_id}/configurations
+    # Singletons made by a POST on their own path (overrides.creates below).
+    cloudflare_dns_zone_transfers_incoming: /zones/{zone_id}/secondary_dns/incoming
+    cloudflare_dns_zone_transfers_outgoing: /zones/{zone_id}/secondary_dns/outgoing
+    cloudflare_magic_network_monitoring_configuration: /accounts/{account_id}/mnm/config
+    cloudflare_tiered_cache: /zones/{zone_id}/cache/tiered_cache_smart_topology_enable
+    cloudflare_zone_subscription: /zones/{zone_id}/subscription
+    cloudflare_certificate_pack: /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}
+    # The provider's plural name is non-functional ("use 'cloudflare_snippet'
+    # instead"): the same API as Snippet.
+    cloudflare_snippet: /zones/{zone_id}/snippets/{snippet_name}
+    cloudflare_snippets: /zones/{zone_id}/snippets/{snippet_name}
+    # The token's own user (PATCH /user), as the provider manages it.
+    cloudflare_user: /user
+    # Signing keys are listed, not got (overrides.listReads).
+    cloudflare_stream_key: /accounts/{account_id}/stream/keys/{identifier}
+    # Zone singletons written by a POST to the path they are read from
+    # (overrides.postUpdates below); the provider's delete leaves them be.
+    cloudflare_leaked_credential_check: /zones/{zone_id}/leaked-credential-checks
+    cloudflare_total_tls: /zones/{zone_id}/acm/total_tls
+    cloudflare_logpull_retention: /zones/{zone_id}/logs/control/retention/flag
+    # Never got singly: read from a list (overrides.readFrom below).
+    cloudflare_web_analytics_rule: /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}
+    cloudflare_magic_wan_gre_tunnel: /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}
+    cloudflare_magic_wan_ipsec_tunnel: /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}
+    cloudflare_magic_wan_static_route: /accounts/{account_id}/magic/routes/{route_id}
+    # The provider reads one entry at .../dlp/entries/{entry_id}; the list
+    # there has the same objects (integration entries are read from it too).
+    cloudflare_zero_trust_dlp_predefined_entry: /accounts/{account_id}/dlp/entries/predefined/{entry_id}
+    # Made, changed and turned on again by a POST to their own path, read
+    # by GET and removed by DELETE there (overrides.postUpdates below).
+    cloudflare_workers_script_subdomain: /accounts/{account_id}/workers/scripts/{script_name}/subdomain
+    cloudflare_observatory_scheduled_test: /zones/{zone_id}/speed_api/schedule/{url}
+    cloudflare_zero_trust_access_short_lived_certificate: /accounts/{account_id}/access/apps/{app_id}/ca
+    # Added one at a time by POST .../operations/item (overrides.creates).
+    cloudflare_api_shield_operation: /zones/{zone_id}/api_gateway/operations/{operation_id}
+    # Zone singletons a PATCH turns on and a DELETE resets (overrides.patchUpserts).
+    cloudflare_zone_dnssec: /zones/{zone_id}/dnssec
+    cloudflare_zone_cache_variants: /zones/{zone_id}/cache/variants
+    cloudflare_zone_tracing: /zones/{zone_id}/observability/tracing/settings
+    cloudflare_managed_transforms: /zones/{zone_id}/managed_headers
+    # The account's one Zero Trust organization: the provider writes it with
+    # PUT and reads it with GET; its delete does nothing (a settings kind).
+    cloudflare_zero_trust_organization: /accounts/{account_id}/access/organizations
+    # All of a waiting room's rules at once: PUT replaces the list, GET
+    # reads it; the provider's delete PUTs an empty list (overrides.deleteBody).
+    cloudflare_waiting_room_rules: /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules
+    # The provider writes a predefined profile's config with PUT .../config,
+    # reads it there and deletes on the profile's own path (a no-op).
+    cloudflare_zero_trust_dlp_predefined_profile: /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config
+    # Made by POST .../entries/integration (which turns an existing
+    # integration entry on), changed by PUT and deleted (a no-op) on its own
+    # path, read from the entry list like ZeroTrustDlpPredefinedEntry.
+    cloudflare_zero_trust_dlp_integration_entry: /accounts/{account_id}/dlp/entries/integration/{entry_id}
+    cloudflare_magic_network_monitoring_rule: /accounts/{account_id}/mnm/rules/{rule_id}
+    # Added by POST .../audio/copy (from a URL), changed by PATCH and
+    # deleted on its own path; the API has no read of one, so it is found
+    # in the video's list at .../audio by uid.
+    cloudflare_stream_audio_track: /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}
+    # A Worker's cron schedules, all at once (overrides.envelope below); the
+    # provider's delete does nothing (a settings kind).
+    cloudflare_workers_cron_trigger: /accounts/{account_id}/workers/scripts/{script_name}/schedules
+    # Made by a bulk POST of a one-element array, which answers an array
+    # (overrides.bulkCreates below); read, changed and deleted on their own path.
+    cloudflare_secrets_store_secret: /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}
+    cloudflare_magic_transit_cf1_site: /accounts/{account_id}/magic/cf1_sites/{cf1_site_id}
+    # The same, and never got singly: found in the zone's list (overrides.readFrom).
+    cloudflare_content_scanning_expression: /zones/{zone_id}/content-upload-scan/payloads/{expression_id}
+    # A key's value: written as a multipart form (value, metadata), read
+    # back as its bytes (overrides.rawReads).
+    cloudflare_workers_kv: /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}
+    # A video's captions for one language, uploaded as a WebVTT file (the
+    # provider can also ask the API to generate them: not covered).
+    cloudflare_stream_caption_language: /accounts/{account_id}/stream/{identifier}/captions/{language}
+    # Uploaded by a multipart POST .../asset/new, changed by a JSON PUT and
+    # read as a one-element list on its own path.
+    cloudflare_cloudforce_one_request_asset: /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}
+  patchUpserts:
+  - /zones/{zone_id}/dnssec
+  - /zones/{zone_id}/cache/variants
+  - /zones/{zone_id}/observability/tracing/settings
+  - /zones/{zone_id}/managed_headers
+  postUpdates:
+  - /zones/{zone_id}/leaked-credential-checks
+  - /zones/{zone_id}/acm/total_tls
+  - /zones/{zone_id}/logs/control/retention/flag
+  - /accounts/{account_id}/workers/scripts/{script_name}/subdomain
+  - /zones/{zone_id}/speed_api/schedule/{url}
+  - /accounts/{account_id}/access/apps/{app_id}/ca
+  # Items the API writes and deletes but answers for singly in another
+  # shape, or not at all: read by finding them in a list.
+  readFrom:
+    /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}:
+      path: /accounts/{account_id}/rum/v2/{ruleset_id}/rules
+      list: result/rules
+      field: id
+    # Magic WAN: a create answers the object in result, a read of one in
+    # result.gre_tunnel (ipsec_tunnel, route), an update in
+    # result.modified_gre_tunnel: one envelope cannot fit them all, so the
+    # read is the list's, whose elements are the object.
+    /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}:
+      path: /accounts/{account_id}/magic/gre_tunnels
+      list: result/gre_tunnels
+      field: id
+    /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}:
+      path: /accounts/{account_id}/magic/ipsec_tunnels
+      list: result/ipsec_tunnels
+      field: id
+    /accounts/{account_id}/magic/routes/{route_id}:
+      path: /accounts/{account_id}/magic/routes
+      list: result/routes
+      field: id
+    /accounts/{account_id}/dlp/entries/predefined/{entry_id}:
+      path: /accounts/{account_id}/dlp/entries
+      list: result
+      field: id
+    /accounts/{account_id}/dlp/entries/integration/{entry_id}:
+      path: /accounts/{account_id}/dlp/entries
+      list: result
+      field: id
+    /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}:
+      path: /accounts/{account_id}/stream/{identifier}/audio
+      list: result/audio
+      field: uid
+    /zones/{zone_id}/content-upload-scan/payloads/{expression_id}:
+      path: /zones/{zone_id}/content-upload-scan/payloads
+      list: result
+      field: id
+  # Creates that take a one-element array and answer an array, the new
+  # object first (result/0); the PATCH takes and answers the object.
+  bulkCreates:
+  - /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}
+  - /accounts/{account_id}/magic/cf1_sites/{cf1_site_id}
+  - /zones/{zone_id}/content-upload-scan/payloads/{expression_id}
+  # A Cloudforce One asset's read answers {"result": [{...}]}.
+  readFirst:
+  - /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}
+  # Workers KV answers a key's value as it is, not JSON.
+  rawReads:
+    /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}: value
+  # The provider reads every managed transform the zone has and compares
+  # those in its state, by id: so is the spec's list (any order, the others
+  # left as they are).
+  compare:
+    /zones/{zone_id}/managed_headers:
+      managed_request_headers: subsetByID
+      managed_response_headers: subsetByID
+  # Made by a POST elsewhere, or on their own path (then updated by PUT or PATCH there).
+  creates:
+    # POST /zones/{zone_id}/hold makes the hold (include_subdomains in its
+    # query; the PATCH that follows sets it), GET answers hold: false when
+    # there is none (absent below), DELETE lifts it.
+    /zones/{zone_id}/hold: /zones/{zone_id}/hold
+    # workers.domains.update: a PUT of the collection attaches a Worker to a
+    # hostname, answering the domain's id (the provider's create).
+    /accounts/{account_id}/workers/domains/{domain_id}: {path: "/accounts/{account_id}/workers/domains", method: put}
+    /zones/{zone_id}/secondary_dns/incoming: /zones/{zone_id}/secondary_dns/incoming
+    /zones/{zone_id}/secondary_dns/outgoing: /zones/{zone_id}/secondary_dns/outgoing
+    /accounts/{account_id}/mnm/config: /accounts/{account_id}/mnm/config
+    /zones/{zone_id}/cache/tiered_cache_smart_topology_enable: /zones/{zone_id}/cache/tiered_cache_smart_topology_enable
+    /zones/{zone_id}/subscription: /zones/{zone_id}/subscription
+    /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}: /zones/{zone_id}/ssl/certificate_packs/order
+    /zones/{zone_id}/api_gateway/operations/{operation_id}: /zones/{zone_id}/api_gateway/operations/item
+    /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config: /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config
+    /accounts/{account_id}/dlp/entries/integration/{entry_id}: /accounts/{account_id}/dlp/entries/integration
+    /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}: /accounts/{account_id}/stream/{identifier}/audio/copy
+    /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}: /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new
+  deletes:
+    /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config: /accounts/{account_id}/dlp/profiles/predefined/{profile_id}
+  # A cron trigger's PUT takes a bare array (bodyField) and answers it
+  # inside {"schedules": [...]}, as the read does: the array is at
+  # result/schedules, and is compared there.
+  envelope:
+    /accounts/{account_id}/workers/scripts/{script_name}/schedules:
+      response: result/schedules
+  readable:
+    /accounts/{account_id}/workers/scripts/{script_name}/schedules: [schedules]
+  # What a read answers, with 200, when there is none: a zone with no hold
+  # reads hold: false (zones-0-hold-get).
+  absent:
+    /zones/{zone_id}/hold: {hold: false}
+  deleteBody:
+    /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules:
+      method: PUT
+      body: {rules: []}
+      stays: the room keeps an empty rule list
+  listReads:
+    /accounts/{account_id}/stream/keys:
+      field: id
+  # One API resource for several Terraform types.
+  kindNames:
+    /accounts/{account_id}/dlp/entries/{entry_id}: ZeroTrustDlpEntry
+    /zones/{zone_id}/snippets/{snippet_name}: Snippet
+  # Where a create's response keeps the new object's ID, when it is not "id"
+  # (found by the live run).
+  idFrom:
+    /accounts/{account_id}/d1/database/{database_id}: uuid
+    /accounts/{account_id}/moq/relays/{relay_id}: uid
+    /accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}: key
+    /accounts/{account_id}/oauth_clients/{oauth_client_id}: client_id
+    # From the spec's read response (the path names the item by another field).
+    /accounts/{account_id}/calls/apps/{app_id}: uid
+    /accounts/{account_id}/calls/turn_keys/{key_id}: uid
+    /accounts/{account_id}/rum/site_info/{site_id}: site_tag
+    /accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}: namespace_name
+    /accounts/{account_id}/access/custom_pages/{custom_page_id}: uid
+    /accounts/{account_id}/access/tags/{tag_name}: name
+    /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}: test_id
+    /accounts/{account_id}/stream/{identifier}: uid
+    /accounts/{account_id}/stream/live_inputs/{live_input_identifier}: uid
+    /accounts/{account_id}/stream/watermarks/{identifier}: uid
+    /zones/{zone_id}/custom_pages/assets/{asset_name}: name
+    /zones/{zone_id}/email/sending/subdomains/{subdomain_id}: tag
+    /zones/{zone_id}/api_gateway/operations/{operation_id}: operation_id
+    /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}: uid
+  # Sent but never read back as sent (the live run): a certificate is read
+  # back re-encoded, a CSR and a version's module source not at all.
+  writeOnly:
+    /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}: [certificates]
+    /certificates/{certificate_id}: [csr]
+    /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}: [modules]
+  # Fields only the create takes: the PATCH refuses them (the live run:
+  # D1 7400 "Unrecognized key 'name'"; Flagship 400 "Unrecognized keys").
+  createOnly:
+    /accounts/{account_id}/d1/database/{database_id}: [name]
+    /accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}: [key, rules, variations]
+    # A pack's PATCH restarts validation and takes cloudflare_branding only.
+    /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}: [certificate_authority, hosts, type, validation_method, validity_days]
+    # The PUT that updates a predefined or integration entry takes enabled only.
+    /accounts/{account_id}/dlp/entries/predefined/{entry_id}: [entry_id, profile_id]
+    /accounts/{account_id}/dlp/entries/integration/{entry_id}: [entry_id, profile_id]
+  # The bulk POST .../api_gateway/operations takes an array; leaving it out
+  # pairs the single-operation POST .../operations/item (overrides.creates).
+  excludeOperationIdPrefixes:
+  - api-shield-endpoint-management-add-operations-to-a-zone
+  # The provider sets the organization up with PUT (a settings kind), and
+  # sets a waiting room's rules all at once with PUT; the POSTs beside them
+  # would pair them as something else.
+  - zero-trust-organization-create-your-zero-trust-organization
+  - waiting-room-create-waiting-room-rule
+  # POST .../asset is the asset list (page, per_page); the upload is .../asset/new.
+  - cloudforce-one-request-asset-list
+  bodyField:
+    /zones/{zone_id}/cloud_connector/rules: rules
+    /accounts/{account_id}/devices/policy/fallback_domains: domains
+    /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains: domains
+    /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules: rules
+    /accounts/{account_id}/workers/scripts/{script_name}/schedules: schedules
+  multipart:
+  - /accounts/{account_id}/workers/scripts/{script_name}
+  - /zones/{zone_id}/snippets/{snippet_name}
+  - /zones/{zone_id}/api_gateway/user_schemas/{schema_id}
+  - /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}
+  # The upload is multipart; the PUT that changes an asset takes JSON.
+  - path: /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}
+    calls: [create]
+  # The caption's file, which the spec types as a plain string.
+  - path: /accounts/{account_id}/stream/{identifier}/captions/{language}
+    files: [file]
+  exclude:
+  # Retired APIs (410 deprecated; use Rulesets).
+  - cloudflare_filter
+  - cloudflare_firewall_rule
+  - cloudflare_rate_limit
+  excludePaths:
+  - /zones/{zone_id}/settings
+  - /zones/{zone_id}/page_shield
+  # Retired APIs.
+  - /zones/{zone_id}/filters/{filter_id}
+  - /zones/{zone_id}/firewall/rules/{rule_id}
+  - /zones/{zone_id}/rate_limits/{rate_limit_id}
+# Terraform gap types no kind will cover, and why: no draft kind is made for them
+# (krm-rest-runtime's README, "Draft kinds"). The README's "Not covered" table is
+# generated from these and draftNotes.
+hardBlocks:
+  cloudflare_filter: >-
+    A retired API; the live run's answer is 410 (`filters.api.deprecated`; use rulesets).
+  cloudflare_firewall_rule: >-
+    A retired API; the live run's answer is 410 (`firewallrules.api.deprecated`; use
+    rulesets).
+  cloudflare_rate_limit: >-
+    A retired API; the live run's answer is 410 (use rulesets).
+  cloudflare_logpush_ownership_challenge: >-
+    A one-off action (`POST .../logpush/ownership` sends a challenge file to a
+    destination); the provider's resource has no read, update or delete.

@@ -1,0 +1,20 @@
+terraform: [cloudflare_email_routing_dns]
+shape: upsert
+envelope: result
+params:
+  zone_id:
+    description: Identifier.
+sample: {zone_id: example-zone-id}
+serverFields:
+  enabled: true
+  status: ready
+create:
+  method: POST
+  path: /zones/{zone_id}/email/routing/dns
+read:
+  method: GET
+  path: /zones/{zone_id}/email/routing
+  absent: {enabled: false}
+delete:
+  method: DELETE
+  path: /zones/{zone_id}/email/routing/dns

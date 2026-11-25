@@ -1,0 +1,106 @@
+{
+  "recorded": "2026-11-20T23:55:53Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 1142,\n      \"message\": \"Unable to retrieve origin_public_cloud_region setting value. The zone setting does not exist.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"origin_ip\":\"192.0.2.10\",\"region\":\"us-east-1\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:50.61128Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-east-1\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:50.61128Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-east-1\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:50.61128Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-east-1\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"origin_ip\":\"192.0.2.10\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:51.233176Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-west-2\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:51.233176Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-west-2\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:51.233176Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-west-2\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"modified_on\":\"2026-11-20T23:55:51.233176Z\",\"origin_ip\":\"192.0.2.10\",\"region\":\"eu-west-1\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:52.033503Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"eu-west-1\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:52.033503Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"eu-west-1\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"origin_ip\":\"192.0.2.10\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:52.437062Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-west-2\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"modified_on\": \"2026-11-20T23:55:52.437062Z\",\n    \"origin_ip\": \"192.0.2.10\",\n    \"region\": \"us-west-2\",\n    \"vendor\": \"aws\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"origin_ip\": \"192.0.2.10\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 1142,\n      \"message\": \"Unable to retrieve origin_public_cloud_region setting value. The zone setting does not exist.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "recorded": "2026-11-20T23:56:28Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/observability/tracing/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[{\"message\":\"Successful request\"}],\"result\":{\"rules\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/observability/tracing/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[{\"message\":\"Successful request\"}],\"result\":{\"rules\":[]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/observability/tracing/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[{\"message\":\"Successful request\"}],\"result\":{\"rules\":[]}}"
+    }
+  ]
+}

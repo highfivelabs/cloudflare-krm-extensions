@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "body": "{\"value\":\"enabled\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"enabled\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"enabled\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"enabled\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "body": "{\"value\":\"changed-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "body": "{\"value\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "body": "{\"value\":\"changed-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/content-upload-scan/settings",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified\":\"2024-12-02T09:57:23.150259Z\",\"value\":\"changed-value\"}}\n"
+    }
+  ]
+}

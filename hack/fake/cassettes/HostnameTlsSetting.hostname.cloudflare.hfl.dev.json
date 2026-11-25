@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "body": "{\"value\":\"example-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"example-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"example-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"example-value\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "body": "{\"value\":\"changed-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "body": "{\"value\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "body": "{\"value\":\"changed-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-10T20:01:50.219171Z\",\"status\":\"pending_deployment\",\"updated_at\":\"2023-07-10T20:01:50.219171Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/hostnames/settings/example-setting-id/example-hostname",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

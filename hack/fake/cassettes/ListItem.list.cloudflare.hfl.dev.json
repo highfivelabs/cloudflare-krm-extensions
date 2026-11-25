@@ -1,0 +1,62 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "list": "rehearsal-list",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/rules/lists",
+      "body": "{\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000005,\"kind\":\"ip\",\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/rehearsal-list/items?per_page=500\u0026search=192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/rehearsal-list/items",
+      "body": "[{\"comment\":\"{{name}}\",\"ip\":\"192.0.2.10\"}]",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"comment\":\"{{name}}\",\"created_on\":\"2020-01-01T08:00:00Z\",\"id\":270000017,\"ip\":\"192.0.2.10\",\"modified_on\":\"2020-01-10T14:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/rehearsal-list/items/270000017",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"comment\":\"{{name}}\",\"created_on\":\"2020-01-01T08:00:00Z\",\"id\":270000017,\"ip\":\"192.0.2.10\",\"modified_on\":\"2020-01-10T14:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/rehearsal-list/items",
+      "body": "{\"items\":[{\"id\":\"270000017\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/rehearsal-list/items/270000017",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/rehearsal-list",
+      "status": 204
+    }
+  ]
+}

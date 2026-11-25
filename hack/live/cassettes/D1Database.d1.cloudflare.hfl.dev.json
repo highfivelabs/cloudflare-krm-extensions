@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:55:10Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/d1/database",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"file_size\":8192,\"num_tables\":0,\"created_in_region\":\"ENAM\",\"jurisdiction\":null,\"read_replication\":{\"mode\":\"disabled\"}},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"disabled\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"disabled\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "body": "{\"read_replication\":{\"mode\":\"auto\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"auto\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"auto\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "body": "{\"read_replication\":{\"mode\":\"disabled\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"disabled\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"disabled\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "body": "{\"read_replication\":{\"mode\":\"auto\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"auto\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"uuid\":\"356b93f2-7d71-4132-8549-d7d4932db045\",\"name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:07.108Z\",\"version\":\"production\",\"num_tables\":0,\"file_size\":12288,\"running_in_region\":\"ENAM\",\"read_replication\":{\"mode\":\"auto\"},\"jurisdiction\":null},\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":null,\"errors\":[],\"messages\":[],\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/d1/database/356b93f2-7d71-4132-8549-d7d4932db045",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"messages\":[],\"result\":null,\"success\":false,\"errors\":[{\"code\":7404,\"message\":\"The database 356b93f2-7d71-4132-8549-d7d4932db045 could not be found\"}]}"
+    }
+  ]
+}

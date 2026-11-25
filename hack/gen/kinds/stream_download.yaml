@@ -1,0 +1,20 @@
+terraform: [cloudflare_stream_download]
+shape: upsert
+envelope: result
+params:
+  account_id:
+  identifier:
+    description: A Cloudflare-generated unique identifier for a media item.
+sample: {account_id: example-account-id, identifier: ea95132c15732412d22c1476fa83f27a}
+serverFields:
+  default: {status: ready, percentComplete: 100}
+create:
+  method: POST
+  path: /accounts/{account_id}/stream/{identifier}/downloads
+read:
+  method: GET
+  path: /accounts/{account_id}/stream/{identifier}/downloads
+  absent: {default: null}
+delete:
+  method: DELETE
+  path: /accounts/{account_id}/stream/{identifier}/downloads

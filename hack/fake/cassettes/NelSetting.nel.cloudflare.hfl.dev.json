@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":false}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":false}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":false}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":false}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":true}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":true}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":true}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":false}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":false}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":false}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{\"value\":{\"enabled\":true}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":true}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":true}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/nel",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2024-01-15T10:30:00Z\",\"value\":{\"enabled\":true}}}\n"
+    }
+  ]
+}

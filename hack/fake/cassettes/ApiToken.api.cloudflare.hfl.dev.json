@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/user/tokens",
+      "body": "{\"name\":\"readonly token\",\"policies\":[]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"readonly token\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user/tokens/270000036",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"readonly token\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user/tokens/270000036",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"readonly token\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/user/tokens/270000036",
+      "body": "{\"name\":\"changed-name\",\"policies\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"changed-name\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user/tokens/270000036",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"changed-name\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/user/tokens/270000036",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"hfl-live-drift\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user/tokens/270000036",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"hfl-live-drift\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/user/tokens/270000036",
+      "body": "{\"name\":\"changed-name\",\"policies\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"changed-name\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user/tokens/270000036",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator_email_at_creation\":\"user@example.com\",\"id\":270000036,\"issued_on\":\"2018-07-01T05:20:00Z\",\"last_used_on\":\"2020-01-02T12:34:00Z\",\"modified_on\":\"2018-07-02T05:20:00Z\",\"name\":\"changed-name\",\"policies\":[],\"provisioner_id\":\"a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\",\"provisioner_type\":\"com.cloudflare.api.oauthtoken\",\"status\":\"active\",\"token_prefix\":\"cfat\",\"token_suffix\":\"a1b2\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/user/tokens/270000036",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/user/tokens/270000036",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

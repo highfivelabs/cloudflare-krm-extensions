@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "body": "{\"value\":\"on\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"on\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"on\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"on\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "body": "{\"value\":\"off\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "body": "{\"value\":\"on\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"on\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"on\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "body": "{\"value\":\"off\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/argo/tiered_caching",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    }
+  ]
+}

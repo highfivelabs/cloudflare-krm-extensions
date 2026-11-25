@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:23Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/moq/relays",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"errors\":[],\"messages\":[],\"result\":{\"config\":{\"upstreams\":{}},\"created\":\"2026-11-20T23:55:20.773072Z\",\"issuers\":[{\"cloudflare_tokens\":[{\"created\":\"2026-11-20T23:55:20Z\",\"expires\":\"2027-11-20T23:55:20Z\",\"jti\":\"{{redacted}}\",\"label\":\"{{redacted}}\",\"operations\":[\"publish\",\"subscribe\"],\"secret\":\"{{redacted}}\"},{\"created\":\"2026-11-20T23:55:20Z\",\"expires\":\"2027-11-20T23:55:20Z\",\"jti\":\"{{redacted}}\",\"label\":\"{{redacted}}\",\"operations\":[\"subscribe\"],\"secret\":\"{{redacted}}\"}],\"issuer\":\"cloudflare\",\"type\":\"cloudflare_jwt\"}],\"modified\":\"2026-11-20T23:55:20.773072Z\",\"name\":\"{{name}}\",\"uid\":\"a73318258659c119dddfa36202d46f40\"},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:20.773072Z\",\n    \"name\": \"{{name}}\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:20.773072Z\",\n    \"name\": \"{{name}}\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:21.967743Z\",\n    \"name\": \"{{name}}-2\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:21.967743Z\",\n    \"name\": \"{{name}}-2\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "body": "{\"name\":\"{{name}}-3\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:22.461251Z\",\n    \"name\": \"{{name}}-3\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:22.461251Z\",\n    \"name\": \"{{name}}-3\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:22.939137Z\",\n    \"name\": \"{{name}}-2\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"uid\": \"a73318258659c119dddfa36202d46f40\",\n    \"created\": \"2026-11-20T23:55:20.773072Z\",\n    \"modified\": \"2026-11-20T23:55:22.939137Z\",\n    \"name\": \"{{name}}-2\",\n    \"config\": {\n      \"upstreams\": {}\n    }\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {},\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/moq/relays/a73318258659c119dddfa36202d46f40",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 21007,\n      \"message\": \"Not Found: A MoQ relay with this ID was not found.\"\n    }\n  ],\n  \"messages\": null\n}\n"
+    }
+  ]
+}

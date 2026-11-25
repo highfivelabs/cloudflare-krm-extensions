@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:27Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients",
+      "body": "{\"client_name\":\"{{name}}\",\"grant_types\":[\"authorization_code\"],\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\"}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"messages\":null,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}\",\"client_secret\":\"{{redacted}}\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:25Z\",\"visibility\":\"private\"},\"result_info\":{},\"success\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:25Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:25Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "body": "{\"client_name\":\"{{name}}-2\",\"grant_types\":[\"authorization_code\"],\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\"}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}-2\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:25Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}-2\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:25Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "body": "{\"client_name\":\"{{name}}-3\"}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}-3\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:26Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}-3\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:26Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "body": "{\"client_name\":\"{{name}}-2\",\"grant_types\":[\"authorization_code\"],\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\"}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}-2\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:26Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":{\"client_id\":\"9840d494e97fb70cd6543d3ddc665064\",\"client_name\":\"{{name}}-2\",\"created_at\":\"2026-11-20T23:55:25Z\",\"grant_types\":[\"authorization_code\"],\"has_rotated_secret\":false,\"redirect_uris\":[\"https://{{name}}.example.com/callback\"],\"response_types\":[\"code\"],\"scopes\":[\"aig.read\"],\"token_endpoint_auth_method\":\"client_secret_post\",\"updated_at\":\"2026-11-20T23:55:26Z\",\"visibility\":\"private\"},\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":null,\"success\":true,\"result\":null,\"result_info\":{},\"messages\":null}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/oauth_clients/9840d494e97fb70cd6543d3ddc665064",
+      "status": 404,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"errors\":[{\"code\":70700,\"message\":\"oauth client not found\"}],\"success\":false,\"result\":null,\"result_info\":{},\"messages\":[]}\n"
+    }
+  ]
+}

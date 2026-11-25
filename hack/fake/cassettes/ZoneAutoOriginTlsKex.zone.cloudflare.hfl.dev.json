@@ -1,0 +1,54 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/auto_origin_tls_kex",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/auto_origin_tls_kex",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/settings/auto_origin_tls_kex",
+      "body": "{\"enabled\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/auto_origin_tls_kex",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/settings/auto_origin_tls_kex",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    }
+  ]
+}

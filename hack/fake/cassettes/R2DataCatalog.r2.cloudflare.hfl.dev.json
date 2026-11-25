@@ -1,0 +1,54 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/r2-catalog/example-bucket",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"status\":\"inactive\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/r2-catalog/example-bucket/enable",
+      "body": "{}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucket\":\"example-bucket\",\"jurisdiction\":\"default\",\"name\":\"account123_example-bucket\",\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/r2-catalog/example-bucket",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucket\":\"example-bucket\",\"jurisdiction\":\"default\",\"name\":\"account123_example-bucket\",\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/r2-catalog/example-bucket/disable",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/r2-catalog/example-bucket",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"status\":\"inactive\"}}\n"
+    }
+  ]
+}

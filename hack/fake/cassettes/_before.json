@@ -1,0 +1,30 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/workers",
+      "body": "{\"name\":\"{{run}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000001,\"name\":\"{{run}}\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/rehearsal-worker/versions",
+      "body": "{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\",\"modules\":[{\"content_base64\":\"aW1wb3J0IHsgV29ya2Zsb3dFbnRyeXBvaW50IH0gZnJvbSAiY2xvdWRmbGFyZTp3b3JrZXJzIjsKZXhwb3J0IGNsYXNzIEhmbExpdmUgZXh0ZW5kcyBXb3JrZmxvd0VudHJ5cG9pbnQgeyBhc3luYyBydW4oZXZlbnQsIHN0ZXApIHsgcmV0dXJuICJoZmwtbGl2ZSI7IH0gfQpleHBvcnQgY2xhc3MgSGZsTGl2ZVR3byBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGNsYXNzIEhmbExpdmVUaHJlZSBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGRlZmF1bHQgeyBhc3luYyBmZXRjaCgpIHsgcmV0dXJuIG5ldyBSZXNwb25zZSgiaGZsLWxpdmUiKTsgfSB9Owo=\",\"content_type\":\"application/javascript+module\",\"name\":\"index.js\"}]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"compatibility_date\":\"2026-01-01\",\"id\":280000002,\"main_module\":\"index.js\",\"modules\":[{\"content_base64\":\"aW1wb3J0IHsgV29ya2Zsb3dFbnRyeXBvaW50IH0gZnJvbSAiY2xvdWRmbGFyZTp3b3JrZXJzIjsKZXhwb3J0IGNsYXNzIEhmbExpdmUgZXh0ZW5kcyBXb3JrZmxvd0VudHJ5cG9pbnQgeyBhc3luYyBydW4oZXZlbnQsIHN0ZXApIHsgcmV0dXJuICJoZmwtbGl2ZSI7IH0gfQpleHBvcnQgY2xhc3MgSGZsTGl2ZVR3byBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGNsYXNzIEhmbExpdmVUaHJlZSBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGRlZmF1bHQgeyBhc3luYyBmZXRjaCgpIHsgcmV0dXJuIG5ldyBSZXNwb25zZSgiaGZsLWxpdmUiKTsgfSB9Owo=\",\"content_type\":\"application/javascript+module\",\"name\":\"index.js\"}]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/deployments",
+      "body": "{\"strategy\":\"percentage\",\"versions\":[{\"percentage\":100,\"version_id\":\"rehearsal-version\"}]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000003,\"strategy\":\"percentage\",\"versions\":[{\"percentage\":100,\"version_id\":\"rehearsal-version\"}]}\n"
+    }
+  ]
+}

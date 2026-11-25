@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/images/v1",
+      "body": "{}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator\":\"107b9558-dd06-4bbd-5fef-9c2c16bb7900\",\"filename\":\"logo.png\",\"id\":270000063,\"meta\":{},\"requireSignedURLs\":true,\"uploaded\":\"2014-01-02T02:20:00.123Z\",\"variants\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/images/v1/270000063",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"creator\":\"107b9558-dd06-4bbd-5fef-9c2c16bb7900\",\"filename\":\"logo.png\",\"id\":270000063,\"meta\":{},\"requireSignedURLs\":true,\"uploaded\":\"2014-01-02T02:20:00.123Z\",\"variants\":[]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/images/v1/270000063",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/images/v1/270000063",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

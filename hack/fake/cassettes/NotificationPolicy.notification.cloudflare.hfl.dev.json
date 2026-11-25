@@ -1,0 +1,97 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies",
+      "body": "{\"alert_type\":\"universal_ssl_event_type\",\"description\":\"first\",\"enabled\":false,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"first\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"first\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"first\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "body": "{\"alert_type\":\"universal_ssl_event_type\",\"description\":\"second\",\"enabled\":false,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"second\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"second\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"second\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "body": "{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"third\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"third\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"third\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "body": "{\"alert_type\":\"universal_ssl_event_type\",\"description\":\"second\",\"enabled\":false,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"second\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"alert_type\":\"universal_ssl_event_type\",\"created\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"second\",\"enabled\":false,\"id\":270000008,\"mechanisms\":{\"email\":[{\"id\":\"{{name}}@example.com\"}]},\"modified\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"{{name}}\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/alerting/v3/policies/270000008",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

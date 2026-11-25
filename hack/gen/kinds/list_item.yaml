@@ -1,0 +1,58 @@
+terraform: [cloudflare_list_item]
+shape: crud
+envelope: result
+params:
+  account_id:
+    description: The Account ID for this resource.
+  list_id:
+    description: The unique ID of the list.
+fields:
+  ip:
+    type: string
+    description: An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
+  asn:
+    type: integer
+    description: Defines a non-negative 32 bit integer.
+  comment:
+    type: string
+    description: Defines an informative summary of the list item.
+  hostname:
+    type: object
+    required: [url_hostname]
+    properties:
+      url_hostname: {type: string, description: The hostname.}
+      exclude_exact_hostname: {type: boolean}
+  redirect:
+    type: object
+    required: [source_url, target_url]
+    description: The definition of the redirect.
+    properties:
+      source_url: {type: string, description: The URL redirected from.}
+      target_url: {type: string, description: The URL redirected to.}
+      include_subdomains: {type: boolean}
+      preserve_path_suffix: {type: boolean}
+      preserve_query_string: {type: boolean}
+      status_code: {type: integer, enum: [301, 302, 307, 308]}
+      subpath_matching: {type: boolean}
+id:
+  from: id
+  find:
+    path: /accounts/{account_id}/rules/lists/{list_id}/items
+    query: {search: "{ip|asn|hostname.url_hostname|redirect.source_url}", per_page: "500"}
+    list: result
+    match: {ip: "{ip}", asn: "{asn}", hostname.url_hostname: "{hostname.url_hostname}", redirect.source_url: "{redirect.source_url}"}
+sample: {account_id: example-account-id, list_id: 2c0fc9fa937b11eaa1b71c4d701ab86e, ip: 192.0.2.10, comment: example}
+serverFields:
+  created_on: "2020-01-01T08:00:00Z"
+  modified_on: "2020-01-10T14:00:00Z"
+create:
+  method: POST
+  path: /accounts/{account_id}/rules/lists/{list_id}/items
+  bodyArray: true
+read:
+  method: GET
+  path: /accounts/{account_id}/rules/lists/{list_id}/items/{id}
+delete:
+  method: DELETE
+  path: /accounts/{account_id}/rules/lists/{list_id}/items
+  body: {items: [{id: "{id}"}]}

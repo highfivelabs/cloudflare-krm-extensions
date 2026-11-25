@@ -1,0 +1,51 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/dnssec",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/dnssec",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algorithm\":\"13\",\"digest\":\"48E939042E82C22542CB377B580DFDC52A361CEFDC72E7F9107E2B6BD9306A45\",\"digest_algorithm\":\"SHA256\",\"digest_type\":\"2\",\"ds\":\"example.com. 3600 IN DS 16953 13 2 48E939042E82C22542CB377B580DFDC52A361CEFDC72E7F9107E2B6BD9306A45\",\"flags\":257,\"key_tag\":42,\"key_type\":\"ECDSAP256SHA256\",\"modified_on\":\"2014-01-01T05:20:00Z\",\"public_key\":\"oXiGYrSTO+LSCJ3mohc8EP+CzF9KxBj8/ydXJ22pKuZP3VAC3/Md/k7xZfz470CoRyZJ6gV6vml07IC3d8xqhA==\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/dnssec",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algorithm\":\"13\",\"digest\":\"48E939042E82C22542CB377B580DFDC52A361CEFDC72E7F9107E2B6BD9306A45\",\"digest_algorithm\":\"SHA256\",\"digest_type\":\"2\",\"ds\":\"example.com. 3600 IN DS 16953 13 2 48E939042E82C22542CB377B580DFDC52A361CEFDC72E7F9107E2B6BD9306A45\",\"flags\":257,\"key_tag\":42,\"key_type\":\"ECDSAP256SHA256\",\"modified_on\":\"2014-01-01T05:20:00Z\",\"public_key\":\"oXiGYrSTO+LSCJ3mohc8EP+CzF9KxBj8/ydXJ22pKuZP3VAC3/Md/k7xZfz470CoRyZJ6gV6vml07IC3d8xqhA==\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/dnssec",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/dnssec",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

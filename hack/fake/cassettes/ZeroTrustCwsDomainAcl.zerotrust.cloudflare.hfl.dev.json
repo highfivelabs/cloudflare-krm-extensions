@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/cws/domain-acls",
+      "body": "{\"default_action\":\"ALLOW\",\"entries\":[],\"name\":\"example-name\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"ALLOW\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"ALLOW\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"ALLOW\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "body": "{\"default_action\":\"changed-default_action\",\"entries\":[],\"name\":\"example-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"changed-default_action\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"changed-default_action\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "body": "{\"default_action\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"hfl-live-drift\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"hfl-live-drift\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "body": "{\"default_action\":\"changed-default_action\",\"entries\":[],\"name\":\"example-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"changed-default_action\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"default_action\":\"changed-default_action\",\"entries\":[],\"id\":270000123,\"name\":\"example-name\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/domain-acls/270000123",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

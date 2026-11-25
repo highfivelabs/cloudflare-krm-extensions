@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/access/custom_pages",
+      "body": "{\"custom_html\":\"\\u003chtml\\u003e\\u003cbody\\u003e\\u003ch1\\u003eAccess Denied\\u003c/h1\\u003e\\u003c/body\\u003e\\u003c/html\\u003e\",\"name\":\"example-name\",\"type\":\"identity_denied\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"\\u003chtml\\u003e\\u003cbody\\u003e\\u003ch1\\u003eAccess Denied\\u003c/h1\\u003e\\u003c/body\\u003e\\u003c/html\\u003e\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"\\u003chtml\\u003e\\u003cbody\\u003e\\u003ch1\\u003eAccess Denied\\u003c/h1\\u003e\\u003c/body\\u003e\\u003c/html\\u003e\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"\\u003chtml\\u003e\\u003cbody\\u003e\\u003ch1\\u003eAccess Denied\\u003c/h1\\u003e\\u003c/body\\u003e\\u003c/html\\u003e\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "body": "{\"custom_html\":\"changed-custom_html\",\"name\":\"example-name\",\"type\":\"identity_denied\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"changed-custom_html\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"changed-custom_html\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "body": "{\"custom_html\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"hfl-live-drift\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"hfl-live-drift\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "body": "{\"custom_html\":\"changed-custom_html\",\"name\":\"example-name\",\"type\":\"identity_denied\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"changed-custom_html\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"custom_html\":\"changed-custom_html\",\"name\":\"example-name\",\"type\":\"identity_denied\",\"uid\":270000113}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/access/custom_pages/270000113",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "body": "[{\"payload\":\"lookup_json_string(http.request.body.raw, \\\"file\\\")\"}]",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"id\":270000155,\"payload\":\"lookup_json_string(http.request.body.raw, \\\"file\\\")\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"id\":270000155,\"payload\":\"lookup_json_string(http.request.body.raw, \\\"file\\\")\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"id\":270000155,\"payload\":\"lookup_json_string(http.request.body.raw, \\\"file\\\")\"}]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads/270000155",
+      "body": "{\"payload\":\"changed-payload\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000155,\"payload\":\"changed-payload\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"id\":270000155,\"payload\":\"changed-payload\"}]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads/270000155",
+      "body": "{\"payload\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000155,\"payload\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"id\":270000155,\"payload\":\"hfl-live-drift\"}]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads/270000155",
+      "body": "{\"payload\":\"changed-payload\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000155,\"payload\":\"changed-payload\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"id\":270000155,\"payload\":\"changed-payload\"}]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads/270000155",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/content-upload-scan/payloads",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[]}\n"
+    }
+  ]
+}

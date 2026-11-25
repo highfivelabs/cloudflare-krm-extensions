@@ -1,0 +1,90 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/rules/lists",
+      "body": "{\"description\":\"first\",\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"first\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"first\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"first\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "body": "{\"description\":\"second\",\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"second\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"second\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"hfl-live-drift\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"hfl-live-drift\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "body": "{\"description\":\"second\",\"kind\":\"ip\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"second\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2020-01-01T08:00:00Z\",\"description\":\"second\",\"id\":270000005,\"kind\":\"ip\",\"modified_on\":\"2020-01-10T14:00:00Z\",\"name\":\"{{name_}}\",\"num_items\":10,\"num_referencing_filters\":2}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rules/lists/270000005",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

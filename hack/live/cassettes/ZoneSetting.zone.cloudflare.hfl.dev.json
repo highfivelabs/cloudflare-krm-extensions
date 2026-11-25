@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:56:27Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":14400,\"modified_on\":\"2026-11-17T01:35:32.756082Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":14400,\"modified_on\":\"2026-11-17T01:35:32.756082Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":7200}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":7200,\"modified_on\":\"2026-11-20T23:56:25.491663Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":7200,\"modified_on\":\"2026-11-20T23:56:25.491663Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":7200,\"modified_on\":\"2026-11-20T23:56:25.491663Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":3600}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":3600,\"modified_on\":\"2026-11-20T23:56:26.014891Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":3600,\"modified_on\":\"2026-11-20T23:56:26.014891Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":1800}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":1800,\"modified_on\":\"2026-11-20T23:56:26.456193Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":1800,\"modified_on\":\"2026-11-20T23:56:26.456193Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":3600}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":3600,\"modified_on\":\"2026-11-20T23:56:27.017857Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":3600,\"modified_on\":\"2026-11-20T23:56:27.017857Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/settings/browser_cache_ttl",
+      "body": "{\"value\":14400}",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "response": "{\"result\":{\"id\":\"browser_cache_ttl\",\"value\":14400,\"modified_on\":\"2026-11-20T23:56:27.36599Z\",\"editable\":true},\"success\":true,\"errors\":[],\"messages\":[],\"result_info\":{}}\n"
+    }
+  ]
+}

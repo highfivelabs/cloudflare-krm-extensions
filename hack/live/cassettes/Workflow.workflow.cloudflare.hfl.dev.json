@@ -1,0 +1,106 @@
+{
+  "recorded": "2026-11-20T23:55:46Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"success\":false,\"messages\":[],\"errors\":[{\"code\":10200,\"message\":\"workflows.api.error.workflow.not_found\"}],\"result\":null}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "body": "{\"class_name\":\"HflLive\",\"script_name\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"name\":\"{{name}}\",\"script_name\":\"{{run}}\",\"class_name\":\"HflLive\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:42.145Z\",\"version_id\":\"11d35a1b-ecd0-40ec-8fa2-6421fb6db4df\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"name\":\"{{name}}\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"script_name\":\"{{run}}\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:42.145Z\",\"triggered_on\":null,\"instances\":{\"queued\":0,\"running\":0,\"paused\":0,\"errored\":0,\"terminated\":0,\"complete\":0,\"unknown\":0,\"waitingForPause\":0,\"waiting\":0,\"rollingBack\":0},\"class_name\":\"HflLive\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"name\":\"{{name}}\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"script_name\":\"{{run}}\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:42.145Z\",\"triggered_on\":null,\"instances\":{\"queued\":0,\"running\":0,\"paused\":0,\"errored\":0,\"terminated\":0,\"complete\":0,\"unknown\":0,\"waitingForPause\":0,\"waiting\":0,\"rollingBack\":0},\"class_name\":\"HflLive\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "body": "{\"class_name\":\"HflLiveTwo\",\"script_name\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"name\":\"{{name}}\",\"script_name\":\"{{run}}\",\"class_name\":\"HflLiveTwo\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:42.145Z\",\"version_id\":\"3461c105-c1b8-4683-a91c-64a8db455942\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"name\":\"{{name}}\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"script_name\":\"{{run}}\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:43.179Z\",\"triggered_on\":null,\"instances\":{\"queued\":0,\"running\":0,\"paused\":0,\"errored\":0,\"terminated\":0,\"complete\":0,\"unknown\":0,\"waitingForPause\":0,\"waiting\":0,\"rollingBack\":0},\"class_name\":\"HflLiveTwo\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"name\":\"{{name}}\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"script_name\":\"{{run}}\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:43.179Z\",\"triggered_on\":null,\"instances\":{\"queued\":0,\"running\":0,\"paused\":0,\"errored\":0,\"terminated\":0,\"complete\":0,\"unknown\":0,\"waitingForPause\":0,\"waiting\":0,\"rollingBack\":0},\"class_name\":\"HflLiveTwo\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "body": "{\"class_name\":\"HflLiveThree\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"instances\":{\"complete\":0,\"errored\":0,\"paused\":0,\"queued\":0,\"rollingBack\":0,\"running\":0,\"terminated\":0,\"unknown\":0,\"waiting\":0,\"waitingForPause\":0},\"modified_on\":\"2026-11-20T23:55:43.179Z\",\"name\":\"{{name}}\",\"script_name\":\"{{run}}\",\"triggered_on\":null}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"name\":\"{{name}}\",\"script_name\":\"{{run}}\",\"class_name\":\"HflLiveThree\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:43.179Z\",\"version_id\":\"4a842597-ba7c-4c1d-8fa1-31f69998ab19\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"name\":\"{{name}}\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"script_name\":\"{{run}}\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:44.248Z\",\"triggered_on\":null,\"instances\":{\"queued\":0,\"running\":0,\"paused\":0,\"errored\":0,\"terminated\":0,\"complete\":0,\"unknown\":0,\"waitingForPause\":0,\"waiting\":0,\"rollingBack\":0},\"class_name\":\"HflLiveThree\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "body": "{\"class_name\":\"HflLiveTwo\",\"script_name\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"name\":\"{{name}}\",\"script_name\":\"{{run}}\",\"class_name\":\"HflLiveTwo\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:44.248Z\",\"version_id\":\"2decc14b-586e-465c-858b-24fa830ad716\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"name\":\"{{name}}\",\"id\":\"47f1fa36-0c79-4b8e-be2e-3a34e3dc56a3\",\"script_name\":\"{{run}}\",\"created_on\":\"2026-11-20T23:55:42.145Z\",\"modified_on\":\"2026-11-20T23:55:45.177Z\",\"triggered_on\":null,\"instances\":{\"queued\":0,\"running\":0,\"paused\":0,\"errored\":0,\"terminated\":0,\"complete\":0,\"unknown\":0,\"waitingForPause\":0,\"waiting\":0,\"rollingBack\":0},\"class_name\":\"HflLiveTwo\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"errors\":[],\"messages\":[],\"result\":{\"status\":\"ok\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workflows/{{name}}",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"success\":false,\"messages\":[],\"errors\":[{\"code\":10200,\"message\":\"workflows.api.error.workflow.not_found\"}],\"result\":null}"
+    }
+  ]
+}

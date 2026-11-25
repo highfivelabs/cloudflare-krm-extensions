@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/page_shield/policies",
+      "body": "{\"action\":\"allow\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"value\":\"script-src 'none';\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"allow\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"allow\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"allow\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "body": "{\"action\":\"changed-action\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"value\":\"script-src 'none';\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"changed-action\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"changed-action\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "body": "{\"action\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"hfl-live-drift\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"hfl-live-drift\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "body": "{\"action\":\"changed-action\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"value\":\"script-src 'none';\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"changed-action\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"action\":\"changed-action\",\"description\":\"Checkout page CSP policy\",\"enabled\":true,\"expression\":\"ends_with(http.request.uri.path, \\\"/checkout\\\")\",\"id\":270000085,\"value\":\"script-src 'none';\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/page_shield/policies/270000085",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

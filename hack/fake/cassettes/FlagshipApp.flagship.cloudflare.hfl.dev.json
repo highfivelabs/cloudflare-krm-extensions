@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}-2\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}-2\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "body": "{\"name\":\"{{name}}-3\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}-3\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}-3\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}-2\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"example-created-at\",\"id\":270000004,\"name\":\"{{name}}-2\",\"updated_at\":\"example-updated-at\",\"updated_by\":\"example-updated-by\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/flagship/apps/270000004",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

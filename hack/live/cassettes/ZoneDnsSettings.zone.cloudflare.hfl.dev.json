@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:56:25Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "body": "{\"multi_provider\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":true,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":true,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":true,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "body": "{\"multi_provider\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "body": "{\"multi_provider\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":true,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":true,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "body": "{\"multi_provider\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/dns_settings",
+      "body": "{\"multi_provider\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"nameservers\":{\"type\":\"cloudflare.standard\"},\"foundation_dns\":false,\"multi_provider\":false,\"secondary_overrides\":false,\"soa\":{\"mname\":null,\"rname\":\"dns.cloudflare.com\",\"refresh\":10000,\"retry\":2400,\"expire\":604800,\"min_ttl\":1800,\"ttl\":3600},\"ns_ttl\":86400,\"zone_mode\":\"standard\",\"internal_dns\":{\"reference_zone_id\":null},\"flatten_all_cnames\":false},\"success\":true,\"errors\":[],\"messages\":[]}"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+terraform: [cloudflare_r2_data_catalog]
+shape: upsert
+envelope: result
+params:
+  account_id:
+    description: Use this to identify the account.
+  bucket_name:
+    description: Specifies the R2 bucket name.
+fields:
+  credential:
+    type: object
+    required: [token]
+    properties:
+      token: {type: string}
+writeOnly: [credential]
+sample: {account_id: example-account-id, bucket_name: example-bucket}
+serverFields:
+  bucket: example-bucket
+  name: account123_example-bucket
+  status: active
+  jurisdiction: default
+create:
+  method: POST
+  path: /accounts/{account_id}/r2-catalog/{bucket_name}/enable
+read:
+  method: GET
+  path: /accounts/{account_id}/r2-catalog/{bucket_name}
+  absent: {status: inactive}
+delete:
+  method: POST
+  path: /accounts/{account_id}/r2-catalog/{bucket_name}/disable
+  body: {}

@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:35Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:33.912096Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:33.912096Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:33.912096Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}-2\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:34.431204Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}-2\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:34.431204Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "body": "{\"name\":\"{{name}}-3\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}-3\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:34.829374Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}-3\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:34.829374Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}-2\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:35.175592Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\",\"name\":\"{{name}}-2\",\"status\":\"V\",\"created_on\":\"2026-11-20T23:55:33.912096Z\",\"modified_on\":\"2026-11-20T23:55:35.175592Z\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":\"097013e991174e89902126e5b68dbfe1\"},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/iam/user_groups/097013e991174e89902126e5b68dbfe1",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"result\":[],\"success\":false,\"errors\":[{\"code\":404,\"message\":\"User group '097013e991174e89902126e5b68dbfe1' not found\"}],\"messages\":[]}\n"
+    }
+  ]
+}

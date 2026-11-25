@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/workers/dispatch/namespaces",
+      "body": "{}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_by\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"created_on\":\"2017-01-01T00:00:00Z\",\"modified_by\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"modified_on\":\"2017-01-01T00:00:00Z\",\"namespace_id\":\"f174e90a-fafe-4643-bbbc-4a0ed4fc8415\",\"namespace_name\":270000112,\"script_count\":800}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/workers/dispatch/namespaces/270000112",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_by\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"created_on\":\"2017-01-01T00:00:00Z\",\"modified_by\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"modified_on\":\"2017-01-01T00:00:00Z\",\"namespace_id\":\"f174e90a-fafe-4643-bbbc-4a0ed4fc8415\",\"namespace_name\":270000112,\"script_count\":800}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/workers/dispatch/namespaces/270000112",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/workers/dispatch/namespaces/270000112",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

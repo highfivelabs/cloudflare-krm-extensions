@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-3\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-3\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-3\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":270000021,\"matchers\":[{\"field\":\"to\",\"type\":\"literal\",\"value\":\"{{name}}@{{cred:zoneName}}\"}],\"name\":\"{{name}}-2\",\"tag\":\"a7e6fb77503c41d8a7f3113c6918f10c\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/270000021",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

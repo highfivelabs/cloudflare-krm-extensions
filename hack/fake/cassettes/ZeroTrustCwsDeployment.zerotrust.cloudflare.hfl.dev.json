@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/cws/deployments",
+      "body": "{\"basic_auth_credential_ids\":[],\"default_mode\":\"ALLOW\",\"name\":\"example-name\",\"policy_set_ids\":[]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"ALLOW\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"ALLOW\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"ALLOW\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "body": "{\"basic_auth_credential_ids\":[],\"default_mode\":\"changed-default_mode\",\"name\":\"example-name\",\"policy_set_ids\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"changed-default_mode\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"changed-default_mode\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "body": "{\"default_mode\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"hfl-live-drift\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"hfl-live-drift\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "body": "{\"basic_auth_credential_ids\":[],\"default_mode\":\"changed-default_mode\",\"name\":\"example-name\",\"policy_set_ids\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"changed-default_mode\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"basic_auth_credential_ids\":[],\"created_at\":\"2000-01-01T00:00:00Z\",\"default_mode\":\"changed-default_mode\",\"id\":270000122,\"name\":\"example-name\",\"policy_set_ids\":[],\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cws/deployments/270000122",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

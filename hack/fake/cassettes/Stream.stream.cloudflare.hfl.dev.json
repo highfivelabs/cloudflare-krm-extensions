@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/stream",
+      "body": "{}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"allowedOrigins\":[],\"clippedFrom\":\"ea95132c15732412d22c1476fa83f27a\",\"created\":\"2014-01-02T02:20:00Z\",\"creator\":\"creator-id_abcde12345\",\"duration\":1,\"input\":{},\"liveInput\":\"fc0a8dc887b16759bfd9ad922230a014\",\"maxDurationSeconds\":1,\"maxSizeBytes\":1,\"meta\":{},\"modified\":\"2014-01-02T02:20:00Z\",\"playback\":{},\"preview\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/watch\",\"publicDetails\":{},\"readyToStream\":true,\"readyToStreamAt\":\"2014-01-02T02:20:00Z\",\"requireSignedURLs\":true,\"scheduledDeletion\":\"2014-01-02T02:20:00Z\",\"size\":4190963,\"status\":{},\"thumbnail\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/thumbnails/thumbnail.jpg\",\"thumbnailTimestampPct\":0.529241,\"uid\":270000095,\"uploadExpiry\":\"2014-01-02T02:20:00Z\",\"uploaded\":\"2014-01-02T02:20:00Z\",\"watermark\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/270000095",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"allowedOrigins\":[],\"clippedFrom\":\"ea95132c15732412d22c1476fa83f27a\",\"created\":\"2014-01-02T02:20:00Z\",\"creator\":\"creator-id_abcde12345\",\"duration\":1,\"input\":{},\"liveInput\":\"fc0a8dc887b16759bfd9ad922230a014\",\"maxDurationSeconds\":1,\"maxSizeBytes\":1,\"meta\":{},\"modified\":\"2014-01-02T02:20:00Z\",\"playback\":{},\"preview\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/watch\",\"publicDetails\":{},\"readyToStream\":true,\"readyToStreamAt\":\"2014-01-02T02:20:00Z\",\"requireSignedURLs\":true,\"scheduledDeletion\":\"2014-01-02T02:20:00Z\",\"size\":4190963,\"status\":{},\"thumbnail\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/thumbnails/thumbnail.jpg\",\"thumbnailTimestampPct\":0.529241,\"uid\":270000095,\"uploadExpiry\":\"2014-01-02T02:20:00Z\",\"uploaded\":\"2014-01-02T02:20:00Z\",\"watermark\":{}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/stream/270000095",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/270000095",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

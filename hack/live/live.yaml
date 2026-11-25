@@ -1,0 +1,667 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+#
+# Live tests (TestEveryKindLive, krm-rest-runtime's kindtest.Live): these
+# kinds, in this order, against the real API. Kinds not listed are not run
+# live. They skip, naming the secret, until it exists in Secret Manager; then
+#   KRM_LIVE=1 go test -tags live -run TestEveryKindLive -v .
+# Everything a run makes is named hfl-live-<stamp>-<hex> (or hfl_live_...),
+# deleted at the end; the sweep deletes older leftovers. How it works and
+# what the {{...}} templates mean: krm-rest-runtime docs/live.md.
+#
+# The account is a free one with one zone on the Free Website plan. The
+# token is an account-owned API token. A run never touches the zone itself,
+# its plan, its existing DNS records, account members, account-wide settings
+# or any token, and never buys anything: kinds that need a paid plan, an
+# entitlement or a payment method are listed with skip: and why. Zone
+# settings kinds change one setting and put the old value back.
+secret: krm-live-cloudflare     # JSON: {"apiToken": "...", "accountId": "...", "zoneId": "..."}
+target: Cloudflare free account (Free Website zone)
+# The account's workers.dev subdomain (a Worker's URL is
+# https://<script>.<account>.workers.dev) names the account: redacted
+# wherever a run records it (krm-rest-runtime docs/live.md, "Identities").
+redactSubdomains: [workers.dev]
+
+# One Worker, deployed (a module with a fetch handler and Workflow classes),
+# for the Workflow kind.
+before:
+- {method: POST, path: "/accounts/{{cred:accountId}}/workers/workers", body: {name: "{{run}}"}, save: {worker: result/id}}
+- method: POST
+  path: "/accounts/{{cred:accountId}}/workers/workers/{{var:worker}}/versions"
+  body: {compatibility_date: "2026-01-01", main_module: index.js, modules: [{name: index.js, content_type: application/javascript+module, content_base64: "aW1wb3J0IHsgV29ya2Zsb3dFbnRyeXBvaW50IH0gZnJvbSAiY2xvdWRmbGFyZTp3b3JrZXJzIjsKZXhwb3J0IGNsYXNzIEhmbExpdmUgZXh0ZW5kcyBXb3JrZmxvd0VudHJ5cG9pbnQgeyBhc3luYyBydW4oZXZlbnQsIHN0ZXApIHsgcmV0dXJuICJoZmwtbGl2ZSI7IH0gfQpleHBvcnQgY2xhc3MgSGZsTGl2ZVR3byBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGNsYXNzIEhmbExpdmVUaHJlZSBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGRlZmF1bHQgeyBhc3luYyBmZXRjaCgpIHsgcmV0dXJuIG5ldyBSZXNwb25zZSgiaGZsLWxpdmUiKTsgfSB9Owo="}]}
+  save: {version: result/id}
+- {method: POST, path: "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/deployments", body: {strategy: percentage, versions: [{percentage: 100, version_id: "{{var:version}}"}]}}
+after:
+- {method: DELETE, path: "/accounts/{{cred:accountId}}/workers/scripts/{{run}}?force=true", ok: [404]}
+
+sweep:
+- {list: "/accounts/{{cred:accountId}}/firewall/access_rules/rules?per_page=100", items: result, name: notes, id: id, delete: "/accounts/{{cred:accountId}}/firewall/access_rules/rules/{id}"}
+- {list: "/accounts/{{cred:accountId}}/ai-gateway/gateways?per_page=50", items: result, name: id, delete: "/accounts/{{cred:accountId}}/ai-gateway/gateways/{id}"}
+- {list: "/accounts/{{cred:accountId}}/d1/database?per_page=100", items: result, name: name, id: uuid, delete: "/accounts/{{cred:accountId}}/d1/database/{id}"}
+- {list: "/accounts/{{cred:accountId}}/rules/lists", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/rules/lists/{id}"}
+- {list: "/accounts/{{cred:accountId}}/storage/kv/namespaces?per_page=100", items: result, name: title, id: id, delete: "/accounts/{{cred:accountId}}/storage/kv/namespaces/{id}"}
+- {list: "/accounts/{{cred:accountId}}/queues?per_page=100", items: result, name: queue_name, id: queue_id, delete: "/accounts/{{cred:accountId}}/queues/{id}"}
+- {list: "/accounts/{{cred:accountId}}/secrets_store/stores", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/secrets_store/stores/{id}"}
+- {list: "/accounts/{{cred:accountId}}/iam/user_groups", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/iam/user_groups/{id}"}
+- {list: "/accounts/{{cred:accountId}}/mtls_certificates", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/mtls_certificates/{id}"}
+- {list: "/accounts/{{cred:accountId}}/flagship/apps", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/flagship/apps/{id}"}
+- {list: "/accounts/{{cred:accountId}}/moq/relays", items: result, name: name, id: uid, delete: "/accounts/{{cred:accountId}}/moq/relays/{id}"}
+- {list: "/accounts/{{cred:accountId}}/oauth_clients", items: result, name: client_name, id: client_id, delete: "/accounts/{{cred:accountId}}/oauth_clients/{id}"}
+- {list: "/accounts/{{cred:accountId}}/email/routing/addresses", items: result, name: email, id: id, delete: "/accounts/{{cred:accountId}}/email/routing/addresses/{id}"}
+- {list: "/zones/{{cred:zoneId}}/workers/routes", items: result, name: pattern, id: id, delete: "/zones/{{cred:zoneId}}/workers/routes/{id}"}
+- {list: "/accounts/{{cred:accountId}}/workers/scripts", items: result, name: id, delete: "/accounts/{{cred:accountId}}/workers/scripts/{id}"}
+- {list: "/accounts/{{cred:accountId}}/workers/workers?per_page=100", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/workers/workers/{id}"}
+- {list: "/zones/{{cred:zoneId}}/email/routing/rules", items: result, name: name, id: id, delete: "/zones/{{cred:zoneId}}/email/routing/rules/{id}"}
+- {list: "/zones/{{cred:zoneId}}/firewall/lockdowns", items: result, name: description, id: id, delete: "/zones/{{cred:zoneId}}/firewall/lockdowns/{id}"}
+- {list: "/zones/{{cred:zoneId}}/page_shield/policies", items: result, name: description, id: id, delete: "/zones/{{cred:zoneId}}/page_shield/policies/{id}"}
+- {list: "/zones/{{cred:zoneId}}/web3/hostnames", items: result, name: name, id: id, delete: "/zones/{{cred:zoneId}}/web3/hostnames/{id}"}
+- {list: "/zones/{{cred:zoneId}}/schema_validation/schemas", items: result, name: name, id: schema_id, delete: "/zones/{{cred:zoneId}}/schema_validation/schemas/{id}"}
+- {list: "/zones/{{cred:zoneId}}/snippets", items: result, name: snippet_name, delete: "/zones/{{cred:zoneId}}/snippets/{id}"}
+- {list: "/zones/{{cred:zoneId}}/healthchecks", items: result, name: name, id: id, delete: "/zones/{{cred:zoneId}}/healthchecks/{id}"}
+- {list: "/zones/{{cred:zoneId}}/waiting_rooms", items: result, name: name, id: id, delete: "/zones/{{cred:zoneId}}/waiting_rooms/{id}"}
+- {list: "/accounts/{{cred:accountId}}/ai-search/namespaces", items: result, name: name, delete: "/accounts/{{cred:accountId}}/ai-search/namespaces/{id}"}
+- {list: "/zones/{{cred:zoneId}}/custom_pages/assets", items: result, name: name, delete: "/zones/{{cred:zoneId}}/custom_pages/assets/{id}"}
+- {list: "/accounts/{{cred:accountId}}/challenges/widgets", items: result, name: name, id: sitekey, delete: "/accounts/{{cred:accountId}}/challenges/widgets/{id}"}
+- {list: "/accounts/{{cred:accountId}}/alerting/v3/policies", items: result, name: name, id: id, delete: "/accounts/{{cred:accountId}}/alerting/v3/policies/{id}"}
+- {list: "/accounts/{{cred:accountId}}/calls/apps", items: result, name: name, id: uid, delete: "/accounts/{{cred:accountId}}/calls/apps/{id}"}
+- {list: "/accounts/{{cred:accountId}}/rum/site_info/list?per_page=100", items: result, name: ruleset/zone_name, id: site_tag, delete: "/accounts/{{cred:accountId}}/rum/site_info/{id}"}
+- {list: "/zones/{{cred:zoneId}}/firewall/ua_rules?per_page=100", items: result, name: description, id: id, delete: "/zones/{{cred:zoneId}}/firewall/ua_rules/{id}"}
+- {list: "/certificates?zone_id={{cred:zoneId}}", items: result, name: hostnames/0, id: id, delete: "/certificates/{id}"}
+- {list: "/accounts/{{cred:accountId}}/workflows", items: result, name: name, delete: "/accounts/{{cred:accountId}}/workflows/{id}"}
+- {list: "/accounts/{{cred:accountId}}/workers/domains", items: result, name: hostname, id: id, delete: "/accounts/{{cred:accountId}}/workers/domains/{id}"}
+
+
+kinds:
+# Account-scoped kinds.
+- kind: AccessRule
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", mode: challenge, configuration: {target: ip, value: 192.0.2.77}, notes: "{{name}}"}
+  change: {notes: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: AiGateway
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", id: "{{name}}", rate_limiting_interval: 60, rate_limiting_limit: 10, collect_logs: false, cache_ttl: 0, cache_invalidate_on_update: false}
+  change: {rate_limiting_limit: 20}
+  drift: 30
+  driftFull: true                 # PUT replaces the gateway
+
+- kind: AiSearchNamespace
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}", description: first}
+  noUpdate: reads lag an update by seconds (the old description comes back), so the read and drift checks after it flake
+
+- kind: CallsSfuApp
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}"}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: D1Database
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}"}
+  change: {read_replication: {mode: auto}}
+  drift: {mode: disabled}
+
+- kind: FlagshipApp
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}"}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: FlagshipFlag
+  replaceSample: true
+  before:
+  - {method: POST, path: "/accounts/{{cred:accountId}}/flagship/apps", body: {name: "{{name}}"}, save: {app: result/id}}
+  after:
+  - {method: DELETE, path: "/accounts/{{cred:accountId}}/flagship/apps/{{var:app}}", ok: [404]}
+  spec: {accountID: "{{cred:accountId}}", appID: "{{var:app}}", key: "{{name}}", default_variation: "off", variations: {"on": true, "off": false}, rules: [], enabled: false, description: first}
+  change: {description: second}
+
+- kind: List
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name_}}", kind: ip, description: first}
+  change: {description: second}
+
+- kind: MoqRelay
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}"}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: MtlsCertificate
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}"}
+
+- kind: NotificationPolicy
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}", description: first, alert_type: universal_ssl_event_type, enabled: false, mechanisms: {email: [{id: "{{name}}@example.com"}]}}
+  change: {description: second}
+  drift: third
+  driftFull: true                 # PUT replaces the policy
+
+- kind: OauthClient
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", client_name: "{{name}}", grant_types: [authorization_code], redirect_uris: ["https://{{name}}.example.com/callback"], response_types: [code], scopes: [aig.read], token_endpoint_auth_method: client_secret_post}
+  change: {client_name: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: Queue
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", queue_name: "{{name}}"}
+  change: {settings: {delivery_delay: 5}}
+  drift: {delivery_delay: 10}
+
+
+- kind: SecretsStore
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name_}}"}
+
+- kind: TurnstileWidget
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}", domains: [example.com], mode: managed}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+  driftFull: true                 # PUT replaces the widget
+
+- kind: UserGroup
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}"}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: WebAnalyticsSite
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", host: "{{name}}.example.com", auto_install: false}
+  noUpdate: host and zone_tag are never read back, and auto_install acts only on a zone's own site (it would add the beacon to the zone's pages)
+
+- kind: Worker
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", name: "{{name}}", logpush: false, tags: [first]}
+  change: {tags: [second]}
+  drift: [drift]
+
+
+
+- kind: WorkersKvNamespace
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", title: "{{name}}"}
+  change: {title: "{{name}}-2"}
+  drift: "{{name}}-3"
+
+- kind: Workflow
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", workflowName: "{{name}}", script_name: "{{run}}", class_name: HflLive}
+  change: {class_name: HflLiveTwo}
+  drift: HflLiveThree
+  driftFull: true                 # PUT replaces the workflow
+
+# An item (an IP) in a list made for it.
+- kind: ListItem
+  before:
+  - {method: POST, path: "/accounts/{{cred:accountId}}/rules/lists", body: {name: "{{name_}}", kind: ip}, save: {list: result/id}}
+  after:
+  - {method: DELETE, path: "/accounts/{{cred:accountId}}/rules/lists/{{var:list}}", ok: [404]}
+  replaceSample: true
+  spec: {account_id: "{{cred:accountId}}", list_id: "{{var:list}}", ip: 192.0.2.10, comment: "{{name}}"}
+
+# A secret (no real value) in a store made for it.
+- kind: SecretsStoreSecret
+  before:
+  - {method: POST, path: "/accounts/{{cred:accountId}}/secrets_store/stores", body: {name: "{{name_}}"}, save: {store: result/id}}
+  after:
+  - {method: DELETE, path: "/accounts/{{cred:accountId}}/secrets_store/stores/{{var:store}}", ok: [404]}
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", storeID: "{{var:store}}", name: "{{NAME_}}", value: hfl-live-not-a-secret, scopes: [workers], comment: first}
+  change: {comment: second}
+
+# A key in a Workers KV namespace made for it.
+- kind: WorkersKv
+  before:
+  - {method: POST, path: "/accounts/{{cred:accountId}}/storage/kv/namespaces", body: {title: "{{name}}"}, save: {kv: result/id}}
+  after:
+  - {method: DELETE, path: "/accounts/{{cred:accountId}}/storage/kv/namespaces/{{var:kv}}", ok: [404]}
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", namespaceID: "{{var:kv}}", keyName: "{{name}}", value: first}
+  change: {value: second}
+
+# The run's Worker on a new hostname of the zone; Cloudflare makes its DNS
+# record and certificate, and the delete removes them.
+- kind: WorkersCustomDomain
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", hostname: "{{name}}.{{cred:zoneName}}", service: "{{run}}", zone_id: "{{cred:zoneId}}", zone_name: "{{cred:zoneName}}"}
+
+# Zone-scoped kinds.
+- kind: ClientCertificate
+  replaceSample: true
+  stays: the delete revokes; a revoked Origin CA certificate still reads, with revoked_at set
+  spec:
+    zone_id: "{{cred:zoneId}}"
+    hostnames: ["{{name}}.{{cred:zoneName}}"]
+    request_type: origin-rsa
+    csr: |
+      -----BEGIN CERTIFICATE REQUEST-----
+      MIICZDCCAUwCAQAwHzEdMBsGA1UEAwwUaGZsLWxpdmUuZXhhbXBsZS5jb20wggEi
+      MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDe2Y649hfxCbgks965i6z5NTIk
+      m0RCYT/G5bV8y/utnU4wf0Wy7WOpAcXomjBFJecoF6pdIpl1WqUy7mScuTW5oSaz
+      MB/Mivp/ZQaHF1UG/14lW8U+KzmO0EA3PZdwO5oyd+2iUkT0PiPPCPYhJU+wILyY
+      J6rFDHK5QZRIZJ/ckMhpglUm9AmV+e6LKE3HTvEHlVXYExcU76/PwzhnQkE4MPya
+      XRIxCMB6Lz4O1WxXgRhMm6riEGj5xb2mHWb07Gg6zb2SYdQ4zI93QTVR1oT5w6b6
+      WKyWuaOHPvbSqr3SzjwKCPJIlZY7ETViRRTBOe9GSW8wvVK3EAOy08xf1vHbAgMB
+      AAGgADANBgkqhkiG9w0BAQsFAAOCAQEATZ/3mzOr7kvQ4vEPTq57sBfjOEmhD9DK
+      t1atDg8oUh6EFHQG/unVvU3jUEUo1FkaBLPrcd/1X7RHSEhfNzWpXwtJ/Vpo+6wL
+      WGTXkLGYOxtTzHF3Z1AslXrFpjs0UDeyafbbR6i1juLQ1fC0ec8TM84hdXg/6Fik
+      rRmwNlGsZDWCSNE8GVrD9C2D5q8/bURp1B/yJe4rS5UhcjWCxD5kO42hu1s42oLm
+      SiJ68y4aVgT+T9Sh8k/dywZy1sVaB1RPV3J64UIYZIx68g5tkq4ilkY58lvwaHh4
+      b78ktgjOjoclbpMJLnBbWnBmJkq/ehGDIwTAKDWrzCAlHgEHwTGv4g==
+      -----END CERTIFICATE REQUEST-----
+
+
+- kind: EmailRoutingRule
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", name: "{{name}}", enabled: false, matchers: [{type: literal, field: to, value: "{{name}}@{{cred:zoneName}}"}], actions: [{type: drop}]}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+  driftFull: true                 # PUT replaces the rule
+
+- kind: OriginCloudRegion
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", origin_ip: 192.0.2.10, vendor: aws, region: us-east-1}
+  change: {region: us-west-2}
+  drift: eu-west-1
+  driftFull: true                 # the PUT wants origin_ip in the body
+
+- kind: SchemaValidationSchemas
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", name: "{{name}}", kind: openapi_v3, validation_enabled: false, source: '{"openapi":"3.0.0","info":{"title":"hfl-live","version":"1"},"servers":[{"url":"https://hfl-live.{{cred:zoneName}}"}],"paths":{"/ping":{"get":{"responses":{"200":{"description":"ok"}}}}}}'}
+  change: {validation_enabled: true}
+  noDrift: the API refuses to turn a schema's validation off again (20400 "delete schema instead")
+
+- kind: UserAgentBlockingRule
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", mode: challenge, configuration: {target: ua, value: "{{name}}"}, paused: true, description: "{{name}}"}
+  change: {description: "{{name}}-2"}
+  drift: "{{name}}-3"
+  driftFull: true                 # PUT replaces the rule
+
+- kind: WorkersRoute
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", pattern: "{{name}}.{{cred:zoneName}}/*"}
+  change: {pattern: "{{name}}.{{cred:zoneName}}/two/*"}
+  drift: "{{name}}.{{cred:zoneName}}/three/*"
+
+- kind: ZoneLockdown
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", description: "{{name}}", urls: ["{{name}}.{{cred:zoneName}}/*"], configurations: [{target: ip, value: 192.0.2.78}], paused: true}
+  change: {description: "{{name}}-2"}
+  drift: "{{name}}-3"
+  driftFull: true                 # PUT replaces the lockdown
+
+# Zone settings: one setting changes, and the old value is put back after.
+- kind: ArgoTieredCaching
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", value: "on"}
+  change: {value: "off"}
+  drift: "on"
+
+- kind: AuthenticatedOriginPullsSettings
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", enabled: true}
+  change: {enabled: false}
+  drift: true
+
+- kind: BotManagement
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", enable_js: true}
+  change: {enable_js: false}
+  drift: true
+
+- kind: CtAlerting
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", enabled: true}
+  change: {enabled: false}
+  drift: true
+
+- kind: EmailRoutingCatchAll
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", name: "{{name}}", enabled: false, matchers: [{type: all}], actions: [{type: drop}]}
+  change: {name: "{{name}}-2"}
+  drift: "{{name}}-3"
+  driftFull: true
+
+- kind: LeakedCredentialCheck
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", enabled: true}
+  change: {enabled: false}
+  drift: true
+
+- kind: NelSetting
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", value: {enabled: false}}
+  change: {value: {enabled: true}}
+  drift: {enabled: false}
+
+- kind: OriginTlsComplianceModes
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", value: [fips]}
+  change: {value: []}
+  drift: [fips]
+  stays: a zone setting; the delete puts it back to [] and it still reads
+
+- kind: Precursor
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", default_mode: "off", enforcement_rules: []}
+  noUpdate: '"off" is the only mode that changes nothing for the zone'
+
+- kind: SchemaValidationSettings
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", validation_default_mitigation_action: block}
+  change: {validation_default_mitigation_action: none}
+  drift: block
+
+- kind: ZoneDnsSettings
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", multi_provider: true}
+  change: {multi_provider: false}
+  drift: true
+
+- kind: ZoneSetting
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", settingID: browser_cache_ttl, value: 7200}
+  change: {value: 3600}
+  drift: 1800
+
+- kind: ZoneTracingRules
+  replaceSample: true
+  spec: {zoneID: "{{cred:zoneId}}", rules: []}
+  noUpdate: a rule would trace the zone's requests
+  stays: a zone setting; the delete leaves an empty rule list that still reads
+
+# The delete puts back Cloudflare's default; the kind's before and after
+# calls put back what was there.
+- kind: TieredCache
+  replaceSample: true
+  before:
+  - {method: GET, path: "/zones/{{cred:zoneId}}/cache/tiered_cache_smart_topology_enable", save: {smartTopology: result/value}}
+  after:
+  - {method: PATCH, path: "/zones/{{cred:zoneId}}/cache/tiered_cache_smart_topology_enable", body: {value: "{{var:smartTopology}}"}}
+  spec: {zoneID: "{{cred:zoneId}}", value: "on"}
+  change: {value: "off"}
+  drift: "on"
+  stays: a zone setting; the delete turns Smart Tiered Cache off and it still reads
+
+- kind: UrlNormalizationSettings
+  replaceSample: true
+  before:
+  - {method: GET, path: "/zones/{{cred:zoneId}}/url_normalization", save: {urlType: result/type, urlScope: result/scope}}
+  after:
+  - {method: PUT, path: "/zones/{{cred:zoneId}}/url_normalization", body: {type: "{{var:urlType}}", scope: "{{var:urlScope}}"}}
+  spec: {zoneID: "{{cred:zoneId}}", type: cloudflare, scope: incoming}
+  change: {type: rfc3986}
+  drift: cloudflare
+  driftFull: true                 # PUT wants type and scope
+  stays: a zone setting; the delete puts back the default and it still reads
+
+# Not run: each says why. "plan:" needs a paid plan or an entitlement the free
+# account lacks (the API's own answer is quoted); "off limits:" would touch
+# what a run must never touch; "api:" the API or descriptor cannot be driven
+# as described; "token:" the token lacks a permission; "not yet tried:" what
+# is uncertain until a live run tries it.
+- kind: CloudConnectorRules
+  replaceSample: true
+  spec:
+    zoneID: "{{cred:zoneId}}"
+    rules:
+    - description: "{{name}}"
+      enabled: false
+      expression: 'http.host eq "example.com"'
+      parameters: {host: examplebucket.s3.eu-north-1.amazonaws.com}
+      provider: aws_s3
+  change:
+    rules:
+    - description: "{{name}}-2"
+      enabled: false
+      expression: 'http.host eq "example.com"'
+      parameters: {host: examplebucket.s3.eu-north-1.amazonaws.com}
+      provider: aws_s3
+  drift:
+  - description: hfl-live-drift
+    enabled: false
+    expression: 'http.host eq "example.com"'
+    parameters: {host: examplebucket.s3.eu-north-1.amazonaws.com}
+    provider: aws_s3
+
+- kind: WorkersScript
+  replaceSample: true
+  spec:
+    accountID: "{{cred:accountId}}"
+    scriptName: "{{name}}"
+    metadata:
+      main_module: index.js
+      compatibility_date: "2026-01-01"
+    files:
+    - name: index.js
+      contentType: application/javascript+module
+      content: 'export default { async fetch() { return new Response("hfl-live"); } };'
+  change:
+    files:
+    - name: index.js
+      contentType: application/javascript+module
+      content: 'export default { async fetch() { return new Response("hfl-live-2"); } };'
+  noDrift: GET /workers/scripts/{script_name} returns the raw script bundle rather than JSON
+
+# The cron schedules of the run's own Worker (made in before:).
+- kind: WorkersCronTrigger
+  replaceSample: true
+  spec: {accountID: "{{cred:accountId}}", scriptName: "{{run}}", schedules: [{cron: "0 3 * * *"}]}
+  change: {schedules: [{cron: "0 4 * * *"}]}
+  drift: [{cron: "0 5 * * *"}]
+
+- {kind: Account, skip: "off limits: creates Cloudflare accounts (tenant API)"}
+- {kind: AccountDnsSettings, skip: "off limits: account-wide DNS defaults"}
+- {kind: AccountDnsSettingsInternalView, fakeOnly: "internal DNS views need internal zones (Enterprise DNS)"}
+- {kind: AccountMember, skip: "off limits: account members"}
+- {kind: AccountSubscription, skip: "off limits: buys a subscription"}
+- {kind: AccountToken, skip: "off limits: mints an API token; its secret would pass through the run"}
+- {kind: AddressMap, fakeOnly: "address maps need BYOIP or static IPs (Enterprise)"}
+- {kind: AiGatewayDynamicRouting, skip: "api: a route reads back wrapped in route, its elements only inside version.data; the provider rewrites the answer (custom.go) and its test is a mock"}
+- {kind: AiSearchInstance, skip: "plan: an AI Search instance needs an R2 bucket; R2 is not enabled (10042, needs a payment method)"}
+- {kind: AiSearchToken, skip: "off limits: stores another API token (cf_api_key)"}
+- {kind: AiSecurity, skip: "plan: 13101 not entitled to access this resource (AI Security for Apps)"}
+- {kind: AiSecurityCustomTopics, skip: "plan: 13101 not entitled to access this resource"}
+- {kind: ApiShield, fakeOnly: "10403 You are not entitled for this service (API Shield)"}
+- {kind: ApiShieldDiscoveryOperation, fakeOnly: "/api_gateway/ is API Shield; 10403 not entitled (as ApiShield)"}
+- {kind: ApiShieldOperation, fakeOnly: "/api_gateway/ is API Shield; 10403 not entitled (as ApiShield)"}
+- {kind: ApiShieldOperationSchemaValidationSettings, fakeOnly: "/api_gateway/ is API Shield; 10403 not entitled (as ApiShield)"}
+- {kind: ApiShieldSchema, fakeOnly: "/api_gateway/ is API Shield; 10403 not entitled (as ApiShield); schemas run as SchemaValidationSchemas"}
+- {kind: ApiShieldSchemaValidationSettings, fakeOnly: "/api_gateway/ is API Shield; 10403 not entitled (as ApiShield); the zone's settings run as SchemaValidationSettings"}
+- {kind: ApiToken, skip: "api: /user/tokens is a user's own tokens; an account-owned token cannot reach it, and it mints a token"}
+- {kind: ArgoSmartRouting, skip: "plan: Argo Smart Routing is paid (1015 not authorized to access this setting)"}
+- {kind: AuthenticatedOriginPullsCertificate, skip: "not yet tried: needs a client certificate and its private key in this file (a key committed to a public repository), and whether the read answers the PEM as sent"}
+- {kind: AuthenticatedOriginPullsHostnameCertificate, skip: "not yet tried: needs a client certificate and its private key in this file (a key committed to a public repository), and whether the read answers the PEM as sent"}
+- {kind: ByoIpPrefix, fakeOnly: "BYOIP is Enterprise"}
+- {kind: CallsTurnApp, skip: "api: the create answers the TURN key's secret in a field named key, which cassette redaction does not cover, so the live cassette would carry it"}
+- {kind: CertificateAuthoritiesHostnameAssociations, skip: "plan: client-certificate (mTLS) hostname associations need a zone mTLS entitlement and an uploaded CA"}
+- {kind: CertificatePack, skip: "plan: needs Advanced Certificate Manager (paid)"}
+- {kind: CloudforceOneRequest, fakeOnly: "Cloudforce One subscription (10403 forbidden)"}
+- {kind: CloudforceOneRequestMessage, fakeOnly: "Cloudforce One subscription (10403 forbidden)"}
+- {kind: CloudforceOneRequestPriority, fakeOnly: "Cloudforce One subscription (10403 forbidden)"}
+- {kind: ConnectivityDirectoryService, skip: "token: 10000 Authentication error on /connectivity/directory/services; the token lacks the Connectivity Directory (Workers VPC) permission"}
+- {kind: ContentScanning, fakeOnly: "malicious uploads detection (content scanning) is an Enterprise add-on"}
+- {kind: CustomCsr, skip: "plan: 1404 Advanced Certificate Manager or Custom CSR with SSL for SaaS entitlement is required"}
+- {kind: CustomHostname, skip: "plan: 1404 no SSL for SaaS quota allocated for this zone"}
+- {kind: CustomHostnameFallbackOrigin, skip: "plan: 1456 available with SSL for SaaS"}
+- {kind: CustomOriginTrustStore, skip: "plan: needs Advanced Certificate Manager (paid)"}
+- {kind: CustomPageAsset, skip: "plan: 1258 Asset limited reached, max assets: 0"}
+- {kind: CustomPages, skip: "api: needs a hosted page carrying Cloudflare's tokens (::CAPTCHA_BOX:: etc.) for Cloudflare to fetch; customizing it would change the live zone's error pages"}
+- {kind: CustomSsl, skip: "plan: custom certificates need Business or Enterprise"}
+- {kind: DlsPrefixBinding, fakeOnly: "Regional Services (Data Localization Suite) is Enterprise"}
+- {kind: DnsFirewall, fakeOnly: "DNS Firewall is Enterprise"}
+- {kind: DnsZoneTransfersAcl, fakeOnly: "DNS zone transfers (secondary DNS) need an Enterprise entitlement"}
+- {kind: DnsZoneTransfersIncoming, fakeOnly: "DNS zone transfers (secondary DNS) need an Enterprise entitlement; it would also make the live zone a secondary"}
+- {kind: DnsZoneTransfersOutgoing, fakeOnly: "DNS zone transfers (secondary DNS) need an Enterprise entitlement; it would also change the live zone's DNS"}
+- {kind: DnsZoneTransfersPeer, fakeOnly: "DNS zone transfers (secondary DNS) need an Enterprise entitlement"}
+- {kind: DnsZoneTransfersTsig, fakeOnly: "DNS zone transfers (secondary DNS) need an Enterprise entitlement"}
+- {kind: EmailRoutingAddress, skip: "api: an address cannot be deleted for some minutes after it is made (429, 2032 created too recently), and each create mails a verification link; no update (PATCH answers 2003 Bad JSON input)"}
+- {kind: EmailRoutingSettings, skip: "off limits: turns Email Routing on or off for the zone, which changes its MX and SPF records"}
+- {kind: EmailRoutingDns, skip: "off limits: turns Email Routing's DNS records on or off for the zone, which changes its MX and SPF records"}
+- {kind: EmailSecurityAllowPolicy, fakeOnly: "4119 Email Security API access is not available in the current subscription"}
+- {kind: EmailSecurityBlockSender, fakeOnly: "4119 Email Security API access is not available in the current subscription"}
+- {kind: EmailSecurityDomain, fakeOnly: "4119 Email Security API access is not available in the current subscription"}
+- {kind: EmailSecurityImpersonationRegistry, fakeOnly: "4119 Email Security API access is not available in the current subscription"}
+- {kind: EmailSecurityTrustedDomains, fakeOnly: "4119 Email Security API access is not available in the current subscription"}
+- {kind: EmailSendingSubdomain, skip: "plan: 2036 Unauthorized (Email Sending is not enabled on the account)"}
+- {kind: FieldExtractor, skip: "api: /accounts/{id}/field_extractors answers 10404 No route for that URI"}
+- {kind: GoogleTagGateway, skip: "api: needs a real Google tag ID, and the zone has none configured (null) that a run could put back"}
+- {kind: Healthcheck, skip: "plan: 1002 health checks disabled for zone (Pro and up)"}
+- {kind: HostnameTlsSetting, skip: "plan: per-hostname TLS settings need Advanced Certificate Manager (paid)"}
+- {kind: HyperdriveConfig, skip: "api: needs a reachable Postgres or MySQL origin"}
+- {kind: Image, skip: "plan: Cloudflare Images storage is paid"}
+- {kind: ImageVariant, skip: "plan: Cloudflare Images storage is paid"}
+- {kind: KeylessCertificate, fakeOnly: "Keyless SSL is Enterprise"}
+- {kind: LeakedCredentialCheckRule, fakeOnly: "custom detection locations are Enterprise"}
+- {kind: LoadBalancer, skip: "plan: Load Balancing is a paid add-on"}
+- {kind: LoadBalancerMonitor, skip: "plan: Load Balancing is a paid add-on"}
+- {kind: LoadBalancerMonitorGroup, skip: "plan: Load Balancing is a paid add-on"}
+- {kind: LoadBalancerPool, skip: "plan: Load Balancing is a paid add-on"}
+- {kind: LogExplorerDataset, skip: "plan: 400 missing entitlement (Log Explorer)"}
+- {kind: LogpullRetention, fakeOnly: "Logpull is Enterprise"}
+- {kind: LogpushJob, fakeOnly: "zone Logpush is Enterprise"}
+- {kind: MagicNetworkMonitoringConfiguration, skip: "not yet tried: whether the free account may use Magic Network Monitoring (its free version needs enrolment); the configuration is the account's one"}
+- {kind: MagicNetworkMonitoringRule, skip: "not yet tried: whether the free account may use Magic Network Monitoring (its free version needs enrolment)"}
+- {kind: MagicTransitConnector, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicTransitSite, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicTransitSiteAcl, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicTransitSiteLan, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicTransitSiteWan, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicWanBgpFilterProfile, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicWanGreTunnel, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicWanIpsecTunnel, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: MagicWanStaticRoute, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: ManagedTransforms, skip: "not yet tried: the read lists every managed transform the zone has, so a spec must list them all, in the API's order, or it is re-sent at each resync; the run would change the zone's request headers"}
+- {kind: MonetizationRules, skip: "plan: pay per crawl (private beta); 10005 payment rule not found"}
+- {kind: NotificationPolicyWebhooks, skip: "api: a webhook destination is tested on create (Cloudflare POSTs to it and wants a 2xx); the account has nowhere a run can answer it (no workers.dev subdomain)"}
+- {kind: ObservatoryScheduledTest, skip: "not yet tried: scheduled tests may need Pro, and each test loads a page of the zone's real site"}
+- {kind: Organization, skip: "off limits: tenant organizations"}
+- {kind: OrganizationProfile, skip: "off limits: tenant organizations"}
+- {kind: PageRule, skip: "token: 1011 Page Rules endpoint does not support account owned tokens; needs a user-owned token"}
+- {kind: PageShieldPolicy, skip: "plan: maximum rules in phase http_response_page_shield is 0 on Free"}
+- {kind: Pipeline, skip: "plan: 1021 requires a Workers Paid plan"}
+- {kind: PipelineSink, skip: "plan: 1021 requires a Workers Paid plan"}
+- {kind: PipelineStream, skip: "plan: 1021 requires a Workers Paid plan"}
+- {kind: QueueConsumer, skip: "off limits: a Worker consumer needs the account's workers.dev subdomain (403), and making one is an account-wide setting"}
+- {kind: R2BucketCors, skip: "plan: 10042 enable R2 through the dashboard (needs a payment method)"}
+- {kind: R2BucketLifecycle, skip: "plan: 10042 enable R2 through the dashboard (needs a payment method)"}
+- {kind: R2BucketLock, skip: "plan: 10042 enable R2 through the dashboard (needs a payment method)"}
+- {kind: R2BucketSippy, skip: "plan: 10042 enable R2 through the dashboard (needs a payment method)"}
+- {kind: R2ManagedDomain, skip: "plan: 10042 enable R2 through the dashboard (needs a payment method)"}
+- {kind: RegionalHostname, fakeOnly: "Regional Services (Data Localization Suite) is Enterprise"}
+- {kind: RegionalTieredCache, skip: "plan: 1135 not available for your plan type"}
+- {kind: SchemaValidationOperationSettings, fakeOnly: "needs an API Shield operation; API Shield is not entitled (10403)"}
+- {kind: Share, skip: "token: 10000 Authentication error on /shares; the token lacks the Resource Sharing permission"}
+- {kind: ShareRecipient, skip: "token: 10000 Authentication error on /shares; the token lacks the Resource Sharing permission"}
+- {kind: ShareResource, skip: "token: 10000 Authentication error on /shares; the token lacks the Resource Sharing permission"}
+- {kind: Snippet, skip: "plan: 403 snippets are not allowed (requires Pro or higher)"}
+- {kind: SnippetRules, skip: "plan: rules must name an uploaded snippet (Snippets require Pro or higher)"}
+- {kind: SpectrumApplication, skip: "plan: Spectrum needs Pro or higher (any protocol: Enterprise)"}
+- {kind: SsoConnector, skip: "off limits: SSO for the account's logins (and an Enterprise feature)"}
+- {kind: Stream, skip: "plan: Stream is paid"}
+- {kind: StreamAudioTrack, skip: "plan: Stream is paid"}
+- {kind: StreamKey, skip: "plan: Stream is paid"}
+- {kind: StreamLiveInput, skip: "plan: Stream is paid"}
+- {kind: StreamWatermark, skip: "plan: Stream is paid (10002 not authorized)"}
+- {kind: StreamWebhook, skip: "plan: Stream is paid"}
+- {kind: TokenValidationConfig, fakeOnly: "10403 not entitled (API Shield JWT validation)"}
+- {kind: TokenValidationRules, fakeOnly: "10403 not entitled (API Shield JWT validation)"}
+- {kind: TotalTls, skip: "plan: Total TLS needs Advanced Certificate Manager (paid)"}
+- {kind: UniversalSslSetting, skip: "off limits: turning Universal SSL off deletes the zone's edge certificate"}
+- {kind: User, skip: "api: /user is a user's own profile; an account-owned token cannot reach it"}
+- {kind: UserGroupMembers, skip: "off limits: account members"}
+- {kind: VulnerabilityScannerCredential, skip: "not yet tried: the vulnerability scanner (/vuln_scanner) has no documented free entitlement"}
+- {kind: VulnerabilityScannerCredentialSet, skip: "not yet tried: the vulnerability scanner (/vuln_scanner) has no documented free entitlement"}
+- {kind: VulnerabilityScannerTargetEnvironment, skip: "not yet tried: the vulnerability scanner (/vuln_scanner) has no documented free entitlement"}
+- {kind: WaitingRoom, skip: "plan: Waiting Room needs Business or Enterprise"}
+- {kind: WaitingRoomEvent, skip: "plan: Waiting Room needs Business or Enterprise"}
+- {kind: WaitingRoomRules, skip: "plan: Waiting Room needs Business or Enterprise"}
+- {kind: WaitingRoomSettings, skip: "plan: 1034 Zone not entitled to this functionality"}
+- {kind: Web3Hostname, skip: "plan: 1010 Account is not entitled to create ipfs hostnames"}
+- {kind: WebAnalyticsRule, skip: "not yet tried: rules act on a zone's auto-installed site; the provider's test makes one with auto_install on the zone, which would add the beacon to the zone's pages"}
+- {kind: WorkerVersion, skip: "api: 409 The latest version cannot be deleted; a version goes only with its Worker"}
+- {kind: WorkersDeployment, skip: "api: 409 The latest (and currently active) deployment cannot be deleted; it goes only with its Worker"}
+- {kind: WorkersForPlatformsDispatchNamespace, skip: "plan: Workers for Platforms is a paid add-on"}
+- {kind: WorkersScriptSubdomain, skip: "off limits: needs the account's workers.dev subdomain (403), and making one is an account-wide setting"}
+- {kind: ZeroTrustAccessAiControlsMcpPortal, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustAccessAiControlsMcpServer, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustAccessCustomPage, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustAccessInfrastructureTarget, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustAccessKeyConfiguration, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustAccessMtlsCertificate, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustAccessMtlsHostnameSettings, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustAccessShortLivedCertificate, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustAccessTag, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCasbFindingType, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCasbIntegration, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCasbPolicy, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCasbWebhook, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustConnectivitySettings, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustCwsBasicAuthCredential, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsBasicAuthSecret, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsDeployment, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsDomainAcl, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsPolicy, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsPolicySet, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsRegoMetadata, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsRegoModule, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsTenantStructure, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsTenantStructureNode, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustCwsWorkload, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDeviceCustomProfileLocalDomainFallback, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDeviceDefaultProfileCertificates, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDeviceDefaultProfileLocalDomainFallback, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustDeviceDeploymentGroups, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDeviceIpProfile, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDeviceManagedNetworks, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDevicePostureIntegration, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDeviceSettings, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustDeviceSubnet, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDexRule, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDexTest, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpCustomProfile, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpDataClass, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpDataTag, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpDataTagCategory, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpDataset, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpEntry, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpIntegrationEntry, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpPredefinedEntry, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpPredefinedProfile, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpProximityValidator, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpSensitivityGroup, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpSensitivityLevel, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpSensitivityLevelOrder, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustDlpSettings, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustDnsLocation, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustGatewayCertificate, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustGatewayLogging, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustGatewayPacfile, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustGatewayProxyEndpoint, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustNetworkHostnameRoute, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustOrganization, skip: "off limits: the account's one Zero Trust organization; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustOrganizationTrustSettings, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustResourceLibraryApplication, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustRiskBehavior, skip: "off limits: an account-wide Zero Trust setting; Zero Trust is not set up on the account either (even its Free plan needs a payment method)"}
+- {kind: ZeroTrustRiskScoringIntegration, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZeroTrustTunnelWarpConnectorConfig, skip: "plan: Zero Trust is not set up on the account (no team domain); even its Free plan needs a payment method"}
+- {kind: ZoneAutoOriginTlsKex, skip: "api: PATCH answers 400 Invalid zone identifier (1000) though GET reads the setting"}
+- {kind: ZoneCacheReserve, skip: "plan: 1135 not available for your plan type (Cache Reserve is paid)"}
+- {kind: ZoneCacheVariants, skip: "not yet tried: Cloudflare documents cache variants as Enterprise-only"}
+- {kind: ZoneDnssec, skip: "off limits: turns DNSSEC on for the account's one zone, and the delete removes the zone's DNSSEC keys"}
+- {kind: ZoneSubscription, skip: "off limits: the zone's plan (buys a subscription)"}
+- {kind: ZoneTracing, skip: "not yet tried: whether a Free zone may turn tracing on; the run would trace the zone's requests"}
+- {kind: AuthenticatedOriginPulls, skip: "not yet tried: needs a hostname's client certificate (AuthenticatedOriginPullsHostnameCertificate is skipped: its private key would be committed to a public repository)"}
+- {kind: CloudforceOneRequestAsset, fakeOnly: "Cloudforce One subscription (10403 forbidden)"}
+- {kind: ContentScanningExpression, fakeOnly: "malicious uploads detection (content scanning) is an Enterprise add-on"}
+- {kind: MagicTransitCf1Site, fakeOnly: "Magic Transit and Magic WAN are Enterprise products"}
+- {kind: R2DataCatalog, skip: "plan: 10042 enable R2 through the dashboard (needs a payment method)"}
+- {kind: StreamCaptionLanguage, skip: "plan: Stream is paid"}
+- {kind: StreamDownload, skip: "plan: Stream is paid"}
+- {kind: ZoneHold, skip: "off limits: a hold on the account's one zone (it blocks the zone's hostnames from being added elsewhere); zone holds are an Enterprise feature too"}

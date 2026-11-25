@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/{{cred:zoneId}}/workers/routes",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/*\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/*\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/*\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/*\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/three/*\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/three/*\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/three/*\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "body": "{\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"id\":270000024,\"pattern\":\"{{name}}.{{cred:zoneName}}/two/*\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/workers/routes/270000024",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

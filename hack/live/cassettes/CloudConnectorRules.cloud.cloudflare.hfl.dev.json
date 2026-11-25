@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:56:33Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"hfl-live-2611161740-fe1b-34-2\",\"id\":\"4ce89701e87e4d99a10dd9e71723c5af\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"hfl-live-2611161740-fe1b-34-2\",\"id\":\"4ce89701e87e4d99a10dd9e71723c5af\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "body": "[{\"description\":\"{{name}}\",\"enabled\":false,\"expression\":\"http.host eq \\\"example.com\\\"\",\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}\",\"id\":\"fcc0dd58b7b74c18a4cf5861e27744b0\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}\",\"id\":\"fcc0dd58b7b74c18a4cf5861e27744b0\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}\",\"id\":\"fcc0dd58b7b74c18a4cf5861e27744b0\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "body": "[{\"description\":\"{{name}}-2\",\"enabled\":false,\"expression\":\"http.host eq \\\"example.com\\\"\",\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}-2\",\"id\":\"33fd2953816c4ca7b9da7e89da87792d\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}-2\",\"id\":\"33fd2953816c4ca7b9da7e89da87792d\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "body": "[{\"description\":\"hfl-live-drift\",\"enabled\":false,\"expression\":\"http.host eq \\\"example.com\\\"\",\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"hfl-live-drift\",\"id\":\"189a9b550d514908be3f4bce4a750fe9\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"hfl-live-drift\",\"id\":\"189a9b550d514908be3f4bce4a750fe9\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "body": "[{\"description\":\"{{name}}-2\",\"enabled\":false,\"expression\":\"http.host eq \\\"example.com\\\"\",\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}-2\",\"id\":\"a88c0bf2033c4ebcb5c3d11ee6b94f38\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"{{name}}-2\",\"id\":\"a88c0bf2033c4ebcb5c3d11ee6b94f38\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/cloud_connector/rules",
+      "body": "[{\"description\":\"hfl-live-2611161740-fe1b-34-2\",\"enabled\":false,\"expression\":\"http.host eq \\\"example.com\\\"\",\"id\":\"4ce89701e87e4d99a10dd9e71723c5af\",\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":[{\"expression\":\"http.host eq \\\"example.com\\\"\",\"description\":\"hfl-live-2611161740-fe1b-34-2\",\"id\":\"049f264bd17946538975e0aa5dfb3d74\",\"enabled\":false,\"parameters\":{\"host\":\"examplebucket.s3.eu-north-1.amazonaws.com\"},\"provider\":\"aws_s3\"}]}"
+    }
+  ]
+}

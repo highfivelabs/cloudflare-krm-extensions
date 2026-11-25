@@ -1,0 +1,30 @@
+{
+  "recorded": "2026-11-20T23:54:43Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/workers",
+      "body": "{\"name\":\"{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"4c81aac2324a4f2fb6fc4061eb5691f5\",\n    \"name\": \"{{run}}\",\n    \"tags\": [],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:54:42.721776Z\",\n    \"updated_on\": \"2026-11-20T23:54:42.721776Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{run}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{run}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/4c81aac2324a4f2fb6fc4061eb5691f5/versions",
+      "body": "{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\",\"modules\":[{\"content_base64\":\"aW1wb3J0IHsgV29ya2Zsb3dFbnRyeXBvaW50IH0gZnJvbSAiY2xvdWRmbGFyZTp3b3JrZXJzIjsKZXhwb3J0IGNsYXNzIEhmbExpdmUgZXh0ZW5kcyBXb3JrZmxvd0VudHJ5cG9pbnQgeyBhc3luYyBydW4oZXZlbnQsIHN0ZXApIHsgcmV0dXJuICJoZmwtbGl2ZSI7IH0gfQpleHBvcnQgY2xhc3MgSGZsTGl2ZVR3byBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGNsYXNzIEhmbExpdmVUaHJlZSBleHRlbmRzIEhmbExpdmUge30KZXhwb3J0IGRlZmF1bHQgeyBhc3luYyBmZXRjaCgpIHsgcmV0dXJuIG5ldyBSZXNwb25zZSgiaGZsLWxpdmUiKTsgfSB9Owo=\",\"content_type\":\"application/javascript+module\",\"name\":\"index.js\"}]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"25cbbb6f-79b2-4d7e-80ab-670cba0c89bf\",\n    \"number\": 1,\n    \"startup_time_ms\": 0,\n    \"compatibility_date\": \"2026-01-01\",\n    \"main_module\": \"index.js\",\n    \"annotations\": {\n      \"workers/triggered_by\": \"create_version_api\"\n    },\n    \"usage_model\": \"standard\",\n    \"urls\": [],\n    \"source\": \"api\",\n    \"created_on\": \"2026-11-20T23:54:43.043984Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/deployments",
+      "body": "{\"strategy\":\"percentage\",\"versions\":[{\"percentage\":100,\"version_id\":\"25cbbb6f-79b2-4d7e-80ab-670cba0c89bf\"}]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"93d65b85-dd99-484b-9a73-1f353094aec3\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "body": "{\"state\":\"default\",\"url\":\"http://www.example.com\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"default\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"default\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"default\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "body": "{\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "body": "{\"state\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"hfl-live-drift\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"hfl-live-drift\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "body": "{\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/example-identifier",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"description\":\"Basic Challenge\",\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"preview_target\":\"block:basic-sec-captcha\",\"required_tokens\":[],\"state\":\"changed-state\",\"url\":\"http://www.example.com\"}\n"
+    }
+  ]
+}

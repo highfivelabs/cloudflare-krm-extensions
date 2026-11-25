@@ -1,0 +1,107 @@
+{
+  "recorded": "2026-11-20T23:56:13Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"type\":\"all\"}],\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"type\":\"all\"}],\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-2\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-2\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-2\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"matchers\":[{\"type\":\"all\"}],\"name\":\"{{name}}-3\",\"priority\":2147483647,\"source\":\"api\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-3\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-3\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"type\":\"all\"}],\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-2\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"{{name}}-2\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/email/routing/rules/catch_all",
+      "body": "{\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"matchers\":[{\"type\":\"all\"}],\"name\":\"\"}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\"result\":{\"id\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"tag\":\"29e87d66287d4fc3aded7eac7f3affbd\",\"name\":\"\",\"matchers\":[{\"type\":\"all\"}],\"actions\":[{\"type\":\"drop\"}],\"enabled\":false,\"priority\":2147483647,\"source\":\"api\"},\"success\":true,\"errors\":[],\"messages\":[]}"
+    }
+  ]
+}

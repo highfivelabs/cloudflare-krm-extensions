@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/devices/deployment-groups",
+      "body": "{\"name\":\"Engineering Ring 0\",\"version_config\":[]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"Engineering Ring 0\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"Engineering Ring 0\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"Engineering Ring 0\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "body": "{\"name\":\"changed-name\",\"version_config\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"changed-name\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"changed-name\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"hfl-live-drift\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"hfl-live-drift\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "body": "{\"name\":\"changed-name\",\"version_config\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"changed-name\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2026-02-14T13:17:00.123456789Z\",\"id\":270000131,\"name\":\"changed-name\",\"updated_at\":\"2026-02-14T13:17:00.123456789Z\",\"version_config\":[]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/devices/deployment-groups/270000131",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

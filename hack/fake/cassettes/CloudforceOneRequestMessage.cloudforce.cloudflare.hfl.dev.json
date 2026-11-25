@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "body": "{\"content\":\"example-content\",\"publish\":true,\"tlp\":\"clear\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"example-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"example-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"example-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "body": "{\"content\":\"changed-content\",\"publish\":true,\"tlp\":\"clear\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"changed-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"changed-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "body": "{\"content\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"hfl-live-drift\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"hfl-live-drift\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "body": "{\"content\":\"changed-content\",\"publish\":true,\"tlp\":\"clear\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"changed-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"changed-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/cloudforce-one/v2/requests/example-project-type/example-request-id/messages/example-message-id",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"attachments\":[],\"content\":\"changed-content\",\"created\":\"example-created\",\"is_cloudflare_team\":true,\"is_published\":true,\"published\":\"example-published\",\"tlp\":\"clear\",\"updated\":\"example-updated\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "body": "{\"enabled\":true,\"endpoint\":\"/metrics\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"/metrics\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"/metrics\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"/metrics\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "body": "{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "body": "{\"endpoint\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"hfl-live-drift\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"hfl-live-drift\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "body": "{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/settings/google-tag-gateway/config",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true,\"endpoint\":\"changed-endpoint\",\"hideOriginalIp\":true,\"measurementId\":\"GTM-P2F3N47Q\"}}\n"
+    }
+  ]
+}

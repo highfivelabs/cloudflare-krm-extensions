@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/data-security/posture/policies",
+      "body": "{\"actions\":{},\"applies_to_all_integrations\":false,\"display_name\":\"Auto-remediate public files\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"Auto-remediate public files\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"Auto-remediate public files\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"Auto-remediate public files\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "body": "{\"actions\":{},\"applies_to_all_integrations\":false,\"display_name\":\"changed-display_name\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"changed-display_name\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"changed-display_name\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "body": "{\"display_name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"hfl-live-drift\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"hfl-live-drift\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "body": "{\"actions\":{},\"applies_to_all_integrations\":false,\"display_name\":\"changed-display_name\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"changed-display_name\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"actions\":{},\"applies_to_all_integrations\":false,\"created_at\":\"2025-03-18T17:25:38.700541Z\",\"disabled_at\":\"2025-03-18T17:25:38.700541Z\",\"display_name\":\"changed-display_name\",\"enabled\":true,\"finding_type_id\":\"5a7d9e2f-1b3c-4d5e-8f6a-7b8c9d0e1f2a\",\"id\":270000118,\"last_triggered_at\":\"2025-03-18T17:25:38.700541Z\",\"updated_at\":\"2025-03-18T17:25:38.700541Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/data-security/posture/policies/270000118",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

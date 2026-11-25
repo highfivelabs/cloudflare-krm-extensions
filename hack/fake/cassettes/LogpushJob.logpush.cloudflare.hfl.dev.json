@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/logpush/jobs",
+      "body": "{\"destination_conf\":\"s3://mybucket/logs?region=us-west-2\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"s3://mybucket/logs?region=us-west-2\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"s3://mybucket/logs?region=us-west-2\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"s3://mybucket/logs?region=us-west-2\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "body": "{\"destination_conf\":\"changed-destination_conf\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"changed-destination_conf\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"changed-destination_conf\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "body": "{\"destination_conf\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"hfl-live-drift\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"hfl-live-drift\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "body": "{\"destination_conf\":\"changed-destination_conf\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"changed-destination_conf\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination_conf\":\"changed-destination_conf\",\"destination_name\":\"s3://mybucket?region=us-west-2\",\"error_message\":\"example-error-message\",\"id\":270000071,\"last_complete\":\"2000-01-01T00:00:00Z\",\"last_error\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/logpush/jobs/270000071",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "body": "{\"name\":\"www.example.com.\",\"peers\":[]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"www.example.com.\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"www.example.com.\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"www.example.com.\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "body": "{\"name\":\"changed-name\",\"peers\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"changed-name\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"changed-name\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"hfl-live-drift\",\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"hfl-live-drift\",\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "body": "{\"name\":\"changed-name\",\"peers\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"changed-name\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"checked_time\":\"2019-10-24T17:09:42.883908+01:00\",\"created_time\":\"2019-10-24T17:09:42.883908+01:00\",\"last_transferred_time\":\"2019-10-24T17:09:42.883908+01:00\",\"name\":\"changed-name\",\"peers\":[],\"soa_serial\":2019102400}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/secondary_dns/outgoing",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

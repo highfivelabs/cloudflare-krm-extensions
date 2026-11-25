@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:56:18Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"value\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "body": "{\"value\":[\"fips\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:16.686545Z\",\n    \"value\": \"[\\\"fips\\\"]\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:16.686545Z\",\n    \"value\": [\n      \"fips\"\n    ]\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:16.686545Z\",\n    \"value\": [\n      \"fips\"\n    ]\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "body": "{\"value\":[]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:17.240307Z\",\n    \"value\": \"[]\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:17.240307Z\",\n    \"value\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "body": "{\"value\":[\"fips\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:17.864575Z\",\n    \"value\": \"[\\\"fips\\\"]\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:17.864575Z\",\n    \"value\": [\n      \"fips\"\n    ]\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "body": "{\"value\":[]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:18.378275Z\",\n    \"value\": \"[]\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:18.378275Z\",\n    \"value\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/settings/origin_tls_compliance_modes",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"editable\": true,\n    \"id\": \"origin_tls_cmpl\",\n    \"modified_on\": \"2026-11-20T23:56:18.784778Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

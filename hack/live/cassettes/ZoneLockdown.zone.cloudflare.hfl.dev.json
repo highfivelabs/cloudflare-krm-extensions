@@ -1,0 +1,99 @@
+{
+  "recorded": "2026-11-20T23:56:00Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns",
+      "body": "{\"configurations\":[{\"target\":\"ip\",\"value\":\"192.0.2.78\"}],\"description\":\"{{name}}\",\"paused\":true,\"urls\":[\"{{name}}.{{cred:zoneName}}/*\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:57.28618792Z\",\n    \"description\": \"{{name}}\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:57.28618792Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:57.28618792Z\",\n    \"description\": \"{{name}}\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:57.28618792Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:57.28618792Z\",\n    \"description\": \"{{name}}\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:57.28618792Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "body": "{\"configurations\":[{\"target\":\"ip\",\"value\":\"192.0.2.78\"}],\"description\":\"{{name}}-2\",\"paused\":true,\"urls\":[\"{{name}}.{{cred:zoneName}}/*\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:57.973569762Z\",\n    \"description\": \"{{name}}-2\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:57.973569762Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:57.973569762Z\",\n    \"description\": \"{{name}}-2\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:57.973569762Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:57.973569762Z\",\n    \"description\": \"{{name}}-2\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:57.973569762Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "body": "{\"configurations\":[{\"target\":\"ip\",\"value\":\"192.0.2.78\"}],\"created_on\":\"2026-11-20T23:55:57.973569762Z\",\"description\":\"{{name}}-3\",\"id\":\"3bd718c9c1124566acfdff40617d8485\",\"modified_on\":\"2026-11-20T23:55:57.973569762Z\",\"paused\":true,\"urls\":[\"{{name}}.{{cred:zoneName}}/*\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:58.546446211Z\",\n    \"description\": \"{{name}}-3\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:58.546446211Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:58.546446211Z\",\n    \"description\": \"{{name}}-3\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:58.546446211Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "body": "{\"configurations\":[{\"target\":\"ip\",\"value\":\"192.0.2.78\"}],\"description\":\"{{name}}-2\",\"paused\":true,\"urls\":[\"{{name}}.{{cred:zoneName}}/*\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:59.190707637Z\",\n    \"description\": \"{{name}}-2\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:59.190707637Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\",\n    \"paused\": true,\n    \"modified_on\": \"2026-11-20T23:55:59.190707637Z\",\n    \"description\": \"{{name}}-2\",\n    \"urls\": [\n      \"{{name}}.{{cred:zoneName}}/*\"\n    ],\n    \"configurations\": [\n      {\n        \"target\": \"ip\",\n        \"value\": \"192.0.2.78\"\n      }\n    ],\n    \"created_on\": \"2026-11-20T23:55:59.190707637Z\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3bd718c9c1124566acfdff40617d8485\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/firewall/lockdowns/3bd718c9c1124566acfdff40617d8485",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10001,\n      \"message\": \"zonelockdown.api.not_found\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

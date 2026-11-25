@@ -1,0 +1,54 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/r2/buckets/example-bucket-name/domains/managed",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucketId\":\"example-bucketId\",\"domain\":\"example-domain\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/r2/buckets/example-bucket-name/domains/managed",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucketId\":\"example-bucketId\",\"domain\":\"example-domain\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/r2/buckets/example-bucket-name/domains/managed",
+      "body": "{\"enabled\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucketId\":\"example-bucketId\",\"domain\":\"example-domain\",\"enabled\":true}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/r2/buckets/example-bucket-name/domains/managed",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucketId\":\"example-bucketId\",\"domain\":\"example-domain\",\"enabled\":true}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/r2/buckets/example-bucket-name/domains/managed",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bucketId\":\"example-bucketId\",\"domain\":\"example-domain\",\"enabled\":true}}\n"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/certificates",
+      "body": "{\"csr\":\"-----BEGIN CERTIFICATE REQUEST-----\\nMIICZDCCAUwCAQAwHzEdMBsGA1UEAwwUaGZsLWxpdmUuZXhhbXBsZS5jb20wggEi\\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDe2Y649hfxCbgks965i6z5NTIk\\nm0RCYT/G5bV8y/utnU4wf0Wy7WOpAcXomjBFJecoF6pdIpl1WqUy7mScuTW5oSaz\\nMB/Mivp/ZQaHF1UG/14lW8U+KzmO0EA3PZdwO5oyd+2iUkT0PiPPCPYhJU+wILyY\\nJ6rFDHK5QZRIZJ/ckMhpglUm9AmV+e6LKE3HTvEHlVXYExcU76/PwzhnQkE4MPya\\nXRIxCMB6Lz4O1WxXgRhMm6riEGj5xb2mHWb07Gg6zb2SYdQ4zI93QTVR1oT5w6b6\\nWKyWuaOHPvbSqr3SzjwKCPJIlZY7ETViRRTBOe9GSW8wvVK3EAOy08xf1vHbAgMB\\nAAGgADANBgkqhkiG9w0BAQsFAAOCAQEATZ/3mzOr7kvQ4vEPTq57sBfjOEmhD9DK\\nt1atDg8oUh6EFHQG/unVvU3jUEUo1FkaBLPrcd/1X7RHSEhfNzWpXwtJ/Vpo+6wL\\nWGTXkLGYOxtTzHF3Z1AslXrFpjs0UDeyafbbR6i1juLQ1fC0ec8TM84hdXg/6Fik\\nrRmwNlGsZDWCSNE8GVrD9C2D5q8/bURp1B/yJe4rS5UhcjWCxD5kO42hu1s42oLm\\nSiJ68y4aVgT+T9Sh8k/dywZy1sVaB1RPV3J64UIYZIx68g5tkq4ilkY58lvwaHh4\\nb78ktgjOjoclbpMJLnBbWnBmJkq/ehGDIwTAKDWrzCAlHgEHwTGv4g==\\n-----END CERTIFICATE REQUEST-----\\n\",\"hostnames\":[\"{{name}}.{{cred:zoneName}}\"],\"request_type\":\"origin-rsa\",\"zone_id\":\"{{cred:zoneId}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIICvDCCAaQCAQAwdzELMAkGA1UEBhMCVVMxDTALBgNVBAgMBFV0YWgxDzANBgNV\\nBAcMBkxpbmRvbjEWMBQGA1UECgwNRGlnaUNlcnQgSW5jLjERMA8GA1UECwwIRGln\\naUNlcnQxHTAbBgNVBAMMFGV4YW1wbGUuZGlnaWNlcnQuY29tMIIBIjANBgkqhkiG\\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8+To7d+2kPWeBv/orU3LVbJwDrSQbeKamCmo\\nwp5bqDxIwV20zqRb7APUOKYoVEFFOEQs6T6gImnIolhbiH6m4zgZ/CPvWBOkZc+c\\n1Po2EmvBz+AD5sBdT5kzGQA6NbWyZGldxRthNLOs1efOhdnWFuhI162qmcflgpiI\\nWDuwq4C9f+YkeJhNn9dF5+owm8cOQmDrV8NNdiTqin8q3qYAHHJRW28glJUCZkTZ\\nwIaSR6crBQ8TbYNE0dc+Caa3DOIkz1EOsHWzTx+n0zKfqcbgXi4DJx+C1bjptYPR\\nBPZL8DAeWuA8ebudVT44yEp82G96/Ggcf7F33xMxe0yc+Xa6owIDAQABoAAwDQYJ\\nKoZIhvcNAQEFBQADggEBAB0kcrFccSmFDmxox0Ne01UIqSsDqHgL+XmHTXJwre6D\\nhJSZwbvEtOK0G3+dr4Fs11WuUNt5qcLsx5a8uk4G6AKHMzuhLsJ7XZjgmQXGECpY\\nQ4mC3yT3ZoCGpIXbw+iP3lmEEXgaQL0Tx5LFl/okKbKYwIqNiyKWOMj7ZR/wxWg/\\nZDGRs55xuoeLDJ/ZRFf9bI+IaCUd1YrfYcHIl3G87Av+r49YVwqRDT0VDV7uLgqn\\n29XI1PpVUNCPQGn9p/eX6Qo7vpDaPybRtA2R7XLKjQaF9oXWeCUqy1hvJac9QFO2\\n97Ob1alpHPoZ7mWiEuJwjBPii6a9M9G30nUo39lBi1w=\\n-----END CERTIFICATE-----\",\"expires_on\":\"2014-01-01 05:20:00 +0000 UTC\",\"hostnames\":[\"{{name}}.{{cred:zoneName}}\"],\"id\":270000020,\"request_type\":\"origin-rsa\",\"revoked_at\":\"2024-09-06T18:43:47.928893Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/certificates/270000020",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIICvDCCAaQCAQAwdzELMAkGA1UEBhMCVVMxDTALBgNVBAgMBFV0YWgxDzANBgNV\\nBAcMBkxpbmRvbjEWMBQGA1UECgwNRGlnaUNlcnQgSW5jLjERMA8GA1UECwwIRGln\\naUNlcnQxHTAbBgNVBAMMFGV4YW1wbGUuZGlnaWNlcnQuY29tMIIBIjANBgkqhkiG\\n9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8+To7d+2kPWeBv/orU3LVbJwDrSQbeKamCmo\\nwp5bqDxIwV20zqRb7APUOKYoVEFFOEQs6T6gImnIolhbiH6m4zgZ/CPvWBOkZc+c\\n1Po2EmvBz+AD5sBdT5kzGQA6NbWyZGldxRthNLOs1efOhdnWFuhI162qmcflgpiI\\nWDuwq4C9f+YkeJhNn9dF5+owm8cOQmDrV8NNdiTqin8q3qYAHHJRW28glJUCZkTZ\\nwIaSR6crBQ8TbYNE0dc+Caa3DOIkz1EOsHWzTx+n0zKfqcbgXi4DJx+C1bjptYPR\\nBPZL8DAeWuA8ebudVT44yEp82G96/Ggcf7F33xMxe0yc+Xa6owIDAQABoAAwDQYJ\\nKoZIhvcNAQEFBQADggEBAB0kcrFccSmFDmxox0Ne01UIqSsDqHgL+XmHTXJwre6D\\nhJSZwbvEtOK0G3+dr4Fs11WuUNt5qcLsx5a8uk4G6AKHMzuhLsJ7XZjgmQXGECpY\\nQ4mC3yT3ZoCGpIXbw+iP3lmEEXgaQL0Tx5LFl/okKbKYwIqNiyKWOMj7ZR/wxWg/\\nZDGRs55xuoeLDJ/ZRFf9bI+IaCUd1YrfYcHIl3G87Av+r49YVwqRDT0VDV7uLgqn\\n29XI1PpVUNCPQGn9p/eX6Qo7vpDaPybRtA2R7XLKjQaF9oXWeCUqy1hvJac9QFO2\\n97Ob1alpHPoZ7mWiEuJwjBPii6a9M9G30nUo39lBi1w=\\n-----END CERTIFICATE-----\",\"expires_on\":\"2014-01-01 05:20:00 +0000 UTC\",\"hostnames\":[\"{{name}}.{{cred:zoneName}}\"],\"id\":270000020,\"request_type\":\"origin-rsa\",\"revoked_at\":\"2024-09-06T18:43:47.928893Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/certificates/270000020",
+      "status": 204
+    }
+  ]
+}

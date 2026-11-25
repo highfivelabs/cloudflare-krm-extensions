@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/shares",
+      "body": "{\"name\":\"My Shared WAF Managed Rule\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"My Shared WAF Managed Rule\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"My Shared WAF Managed Rule\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"My Shared WAF Managed Rule\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "body": "{\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"changed-name\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"changed-name\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"hfl-live-drift\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"hfl-live-drift\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "body": "{\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"changed-name\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"account_name\":\"Account A\",\"associated_recipient_count\":10,\"associating_recipient_count\":1,\"created\":\"2023-09-21T18:56:32.624632Z\",\"disassociated_recipient_count\":0,\"disassociating_recipient_count\":0,\"id\":270000090,\"kind\":\"sent\",\"modified\":\"2023-09-21T18:56:32.624632Z\",\"name\":\"changed-name\",\"organization_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"status\":\"active\",\"target_type\":\"account\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/270000090",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

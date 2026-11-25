@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "body": "{\"value\":\"off\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"off\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "body": "{\"value\":\"changed-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "body": "{\"value\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "body": "{\"value\":\"changed-value\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"changed-value\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/cache/regional_tiered_cache",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"editable\":true,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"value\":\"changed-value\"}}\n"
+    }
+  ]
+}

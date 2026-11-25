@@ -1,0 +1,38 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/rum/site_info",
+      "body": "{\"auto_install\":false,\"host\":\"{{name}}.example.com\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"auto_install\":false,\"created\":\"2014-01-01T05:20:00.12345Z\",\"rules\":[],\"ruleset\":{},\"site_tag\":270000014,\"site_token\":\"{{redacted}}\",\"snippet\":\"\u003c!-- Cloudflare Web Analytics --\u003e\u003cscript type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\\\"token\\\": \\\"{{redacted}}\\\"}'\u003e\u003c/script\u003e\u003c!-- End Cloudflare Web Analytics --\u003e\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rum/site_info/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"auto_install\":false,\"created\":\"2014-01-01T05:20:00.12345Z\",\"rules\":[],\"ruleset\":{},\"site_tag\":270000014,\"site_token\":\"{{redacted}}\",\"snippet\":\"\u003c!-- Cloudflare Web Analytics --\u003e\u003cscript type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\\\"token\\\": \\\"{{redacted}}\\\"}'\u003e\u003c/script\u003e\u003c!-- End Cloudflare Web Analytics --\u003e\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/rum/site_info/270000014",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/rum/site_info/270000014",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

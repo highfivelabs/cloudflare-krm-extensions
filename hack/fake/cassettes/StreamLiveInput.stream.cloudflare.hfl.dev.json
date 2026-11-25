@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/stream/live_inputs",
+      "body": "{}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2014-01-02T02:20:00Z\",\"keysRotatedAt\":\"2014-01-02T02:20:00Z\",\"modified\":\"2014-01-02T02:20:00Z\",\"playback\":{\"dash\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/66be4bf738797e01e1fca35a7bdecdcd/manifest/video.mpd\",\"hls\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/66be4bf738797e01e1fca35a7bdecdcd/manifest/video.m3u8\"},\"rtmps\":{},\"rtmpsPlayback\":{},\"srt\":{},\"srtPlayback\":{},\"status\":null,\"uid\":270000098,\"webRTC\":{},\"webRTCPlayback\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/live_inputs/270000098",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2014-01-02T02:20:00Z\",\"keysRotatedAt\":\"2014-01-02T02:20:00Z\",\"modified\":\"2014-01-02T02:20:00Z\",\"playback\":{\"dash\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/66be4bf738797e01e1fca35a7bdecdcd/manifest/video.mpd\",\"hls\":\"https://customer-m033z5x00ks6nunl.cloudflarestream.com/66be4bf738797e01e1fca35a7bdecdcd/manifest/video.m3u8\"},\"rtmps\":{},\"rtmpsPlayback\":{},\"srt\":{},\"srtPlayback\":{},\"status\":null,\"uid\":270000098,\"webRTC\":{},\"webRTCPlayback\":{}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/stream/live_inputs/270000098",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/live_inputs/270000098",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

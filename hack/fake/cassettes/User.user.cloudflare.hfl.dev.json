@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/user",
+      "body": "{\"country\":\"example-country\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"example-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"example-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"example-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/user",
+      "body": "{\"country\":\"changed-country\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"changed-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"changed-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/user",
+      "body": "{\"country\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"hfl-live-drift\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"hfl-live-drift\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/user",
+      "body": "{\"country\":\"changed-country\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"changed-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/user",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"changed-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/user",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"betas\":[],\"country\":\"changed-country\",\"email\":\"alice@example.com\",\"has_business_zones\":false,\"has_enterprise_zones\":false,\"has_pro_zones\":false,\"organizations\":[],\"suspended\":false,\"two_factor_authentication_enabled\":false,\"two_factor_authentication_locked\":false}}\n"
+    }
+  ]
+}

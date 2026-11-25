@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/custom_pages/assets",
+      "body": "{\"description\":\"Custom 500 error page\",\"name\":\"my_custom_error_page\",\"url\":\"https://example.com/error.html\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"Custom 500 error page\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"Custom 500 error page\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"Custom 500 error page\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "body": "{\"description\":\"changed-description\",\"name\":\"my_custom_error_page\",\"url\":\"https://example.com/error.html\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"changed-description\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"changed-description\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "body": "{\"description\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"hfl-live-drift\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"hfl-live-drift\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "body": "{\"description\":\"changed-description\",\"name\":\"my_custom_error_page\",\"url\":\"https://example.com/error.html\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"changed-description\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"description\":\"changed-description\",\"last_updated\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"my_custom_error_page\",\"size_bytes\":1024,\"url\":\"https://example.com/error.html\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_pages/assets/my_custom_error_page",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

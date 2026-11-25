@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests",
+      "body": "{\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"30m\",\"name\":\"HTTP dash health check\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"30m\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"30m\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"30m\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "body": "{\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"changed-interval\",\"name\":\"HTTP dash health check\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"changed-interval\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"changed-interval\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "body": "{\"interval\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"hfl-live-drift\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"hfl-live-drift\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "body": "{\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"changed-interval\",\"name\":\"HTTP dash health check\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"changed-interval\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-10-11T00:00:00Z\",\"data\":{\"host\":\"https://dash.cloudflare.com\",\"kind\":\"http\"},\"enabled\":true,\"interval\":\"changed-interval\",\"name\":\"HTTP dash health check\",\"test_id\":270000137,\"updated\":\"2023-10-11T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/devices/dex_tests/270000137",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

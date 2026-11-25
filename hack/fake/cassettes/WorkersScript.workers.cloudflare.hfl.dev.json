@@ -1,0 +1,73 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"files\":[{\"content\":\"export default { async fetch() { return new Response(\\\"hfl-live\\\"); } };\",\"contentType\":\"application/javascript+module\",\"name\":\"index.js\"}],\"metadata\":{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"files\":[{\"content\":\"export default { async fetch() { return new Response(\\\"hfl-live\\\"); } };\",\"contentType\":\"application/javascript+module\",\"name\":\"index.js\"}],\"metadata\":{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"files\":[{\"content\":\"export default { async fetch() { return new Response(\\\"hfl-live\\\"); } };\",\"contentType\":\"application/javascript+module\",\"name\":\"index.js\"}],\"metadata\":{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"files\":[{\"content\":\"export default { async fetch() { return new Response(\\\"hfl-live-2\\\"); } };\",\"contentType\":\"application/javascript+module\",\"name\":\"index.js\"}],\"metadata\":{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"files\":[{\"content\":\"export default { async fetch() { return new Response(\\\"hfl-live-2\\\"); } };\",\"contentType\":\"application/javascript+module\",\"name\":\"index.js\"}],\"metadata\":{\"compatibility_date\":\"2026-01-01\",\"main_module\":\"index.js\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

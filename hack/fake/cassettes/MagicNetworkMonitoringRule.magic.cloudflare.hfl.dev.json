@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/mnm/rules",
+      "body": "{\"automatic_advertisement\":false,\"name\":\"my_rule_1\",\"prefixes\":[],\"type\":\"zscore\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"my_rule_1\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"my_rule_1\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"my_rule_1\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "body": "{\"automatic_advertisement\":false,\"name\":\"changed-name\",\"prefixes\":[],\"type\":\"zscore\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"changed-name\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"changed-name\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"hfl-live-drift\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"hfl-live-drift\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "body": "{\"automatic_advertisement\":false,\"name\":\"changed-name\",\"prefixes\":[],\"type\":\"zscore\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"changed-name\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"automatic_advertisement\":false,\"id\":270000072,\"name\":\"changed-name\",\"prefixes\":[],\"type\":\"zscore\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/mnm/rules/270000072",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

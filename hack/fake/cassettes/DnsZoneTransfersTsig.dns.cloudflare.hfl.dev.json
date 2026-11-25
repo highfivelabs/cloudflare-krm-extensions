@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs",
+      "body": "{\"algo\":\"hmac-sha512.\",\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"hmac-sha512.\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"hmac-sha512.\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"hmac-sha512.\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "body": "{\"algo\":\"changed-algo\",\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"changed-algo\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"changed-algo\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "body": "{\"algo\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"hfl-live-drift\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"hfl-live-drift\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "body": "{\"algo\":\"changed-algo\",\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"changed-algo\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"algo\":\"changed-algo\",\"id\":270000053,\"name\":\"tsig.customer.cf.\",\"secret\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/secondary_dns/tsigs/270000053",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/web3/hostnames",
+      "body": "{\"name\":\"gateway.example.com\",\"target\":\"ipfs\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"gateway.example.com\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"gateway.example.com\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"gateway.example.com\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "body": "{\"name\":\"changed-name\",\"target\":\"ipfs\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"changed-name\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"changed-name\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"hfl-live-drift\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"hfl-live-drift\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "body": "{\"name\":\"changed-name\",\"target\":\"ipfs\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"changed-name\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"id\":270000108,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"changed-name\",\"status\":\"active\",\"target\":\"ipfs\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/web3/hostnames/270000108",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

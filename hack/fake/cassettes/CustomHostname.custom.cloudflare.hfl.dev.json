@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/custom_hostnames",
+      "body": "{\"hostname\":\"app.example.com\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"app.example.com\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"app.example.com\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"app.example.com\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "body": "{\"hostname\":\"changed-hostname\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"changed-hostname\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"changed-hostname\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "body": "{\"hostname\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"hfl-live-drift\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"hfl-live-drift\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "body": "{\"hostname\":\"changed-hostname\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"changed-hostname\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2020-02-06T18:11:23.531995Z\",\"hostname\":\"changed-hostname\",\"id\":270000046,\"ownership_verification\":{},\"ownership_verification_http\":{},\"status\":\"pending\",\"verification_errors\":[]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/270000046",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

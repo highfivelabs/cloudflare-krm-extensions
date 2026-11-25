@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/sso_connectors",
+      "body": "{\"email_domain\":\"example.com\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"example.com\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"example.com\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"example.com\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "body": "{\"email_domain\":\"changed-email_domain\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"changed-email_domain\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"changed-email_domain\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "body": "{\"email_domain\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"hfl-live-drift\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"hfl-live-drift\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "body": "{\"email_domain\":\"changed-email_domain\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"changed-email_domain\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2025-01-01T12:21:02Z\",\"email_domain\":\"changed-email_domain\",\"enabled\":false,\"id\":270000094,\"updated_on\":\"2025-01-01T12:21:02Z\",\"verification\":{}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/sso_connectors/270000094",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

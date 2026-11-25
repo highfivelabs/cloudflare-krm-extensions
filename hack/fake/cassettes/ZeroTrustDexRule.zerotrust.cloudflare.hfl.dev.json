@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/dex/rules",
+      "body": "{\"match\":\"example-match\",\"name\":\"example-name\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"example-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"example-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"example-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "body": "{\"match\":\"changed-match\",\"name\":\"example-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"changed-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"changed-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "body": "{\"match\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"hfl-live-drift\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"hfl-live-drift\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "body": "{\"match\":\"changed-match\",\"name\":\"example-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"changed-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2023-07-16 15:00:00+00\",\"id\":270000136,\"match\":\"changed-match\",\"name\":\"example-name\",\"targeted_tests\":[],\"updated_at\":\"2023-07-16 15:00:00+00\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dex/rules/270000136",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

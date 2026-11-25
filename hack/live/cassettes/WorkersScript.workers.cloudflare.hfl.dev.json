@@ -1,0 +1,69 @@
+{
+  "recorded": "2026-11-20T23:56:36Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10007,\n      \"message\": \"This Worker does not exist on your account.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"created_on\": \"2026-11-20T23:56:34.058033Z\",\n    \"modified_on\": \"2026-11-20T23:56:34.058033Z\",\n    \"id\": \"{{name}}\",\n    \"tag\": \"7e4254adc87444218426a7d2eb2cd7df\",\n    \"entry_point\": \"index.js\",\n    \"tags\": null,\n    \"deployment_id\": \"bd040635f23244c099d427788409cbd5\",\n    \"tail_consumers\": null,\n    \"logpush\": false,\n    \"has_assets\": false,\n    \"has_modules\": true,\n    \"etag\": \"28c27b696c89cb2351217ed97cfc14edc5c75e4b19a2938427d033aa0e11ea3b\",\n    \"handlers\": [\n      \"fetch\"\n    ],\n    \"last_deployed_from\": \"api\",\n    \"compatibility_date\": \"2026-01-01\",\n    \"usage_model\": \"standard\",\n    \"startup_time_ms\": 0\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "multipart/form-data; boundary=41724d95edbdf0198c464011e3926cf5af05a0f0c8c3927b9e0d91abb9e5",
+      "response": "--41724d95edbdf0198c464011e3926cf5af05a0f0c8c3927b9e0d91abb9e5\r\nContent-Disposition: form-data; name=\"index.js\"\r\n\r\nexport default { async fetch() { return new Response(\"hfl-live\"); } };\r\n--41724d95edbdf0198c464011e3926cf5af05a0f0c8c3927b9e0d91abb9e5--\r\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "multipart/form-data; boundary=d4be4486d008d69463c7bdea51a2d6c515f3d4cc7b89569b6b7d6e4f1107",
+      "response": "--d4be4486d008d69463c7bdea51a2d6c515f3d4cc7b89569b6b7d6e4f1107\r\nContent-Disposition: form-data; name=\"index.js\"\r\n\r\nexport default { async fetch() { return new Response(\"hfl-live\"); } };\r\n--d4be4486d008d69463c7bdea51a2d6c515f3d4cc7b89569b6b7d6e4f1107--\r\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"created_on\": \"2026-11-20T23:56:34.058033Z\",\n    \"modified_on\": \"2026-11-20T23:56:35.002751Z\",\n    \"id\": \"{{name}}\",\n    \"tag\": \"7e4254adc87444218426a7d2eb2cd7df\",\n    \"entry_point\": \"index.js\",\n    \"tags\": null,\n    \"deployment_id\": \"4dc71fa53bd545e7a92a8788cb91dea1\",\n    \"tail_consumers\": null,\n    \"logpush\": false,\n    \"has_assets\": false,\n    \"has_modules\": true,\n    \"etag\": \"99213093e503c83f8b5ebaaa498f899d877b7db6e9581f224ca8ae59c69d817a\",\n    \"handlers\": [\n      \"fetch\"\n    ],\n    \"last_deployed_from\": \"api\",\n    \"compatibility_date\": \"2026-01-01\",\n    \"usage_model\": \"standard\",\n    \"startup_time_ms\": 0\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "multipart/form-data; boundary=94ed07422c733511140911d47e3b9618015bcb63126979010efea7c07a17",
+      "response": "--94ed07422c733511140911d47e3b9618015bcb63126979010efea7c07a17\r\nContent-Disposition: form-data; name=\"index.js\"\r\n\r\nexport default { async fetch() { return new Response(\"hfl-live-2\"); } };\r\n--94ed07422c733511140911d47e3b9618015bcb63126979010efea7c07a17--\r\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"7e4254adc87444218426a7d2eb2cd7df\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{name}}",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10007,\n      \"message\": \"This Worker does not exist on your account.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

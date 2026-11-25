@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/gateway/locations",
+      "body": "{\"name\":\"Austin Office Location\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"Austin Office Location\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"Austin Office Location\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"Austin Office Location\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "body": "{\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"changed-name\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"changed-name\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"hfl-live-drift\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"hfl-live-drift\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "body": "{\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"changed-name\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2014-01-01T05:20:00.12345Z\",\"dns_destination_ipv6_block_id\":\"b08f7231-d458-495c-98ef-190604c9ee83\",\"doh_subdomain\":\"oli3n9zkz5\",\"id\":270000147,\"ip\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"ipv4_destination\":\"172.64.36.1\",\"ipv4_destination_backup\":\"172.64.36.2\",\"name\":\"changed-name\",\"updated_at\":\"2014-01-01T05:20:00.12345Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/gateway/locations/270000147",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

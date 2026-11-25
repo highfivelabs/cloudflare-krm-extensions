@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/healthchecks",
+      "body": "{\"address\":\"www.example.com\",\"name\":\"server-1\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"www.example.com\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"www.example.com\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"www.example.com\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "body": "{\"address\":\"changed-address\",\"name\":\"server-1\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"changed-address\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"changed-address\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "body": "{\"address\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"hfl-live-drift\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"hfl-live-drift\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "body": "{\"address\":\"changed-address\",\"name\":\"server-1\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"changed-address\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"address\":\"changed-address\",\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"failure_reason\":\"example-failure-reason\",\"id\":270000061,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"name\":\"server-1\",\"status\":\"healthy\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/healthchecks/270000061",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

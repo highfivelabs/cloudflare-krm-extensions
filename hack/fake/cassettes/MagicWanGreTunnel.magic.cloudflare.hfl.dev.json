@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "body": "{\"cloudflare_gre_endpoint\":\"203.0.113.1\",\"customer_gre_endpoint\":\"203.0.113.1\",\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bgp_status\":{\"state\":\"BGP_DOWN\",\"tcp_established\":true,\"updated_at\":\"example-updated-at\"},\"cloudflare_gre_endpoint\":\"203.0.113.1\",\"created_on\":\"2017-06-14T00:00:00Z\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"modified_on\":\"2017-06-14T05:20:00Z\",\"name\":\"GRE_1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"gre_tunnels\":[{\"cloudflare_gre_endpoint\":\"203.0.113.1\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"gre_tunnels\":[{\"cloudflare_gre_endpoint\":\"203.0.113.1\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/magic/gre_tunnels/270000079",
+      "body": "{\"cloudflare_gre_endpoint\":\"changed-cloudflare_gre_endpoint\",\"customer_gre_endpoint\":\"203.0.113.1\",\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bgp_status\":{\"state\":\"BGP_DOWN\",\"tcp_established\":true,\"updated_at\":\"example-updated-at\"},\"cloudflare_gre_endpoint\":\"changed-cloudflare_gre_endpoint\",\"created_on\":\"2017-06-14T00:00:00Z\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"modified_on\":\"2017-06-14T05:20:00Z\",\"name\":\"GRE_1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"gre_tunnels\":[{\"cloudflare_gre_endpoint\":\"changed-cloudflare_gre_endpoint\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/magic/gre_tunnels/270000079",
+      "body": "{\"cloudflare_gre_endpoint\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bgp_status\":{\"state\":\"BGP_DOWN\",\"tcp_established\":true,\"updated_at\":\"example-updated-at\"},\"cloudflare_gre_endpoint\":\"hfl-live-drift\",\"created_on\":\"2017-06-14T00:00:00Z\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"modified_on\":\"2017-06-14T05:20:00Z\",\"name\":\"GRE_1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"gre_tunnels\":[{\"cloudflare_gre_endpoint\":\"hfl-live-drift\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/magic/gre_tunnels/270000079",
+      "body": "{\"cloudflare_gre_endpoint\":\"changed-cloudflare_gre_endpoint\",\"customer_gre_endpoint\":\"203.0.113.1\",\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"bgp_status\":{\"state\":\"BGP_DOWN\",\"tcp_established\":true,\"updated_at\":\"example-updated-at\"},\"cloudflare_gre_endpoint\":\"changed-cloudflare_gre_endpoint\",\"created_on\":\"2017-06-14T00:00:00Z\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"modified_on\":\"2017-06-14T05:20:00Z\",\"name\":\"GRE_1\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"gre_tunnels\":[{\"cloudflare_gre_endpoint\":\"changed-cloudflare_gre_endpoint\",\"customer_gre_endpoint\":\"203.0.113.1\",\"id\":270000079,\"interface_address\":\"192.0.2.0/31\",\"name\":\"GRE_1\"}]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/magic/gre_tunnels/270000079",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/gre_tunnels",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"gre_tunnels\":[]}}\n"
+    }
+  ]
+}

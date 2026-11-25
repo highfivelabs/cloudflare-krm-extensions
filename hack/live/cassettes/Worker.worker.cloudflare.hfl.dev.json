@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:55:38Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/workers",
+      "body": "{\"logpush\":false,\"name\":\"{{name}}\",\"tags\":[\"first\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"first\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"first\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"first\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "body": "{\"logpush\":false,\"name\":\"{{name}}\",\"tags\":[\"second\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"second\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:36.613873Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"second\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:36.613873Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "body": "{\"tags\":[\"drift\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"drift\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:37.218048Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"drift\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:37.218048Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "body": "{\"logpush\":false,\"name\":\"{{name}}\",\"tags\":[\"second\"]}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"second\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:37.713457Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"3da8683bbbbf4318b731751abd60af33\",\n    \"name\": \"{{name}}\",\n    \"tags\": [\n      \"second\"\n    ],\n    \"observability\": {\n      \"enabled\": false,\n      \"head_sampling_rate\": 1,\n      \"redact_query_string\": false,\n      \"logs\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"invocation_logs\": true,\n        \"persist\": true,\n        \"destinations\": []\n      },\n      \"traces\": {\n        \"enabled\": false,\n        \"head_sampling_rate\": 1,\n        \"persist\": true,\n        \"destinations\": []\n      }\n    },\n    \"logpush\": false,\n    \"created_on\": \"2026-11-20T23:55:36.022073Z\",\n    \"updated_on\": \"2026-11-20T23:55:37.713457Z\",\n    \"deployed_on\": null,\n    \"references\": {\n      \"workers\": [],\n      \"domains\": [],\n      \"dispatch_namespace_outbounds\": [],\n      \"durable_objects\": [],\n      \"queues\": []\n    },\n    \"subdomain\": {\n      \"enabled\": false,\n      \"previews_enabled\": false,\n      \"url\": \"https://{{name}}.{{redacted}}.workers.dev\",\n      \"preview_url_suffix\": \"-{{name}}.{{redacted}}.workers.dev\"\n    },\n    \"tail_consumers\": []\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/3da8683bbbbf4318b731751abd60af33",
+      "status": 404,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": null,\n  \"success\": false,\n  \"errors\": [\n    {\n      \"code\": 10007,\n      \"message\": \"This Worker does not exist on your account.\"\n    }\n  ],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

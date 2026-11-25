@@ -1,0 +1,134 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces",
+      "body": "{\"title\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000007,\"title\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"value\":\"first\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "first"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "first"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "first"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"value\":\"second\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "second"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "second"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"value\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "hfl-live-drift"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "multipart": true,
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"value\":\"second\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "second"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "response": "second"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv/values/{{name}}",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/storage/kv/namespaces/rehearsal-kv",
+      "status": 204
+    }
+  ]
+}

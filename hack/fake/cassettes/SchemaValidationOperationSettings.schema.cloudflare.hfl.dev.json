@@ -1,0 +1,54 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/schema_validation/settings/operations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/schema_validation/settings/operations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/schema_validation/settings/operations",
+      "body": "{\"example\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"example\":{}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/schema_validation/settings/operations",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"example\":{}}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/example-zone-id/schema_validation/settings/operations",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"example\":{}}}\n"
+    }
+  ]
+}

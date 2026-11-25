@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/ssl/certificate_packs/order",
+      "body": "{\"certificate_authority\":\"lets_encrypt\",\"hosts\":[],\"type\":\"advanced\",\"validation_method\":\"txt\",\"validity_days\":14}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"certificate_authority\":\"lets_encrypt\",\"certificates\":[],\"dcv_delegation_records\":[],\"hosts\":[],\"id\":270000041,\"primary_certificate\":\"7e7b8deba8538af625850b7b2530034c\",\"status\":\"initializing\",\"type\":\"advanced\",\"validation_errors\":[],\"validation_method\":\"txt\",\"validation_records\":[],\"validity_days\":14}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/ssl/certificate_packs/270000041",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"certificate_authority\":\"lets_encrypt\",\"certificates\":[],\"dcv_delegation_records\":[],\"hosts\":[],\"id\":270000041,\"primary_certificate\":\"7e7b8deba8538af625850b7b2530034c\",\"status\":\"initializing\",\"type\":\"advanced\",\"validation_errors\":[],\"validation_method\":\"txt\",\"validation_records\":[],\"validity_days\":14}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/ssl/certificate_packs/270000041",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/ssl/certificate_packs/270000041",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

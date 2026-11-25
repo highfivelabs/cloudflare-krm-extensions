@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/dlp/entries/predefined",
+      "body": "{\"enabled\":true,\"entry_id\":\"example-entry-id\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"case_sensitive\":true,\"confidence\":{\"ai_context_available\":true,\"available\":true},\"created_at\":\"2000-01-01T00:00:00Z\",\"deprecated\":true,\"description\":\"example-description\",\"enabled\":true,\"id\":\"example-entry-id\",\"name\":\"example-name\",\"pattern\":{\"regex\":\"example-regex\"},\"secret\":true,\"type\":\"custom\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"upload_status\":\"empty\",\"validator_ids\":[],\"variant\":{\"type\":\"PromptTopic\"},\"word_list\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dlp/entries",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"enabled\":true,\"entry_id\":\"example-entry-id\",\"id\":\"example-entry-id\"}]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/dlp/entries/predefined/example-entry-id",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/dlp/entries",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[]}\n"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "body": "{\"enabled\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "body": "{\"enabled\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":false}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "body": "{\"enabled\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":true}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "body": "{\"enabled\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":false}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":false}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin_tls_client_auth/settings",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"enabled\":false}}\n"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/pipelines",
+      "body": "{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"name\":\"sample_pipeline\",\"source\":[]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"sample_pipeline\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"sample_pipeline\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"sample_pipeline\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "body": "{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"name\":\"changed-name\",\"source\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"changed-name\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"changed-name\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"hfl-live-drift\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"hfl-live-drift\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "body": "{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"name\":\"changed-name\",\"source\":[]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"changed-name\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"destination\":{\"batch\":{},\"compression\":{},\"credentials\":{\"access_key_id\":\"{{redacted}}\",\"endpoint\":\"https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com\",\"secret_access_key\":\"{{redacted}}\"},\"format\":\"json\",\"path\":{\"bucket\":\"bucket\"},\"type\":\"r2\"},\"endpoint\":\"https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com\",\"id\":270000086,\"name\":\"changed-name\",\"source\":[],\"version\":2}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/pipelines/270000086",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

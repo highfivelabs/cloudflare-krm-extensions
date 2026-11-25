@@ -1,0 +1,103 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "body": "{\"origin\":\"fallback.example.com\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"fallback.example.com\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"fallback.example.com\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"fallback.example.com\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "body": "{\"origin\":\"changed-origin\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"changed-origin\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"changed-origin\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "body": "{\"origin\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"hfl-live-drift\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"hfl-live-drift\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "body": "{\"origin\":\"changed-origin\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"changed-origin\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_at\":\"2019-10-28T18:11:23.37411Z\",\"errors\":[],\"origin\":\"changed-origin\",\"status\":\"pending_deployment\",\"updated_at\":\"2020-03-16T18:11:23.531995Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/custom_hostnames/fallback_origin",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

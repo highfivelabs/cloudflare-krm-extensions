@@ -1,0 +1,13 @@
+{
+  "recorded": "2026-11-20T23:56:36Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}?force=true",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"id\": \"4c81aac2324a4f2fb6fc4061eb5691f5\"\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources",
+      "body": "{\"meta\":{},\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"custom-ruleset\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"custom-ruleset\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"custom-ruleset\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"custom-ruleset\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "body": "{\"meta\":{},\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"changed-resource_type\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"changed-resource_type\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"changed-resource_type\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "body": "{\"resource_type\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"hfl-live-drift\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"hfl-live-drift\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "body": "{\"meta\":{},\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"changed-resource_type\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"changed-resource_type\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created\":\"2023-09-21T18:56:32.624632Z\",\"id\":270000092,\"meta\":{},\"modified\":\"2023-09-21T18:56:32.624632Z\",\"resource_account_id\":\"023e105f4ecef8ad9ca31a8372d0c353\",\"resource_id\":\"0a679032-bbb2-4b7e-9acc-dd5c5cb27a17\",\"resource_type\":\"changed-resource_type\",\"resource_version\":1,\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/shares/example-share-id/resources/270000092",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

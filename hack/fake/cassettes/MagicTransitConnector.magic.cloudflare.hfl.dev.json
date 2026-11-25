@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/magic/connectors",
+      "body": "{\"device\":{},\"notes\":\"example-notes\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"example-notes\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"example-notes\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"example-notes\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "body": "{\"device\":{},\"notes\":\"changed-notes\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"changed-notes\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"changed-notes\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "body": "{\"notes\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "body": "{\"device\":{},\"notes\":\"changed-notes\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"changed-notes\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"device\":{},\"id\":270000073,\"last_heartbeat\":\"example-last-heartbeat\",\"last_seen_version\":\"example-last-seen-version\",\"last_updated\":\"example-last-updated\",\"license_key\":\"example-license-key\",\"notes\":\"changed-notes\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/connectors/270000073",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

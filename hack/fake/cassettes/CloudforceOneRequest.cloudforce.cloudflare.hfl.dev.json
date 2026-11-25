@@ -1,0 +1,44 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/cloudforce-one/requests",
+      "body": "{\"page\":1,\"per_page\":10}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"completed\":\"2022-04-01T05:20:00Z\",\"content\":\"What regions were most effected by the recent DoS?\",\"created\":\"2022-04-01T05:20:00Z\",\"id\":270000042,\"message_tokens\":1,\"priority\":\"2022-04-01T05:20:00Z\",\"readable_id\":\"RFI-2022-000001\",\"request\":\"Victomology\",\"summary\":\"DoS attack\",\"tlp\":\"clear\",\"tokens\":16,\"updated\":\"2022-04-01T05:20:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/requests/270000042",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"completed\":\"2022-04-01T05:20:00Z\",\"content\":\"What regions were most effected by the recent DoS?\",\"created\":\"2022-04-01T05:20:00Z\",\"id\":270000042,\"message_tokens\":1,\"priority\":\"2022-04-01T05:20:00Z\",\"readable_id\":\"RFI-2022-000001\",\"request\":\"Victomology\",\"summary\":\"DoS attack\",\"tlp\":\"clear\",\"tokens\":16,\"updated\":\"2022-04-01T05:20:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/cloudforce-one/requests/270000042",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/cloudforce-one/requests/270000042",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

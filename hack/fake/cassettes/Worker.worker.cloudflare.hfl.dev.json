@@ -1,0 +1,90 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/{{cred:accountId}}/workers/workers",
+      "body": "{\"logpush\":false,\"name\":\"{{name}}\",\"tags\":[\"first\"]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"first\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"first\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"first\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "body": "{\"logpush\":false,\"name\":\"{{name}}\",\"tags\":[\"second\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"second\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"second\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "body": "{\"tags\":[\"drift\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"drift\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"drift\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "body": "{\"logpush\":false,\"name\":\"{{name}}\",\"tags\":[\"second\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"second\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2000-01-01T00:00:00Z\",\"deployed_on\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"logpush\":false,\"name\":\"{{name}}\",\"references\":{\"dispatch_namespace_outbounds\":[],\"domains\":[],\"durable_objects\":[],\"queues\":[],\"workers\":[]},\"tags\":[\"second\"],\"updated_on\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/workers/270000015",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/api_gateway/operations/example-operation-id/schema_validation",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"operation_id\":\"f174e90a-fafe-4643-bbbc-4a0ed4fc8415\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/api_gateway/operations/example-operation-id/schema_validation",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"operation_id\":\"f174e90a-fafe-4643-bbbc-4a0ed4fc8415\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/api_gateway/operations/example-operation-id/schema_validation",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"operation_id\":\"f174e90a-fafe-4643-bbbc-4a0ed4fc8415\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/api_gateway/operations/example-operation-id/schema_validation",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"operation_id\":\"f174e90a-fafe-4643-bbbc-4a0ed4fc8415\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/origin_tls_client_auth/hostnames/app.example.com",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/origin_tls_client_auth/hostnames",
+      "body": "{\"config\":[{\"cert_id\":\"2458ce5a-0c35-4c7f-82c7-8e9487d3ff60\",\"enabled\":true,\"hostname\":\"app.example.com\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":[{\"cert_id\":\"2458ce5a-0c35-4c7f-82c7-8e9487d3ff60\",\"cert_status\":\"active\",\"enabled\":true,\"hostname\":\"app.example.com\",\"status\":\"active\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/origin_tls_client_auth/hostnames/app.example.com",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"cert_id\":\"2458ce5a-0c35-4c7f-82c7-8e9487d3ff60\",\"cert_status\":\"active\",\"enabled\":true,\"hostname\":\"app.example.com\",\"status\":\"active\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/origin_tls_client_auth/hostnames",
+      "body": "{\"config\":[{\"cert_id\":\"2458ce5a-0c35-4c7f-82c7-8e9487d3ff60\",\"enabled\":null,\"hostname\":\"app.example.com\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/origin_tls_client_auth/hostnames/app.example.com",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

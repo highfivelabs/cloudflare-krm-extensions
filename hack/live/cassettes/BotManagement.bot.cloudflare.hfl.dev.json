@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:56:09Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "body": "{\"enable_js\":true}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": true,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": true,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": true,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "body": "{\"enable_js\":false}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "body": "{\"enable_js\":true}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": true,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": true,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "body": "{\"enable_js\":false}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/bot_management",
+      "body": "{\"enable_js\":false}",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "response": "{\n  \"result\": {\n    \"enable_js\": false,\n    \"fight_mode\": false,\n    \"ai_bots_protection\": \"disabled\",\n    \"content_bots_protection\": \"disabled\",\n    \"crawler_protection\": \"disabled\",\n    \"ai_training\": \"disabled\",\n    \"ai_search\": \"disabled\",\n    \"ai_user\": \"disabled\",\n    \"ai_agents\": {\n      \"anthropic_agent\": \"disabled\",\n      \"google_agent\": \"disabled\",\n      \"instinct\": \"disabled\",\n      \"muse\": \"disabled\",\n      \"openai_agent\": \"disabled\"\n    },\n    \"is_robots_txt_managed\": false,\n    \"bot_preference_sync_enabled\": true,\n    \"cf_robots_variant\": \"policy_only\",\n    \"ai_bots_migration_opt_out\": false,\n    \"using_latest_model\": true\n  },\n  \"success\": true,\n  \"errors\": [],\n  \"messages\": []\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "store": "rehearsal-store",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"region\":\"us-east-1\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-east-1\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-east-1\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-east-1\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"region\":\"us-west-2\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"eu-west-1\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"eu-west-1\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"eu-west-1\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "body": "{\"region\":\"us-west-2\",\"vendor\":\"aws\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"modified_on\":\"2000-01-01T00:00:00Z\",\"region\":\"us-west-2\",\"vendor\":\"aws\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/origin/cloud_regions/192.0.2.10",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

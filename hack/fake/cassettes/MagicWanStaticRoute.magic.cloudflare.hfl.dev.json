@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/magic/routes",
+      "body": "{\"nexthop\":\"203.0.113.1\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2017-06-14T00:00:00Z\",\"id\":270000081,\"modified_on\":\"2017-06-14T05:20:00Z\",\"nexthop\":\"203.0.113.1\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/routes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"routes\":[{\"id\":270000081,\"nexthop\":\"203.0.113.1\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/routes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"routes\":[{\"id\":270000081,\"nexthop\":\"203.0.113.1\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/magic/routes/270000081",
+      "body": "{\"nexthop\":\"changed-nexthop\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2017-06-14T00:00:00Z\",\"id\":270000081,\"modified_on\":\"2017-06-14T05:20:00Z\",\"nexthop\":\"changed-nexthop\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/routes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"routes\":[{\"id\":270000081,\"nexthop\":\"changed-nexthop\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/magic/routes/270000081",
+      "body": "{\"nexthop\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2017-06-14T00:00:00Z\",\"id\":270000081,\"modified_on\":\"2017-06-14T05:20:00Z\",\"nexthop\":\"hfl-live-drift\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/routes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"routes\":[{\"id\":270000081,\"nexthop\":\"hfl-live-drift\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/example-account-id/magic/routes/270000081",
+      "body": "{\"nexthop\":\"changed-nexthop\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2017-06-14T00:00:00Z\",\"id\":270000081,\"modified_on\":\"2017-06-14T05:20:00Z\",\"nexthop\":\"changed-nexthop\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/routes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"routes\":[{\"id\":270000081,\"nexthop\":\"changed-nexthop\",\"prefix\":\"192.0.2.0/24\",\"priority\":1}]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/magic/routes/270000081",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/magic/routes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"routes\":[]}}\n"
+    }
+  ]
+}

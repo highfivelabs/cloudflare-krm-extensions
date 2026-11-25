@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio/copy",
+      "body": "{\"label\":\"director commentary\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"default\":false,\"label\":\"director commentary\",\"status\":\"queued\",\"uid\":270000096}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"audio\":[{\"label\":\"director commentary\",\"uid\":270000096}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"audio\":[{\"label\":\"director commentary\",\"uid\":270000096}]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio/270000096",
+      "body": "{\"label\":\"changed-label\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"default\":false,\"label\":\"changed-label\",\"status\":\"queued\",\"uid\":270000096}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"audio\":[{\"label\":\"changed-label\",\"uid\":270000096}]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio/270000096",
+      "body": "{\"label\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"default\":false,\"label\":\"hfl-live-drift\",\"status\":\"queued\",\"uid\":270000096}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"audio\":[{\"label\":\"hfl-live-drift\",\"uid\":270000096}]}}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio/270000096",
+      "body": "{\"label\":\"changed-label\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"default\":false,\"label\":\"changed-label\",\"status\":\"queued\",\"uid\":270000096}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"audio\":[{\"label\":\"changed-label\",\"uid\":270000096}]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio/270000096",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/example-account-id/stream/example-identifier/audio",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"audio\":[]}}\n"
+    }
+  ]
+}

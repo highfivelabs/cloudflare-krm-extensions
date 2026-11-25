@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:56:22Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "body": "{\"validation_default_mitigation_action\":\"block\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"block\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"block\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"block\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "body": "{\"validation_default_mitigation_action\":\"none\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "body": "{\"validation_default_mitigation_action\":\"block\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"block\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"block\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "body": "{\"validation_default_mitigation_action\":\"none\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/zones/{{cred:zoneId}}/schema_validation/settings",
+      "body": "{\"validation_default_mitigation_action\":\"none\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"validation_default_mitigation_action\":\"none\",\"validation_override_mitigation_action\":null},\"success\":true,\"errors\":[],\"messages\":[]}\n"
+    }
+  ]
+}

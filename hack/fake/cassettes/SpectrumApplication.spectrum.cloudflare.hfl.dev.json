@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/zones/example-zone-id/spectrum/apps",
+      "body": "{\"dns\":{},\"protocol\":\"tcp/22\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"tcp/22\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"tcp/22\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"tcp/22\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "body": "{\"dns\":{},\"protocol\":\"changed-protocol\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"changed-protocol\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"changed-protocol\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "body": "{\"protocol\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "body": "{\"dns\":{},\"protocol\":\"changed-protocol\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"changed-protocol\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"created_on\":\"2014-01-01T05:20:00.12345Z\",\"dns\":{},\"id\":270000093,\"modified_on\":\"2014-01-01T05:20:00.12345Z\",\"origin_worker_name\":\"example-origin-worker-name\",\"origin_worker_status\":\"available\",\"protocol\":\"changed-protocol\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/zones/example-zone-id/spectrum/apps/270000093",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

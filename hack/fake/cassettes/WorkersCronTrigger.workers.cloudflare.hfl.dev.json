@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "app": "rehearsal-app",
+    "kv": "rehearsal-kv",
+    "list": "rehearsal-list",
+    "smartTopology": "rehearsal-smartTopology",
+    "store": "rehearsal-store",
+    "urlScope": "rehearsal-urlScope",
+    "urlType": "rehearsal-urlType",
+    "version": "rehearsal-version",
+    "worker": "rehearsal-worker"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "body": "[{\"cron\":\"0 3 * * *\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 3 * * *\"}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 3 * * *\"}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 3 * * *\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "body": "[{\"cron\":\"0 4 * * *\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 4 * * *\"}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 4 * * *\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "body": "[{\"cron\":\"0 5 * * *\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 5 * * *\"}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 5 * * *\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "body": "[{\"cron\":\"0 4 * * *\"}]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 4 * * *\"}]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[{\"cron\":\"0 4 * * *\"}]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/accounts/{{cred:accountId}}/workers/scripts/{{run}}/schedules",
+      "body": "[]",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"result\":{\"schedules\":[]}}\n"
+    }
+  ]
+}

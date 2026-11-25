@@ -1,0 +1,33 @@
+{
+  "recorded": "2026-11-20T23:55:47Z",
+  "target": "Cloudflare free account (Free Website zone)",
+  "vars": {
+    "app": "76c92f6c-00ae-4424-80d4-b33404b554c7",
+    "version": "25cbbb6f-79b2-4d7e-80ab-670cba0c89bf",
+    "worker": "4c81aac2324a4f2fb6fc4061eb5691f5"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/certificates",
+      "body": "{\"csr\":\"-----BEGIN CERTIFICATE REQUEST-----\\nMIICZDCCAUwCAQAwHzEdMBsGA1UEAwwUaGZsLWxpdmUuZXhhbXBsZS5jb20wggEi\\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDe2Y649hfxCbgks965i6z5NTIk\\nm0RCYT/G5bV8y/utnU4wf0Wy7WOpAcXomjBFJecoF6pdIpl1WqUy7mScuTW5oSaz\\nMB/Mivp/ZQaHF1UG/14lW8U+KzmO0EA3PZdwO5oyd+2iUkT0PiPPCPYhJU+wILyY\\nJ6rFDHK5QZRIZJ/ckMhpglUm9AmV+e6LKE3HTvEHlVXYExcU76/PwzhnQkE4MPya\\nXRIxCMB6Lz4O1WxXgRhMm6riEGj5xb2mHWb07Gg6zb2SYdQ4zI93QTVR1oT5w6b6\\nWKyWuaOHPvbSqr3SzjwKCPJIlZY7ETViRRTBOe9GSW8wvVK3EAOy08xf1vHbAgMB\\nAAGgADANBgkqhkiG9w0BAQsFAAOCAQEATZ/3mzOr7kvQ4vEPTq57sBfjOEmhD9DK\\nt1atDg8oUh6EFHQG/unVvU3jUEUo1FkaBLPrcd/1X7RHSEhfNzWpXwtJ/Vpo+6wL\\nWGTXkLGYOxtTzHF3Z1AslXrFpjs0UDeyafbbR6i1juLQ1fC0ec8TM84hdXg/6Fik\\nrRmwNlGsZDWCSNE8GVrD9C2D5q8/bURp1B/yJe4rS5UhcjWCxD5kO42hu1s42oLm\\nSiJ68y4aVgT+T9Sh8k/dywZy1sVaB1RPV3J64UIYZIx68g5tkq4ilkY58lvwaHh4\\nb78ktgjOjoclbpMJLnBbWnBmJkq/ehGDIwTAKDWrzCAlHgEHwTGv4g==\\n-----END CERTIFICATE REQUEST-----\\n\",\"hostnames\":[\"{{name}}.{{cred:zoneName}}\"],\"request_type\":\"origin-rsa\",\"zone_id\":\"{{cred:zoneId}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":{\"id\":\"199163343546312005099095097204219325631244784218\",\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIIDizCCAnOgAwIBAgIUe72fyFZOoPH79qan+zCZGyho6iQwDQYJKoZIhvcNAQEL\\nBQAwOjE4MDYGA1UEAwwvU3RhbmQtaW4gZm9yIGEgQ2xvdWRmbGFyZSBPcmlnaW4g\\nQ0EgY2VydGlmaWNhdGUwHhcNMjYxMTIzMDA1MTUxWhcNNDExMTE5MDA1MTUxWjA6\\nMTgwNgYDVQQDDC9TdGFuZC1pbiBmb3IgYSBDbG91ZGZsYXJlIE9yaWdpbiBDQSBj\\nZXJ0aWZpY2F0ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL6tlTxM\\n5q39soW5CwOJmWrozo6l/YiK01x8spRSAZsv7D54bziHtOw57mMx5He7I0+DgI9C\\nefG+bkRnXIt4obQHnpI83cgoGIymMN+rMfcxqmWAXXNkDU2Dv3QGFDiS8+DhM9zz\\nMVZf43+JCv/9r5h3YyYUmZK8rUno8mZZEzkyVDwNysAfNA15UdGoKw9kqSQNH39b\\ngoNhUBBUzKJ+lEisWjPqXcBVTiJ8p0XJOvbzX+/YPKxPF8iko20GF2njkDxrdWln\\nAFWqDbr8vLh0vJ2d+a4KxbZk/LGyGeMngICo9eWNFvOagPlNnD98nNBI3iLLsti+\\nbpWxesSKELS9CNUCAwEAAaOBiDCBhTAdBgNVHQ4EFgQUpUN9FTsaTs9qt4O3Zp8J\\nLOMXWHowHwYDVR0jBBgwFoAUpUN9FTsaTs9qt4O3Zp8JLOMXWHowDwYDVR0TAQH/\\nBAUwAwEB/zAyBgNVHREEKzApgidoZmwtbGl2ZS0yNjExMjAyMzU0LWQ1NDAtMTcu\\nZXhhbXBsZS5jb20wDQYJKoZIhvcNAQELBQADggEBAHK5PCmF4uu2m3JE/W704aSe\\nMBvmEy22M9KWh8B9Ur4XH94bGerOmIIBjVhr2MzmneT/W1vONQT5ia/XtcURHoCz\\nojQLNlFmGMIlAvTCDk8XQRhXO/o0dUriQHBIw9ulKyCCSp5hVM5XYwWRZehVRLf3\\nqutn0NUMjo7b+iJuj4yd5oSz8aaSo+RXtF8bNfT/SbhgTGWRPTJKwR/+qho9bOzf\\nD/bOooqArGXeU0xBWUvZgrHii7rwqn56d6QjCTWcPxbgrEkFtmf2v+HYZp6ToY1P\\nW03Si8smkzIN8zJ1NFIOhU7WMnU/48r7P0CUO+WB7OVPzwwCquE8lZLq9RKw5HA=\\n-----END CERTIFICATE-----\\n\",\"expires_on\":\"2041-11-16 23:51:00 +0000 UTC\",\"request_type\":\"origin-rsa\",\"hostnames\":[\"{{name}}.{{cred:zoneName}}\"],\"csr\":\"-----BEGIN CERTIFICATE REQUEST-----\\nMIICZDCCAUwCAQAwHzEdMBsGA1UEAwwUaGZsLWxpdmUuZXhhbXBsZS5jb20wggEi\\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDe2Y649hfxCbgks965i6z5NTIk\\nm0RCYT/G5bV8y/utnU4wf0Wy7WOpAcXomjBFJecoF6pdIpl1WqUy7mScuTW5oSaz\\nMB/Mivp/ZQaHF1UG/14lW8U+KzmO0EA3PZdwO5oyd+2iUkT0PiPPCPYhJU+wILyY\\nJ6rFDHK5QZRIZJ/ckMhpglUm9AmV+e6LKE3HTvEHlVXYExcU76/PwzhnQkE4MPya\\nXRIxCMB6Lz4O1WxXgRhMm6riEGj5xb2mHWb07Gg6zb2SYdQ4zI93QTVR1oT5w6b6\\nWKyWuaOHPvbSqr3SzjwKCPJIlZY7ETViRRTBOe9GSW8wvVK3EAOy08xf1vHbAgMB\\nAAGgADANBgkqhkiG9w0BAQsFAAOCAQEATZ/3mzOr7kvQ4vEPTq57sBfjOEmhD9DK\\nt1atDg8oUh6EFHQG/unVvU3jUEUo1FkaBLPrcd/1X7RHSEhfNzWpXwtJ/Vpo+6wL\\nWGTXkLGYOxtTzHF3Z1AslXrFpjs0UDeyafbbR6i1juLQ1fC0ec8TM84hdXg/6Fik\\nrRmwNlGsZDWCSNE8GVrD9C2D5q8/bURp1B/yJe4rS5UhcjWCxD5kO42hu1s42oLm\\nSiJ68y4aVgT+T9Sh8k/dywZy1sVaB1RPV3J64UIYZIx68g5tkq4ilkY58lvwaHh4\\nb78ktgjOjoclbpMJLnBbWnBmJkq/ehGDIwTAKDWrzCAlHgEHwTGv4g==\\n-----END CERTIFICATE REQUEST-----\\n\",\"requested_validity\":5475},\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/certificates/199163343546312005099095097204219325631244784218",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":{\"id\":\"199163343546312005099095097204219325631244784218\",\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIIDizCCAnOgAwIBAgIUe72fyFZOoPH79qan+zCZGyho6iQwDQYJKoZIhvcNAQEL\\nBQAwOjE4MDYGA1UEAwwvU3RhbmQtaW4gZm9yIGEgQ2xvdWRmbGFyZSBPcmlnaW4g\\nQ0EgY2VydGlmaWNhdGUwHhcNMjYxMTIzMDA1MTUxWhcNNDExMTE5MDA1MTUxWjA6\\nMTgwNgYDVQQDDC9TdGFuZC1pbiBmb3IgYSBDbG91ZGZsYXJlIE9yaWdpbiBDQSBj\\nZXJ0aWZpY2F0ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL6tlTxM\\n5q39soW5CwOJmWrozo6l/YiK01x8spRSAZsv7D54bziHtOw57mMx5He7I0+DgI9C\\nefG+bkRnXIt4obQHnpI83cgoGIymMN+rMfcxqmWAXXNkDU2Dv3QGFDiS8+DhM9zz\\nMVZf43+JCv/9r5h3YyYUmZK8rUno8mZZEzkyVDwNysAfNA15UdGoKw9kqSQNH39b\\ngoNhUBBUzKJ+lEisWjPqXcBVTiJ8p0XJOvbzX+/YPKxPF8iko20GF2njkDxrdWln\\nAFWqDbr8vLh0vJ2d+a4KxbZk/LGyGeMngICo9eWNFvOagPlNnD98nNBI3iLLsti+\\nbpWxesSKELS9CNUCAwEAAaOBiDCBhTAdBgNVHQ4EFgQUpUN9FTsaTs9qt4O3Zp8J\\nLOMXWHowHwYDVR0jBBgwFoAUpUN9FTsaTs9qt4O3Zp8JLOMXWHowDwYDVR0TAQH/\\nBAUwAwEB/zAyBgNVHREEKzApgidoZmwtbGl2ZS0yNjExMjAyMzU0LWQ1NDAtMTcu\\nZXhhbXBsZS5jb20wDQYJKoZIhvcNAQELBQADggEBAHK5PCmF4uu2m3JE/W704aSe\\nMBvmEy22M9KWh8B9Ur4XH94bGerOmIIBjVhr2MzmneT/W1vONQT5ia/XtcURHoCz\\nojQLNlFmGMIlAvTCDk8XQRhXO/o0dUriQHBIw9ulKyCCSp5hVM5XYwWRZehVRLf3\\nqutn0NUMjo7b+iJuj4yd5oSz8aaSo+RXtF8bNfT/SbhgTGWRPTJKwR/+qho9bOzf\\nD/bOooqArGXeU0xBWUvZgrHii7rwqn56d6QjCTWcPxbgrEkFtmf2v+HYZp6ToY1P\\nW03Si8smkzIN8zJ1NFIOhU7WMnU/48r7P0CUO+WB7OVPzwwCquE8lZLq9RKw5HA=\\n-----END CERTIFICATE-----\\n\",\"expires_on\":\"2041-11-16 23:51:00 +0000 UTC\",\"request_type\":\"origin-rsa\",\"hostnames\":[\"{{name}}.{{cred:zoneName}}\"]},\"errors\":[],\"messages\":[]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/certificates/199163343546312005099095097204219325631244784218",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"success\":true,\"result\":{\"id\":\"199163343546312005099095097204219325631244784218\",\"revoked_at\":\"2026-11-20T23:55:47.739876Z\"},\"errors\":[],\"messages\":[]}\n"
+    }
+  ]
+}
