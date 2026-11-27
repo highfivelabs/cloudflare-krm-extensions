@@ -1,0 +1,12 @@
+# gitleaks false positives, by fingerprint (commit:file:rule:line); krm-ci's
+# gitleaks.toml asks for them here rather than a disabled rule. Each one was
+# read and is not a credential: example values from the vendor's API spec,
+# made-up test inputs, or generated IDs (HFL-815).
+08e0349ce555b6fc42c64bb66211c55284c5373c:types.yaml:generic-api-key:1123
+08e0349ce555b6fc42c64bb66211c55284c5373c:types.yaml:generic-api-key:2259
+08e0349ce555b6fc42c64bb66211c55284c5373c:types.yaml:generic-api-key:5528
+08e0349ce555b6fc42c64bb66211c55284c5373c:types.yaml:generic-api-key:6042
+08e0349ce555b6fc42c64bb66211c55284c5373c:types.yaml:private-key:838
+08e0349ce555b6fc42c64bb66211c55284c5373c:types.yaml:private-key:973
+fe5047e8115ea30069146a69ca3637d660bfa755:hack/gen/terraform-gaps.json:cloudflare-api-key:15
+fe5047e8115ea30069146a69ca3637d660bfa755:hack/gen/terraform-gaps.json:cloudflare-api-key:26
