@@ -1,0 +1,8 @@
+# Upjet references that gen/examples.py (krm-rest-runtime) would turn into
+# examples/<Kind>/with-<Target>.yaml, but that don't hold here, with why.
+upjet:
+  QueueConsumer: >-
+    its two references don't meet: accountID would come from a new Account,
+    while the Queue that queueID names is made in its own sample's account
+    (<accountId>), so Cloudflare would find no such queue in that account.
+    The fake doesn't scope a queue to its account, so it passes there.
