@@ -1,0 +1,6058 @@
+{
+ "formatVersion": 1,
+ "generatedBy": "factory upjet sync (upjet/README.md in highfivelabs/factory)",
+ "provider": {
+  "repo": "crossplane-contrib/provider-upjet-cloudflare",
+  "tag": "90fff8215d2b84103de02eb3ae6db689750e3084",
+  "commit": "90fff8215d2b84103de02eb3ae6db689750e3084",
+  "commitDate": "2026-06-02T15:09:06Z",
+  "licence": "Apache-2.0"
+ },
+ "join": "types.yaml terraform",
+ "counts": {
+  "ours": 258,
+  "matched": 106,
+  "references": 121,
+  "referencesOur": 65,
+  "handExamples": 0,
+  "notTested": 0
+ },
+ "entries": [
+  {
+   "ours": {
+    "kind": "AccessRule",
+    "group": "access.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_access_rule",
+    "group": "access.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "AccessRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:110"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/access/config.go:74"
+     },
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/access/config.go:71"
+     }
+    ],
+    "examples": [
+     {
+      "id": "access/v1alpha1/accessrule",
+      "at": "examples-generated/cluster/access/v1alpha1/accessrule.yaml",
+      "origin": "generated",
+      "fields": [
+       "configuration",
+       "configuration.target",
+       "configuration.value",
+       "mode",
+       "notes"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "AccessRule",
+     "at": "config/cluster/access/config.go:70"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Account",
+    "group": "account.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_account",
+    "group": "account.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Account",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:12"
+    },
+    "examples": [
+     {
+      "id": "account/v1alpha1/account",
+      "at": "examples-generated/cluster/account/v1alpha1/account.yaml",
+      "origin": "generated",
+      "fields": [
+       "name",
+       "type",
+       "unit",
+       "unit.id"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AccountMember",
+    "group": "account.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_account_member",
+    "group": "account.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Member",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:14"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/account/config.go:15"
+     }
+    ],
+    "examples": [
+     {
+      "id": "account/v1alpha1/member",
+      "at": "examples-generated/cluster/account/v1alpha1/member.yaml",
+      "origin": "generated",
+      "fields": [
+       "email",
+       "roles",
+       "status"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ]
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AccountToken",
+    "group": "account.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_account_token",
+    "group": "account.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "AccountToken",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:16"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/account/config.go:23"
+     }
+    ],
+    "examples": [
+     {
+      "id": "account/v1alpha1/accounttoken",
+      "at": "examples-generated/cluster/account/v1alpha1/accounttoken.yaml",
+      "origin": "generated",
+      "fields": [
+       "?policies.permissionGroups.meta",
+       "?policies.permissionGroups.meta.key",
+       "?policies.permissionGroups.meta.value",
+       "?policies.resources.foo",
+       "condition",
+       "condition.request_ip",
+       "condition.request_ip.in",
+       "condition.request_ip.not_in",
+       "expires_on",
+       "name",
+       "not_before",
+       "policies",
+       "policies.effect",
+       "policies.permission_groups",
+       "policies.permission_groups.id",
+       "policies.resources"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "AccountToken",
+     "at": "config/cluster/account/config.go:22"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AddressMap",
+    "group": "address.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_address_map",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "AddressMap",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:305"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:23"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/addressmap",
+      "at": "examples-generated/cluster/misc/v1alpha1/addressmap.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "enabled",
+       "ips",
+       "memberships",
+       "memberships.identifier",
+       "memberships.kind"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "AddressMap",
+     "at": "config/cluster/misc/config.go:22"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AiGateway",
+    "group": "ai.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_ai_gateway",
+    "tested": true,
+    "generated": false,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:332"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "source": "config",
+      "at": "config/cluster/misc/config.go:121"
+     }
+    ],
+    "renamed": {
+     "kind": "AIGateway",
+     "at": "config/cluster/misc/config.go:120"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ApiShield",
+    "group": "api.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_api_shield",
+    "group": "apishield.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIShield",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:298"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/apishield/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "apishield/v1alpha1/apishield",
+      "at": "examples-generated/cluster/apishield/v1alpha1/apishield.yaml",
+      "origin": "generated",
+      "fields": [
+       "auth_id_characteristics",
+       "auth_id_characteristics.name",
+       "auth_id_characteristics.type"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "APIShield",
+     "at": "config/cluster/apishield/config.go:11"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ApiShieldOperation",
+    "group": "api.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_api_shield_operation",
+    "group": "apishield.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIShieldOperation",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:299"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/apishield/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "apishield/v1alpha1/apishieldoperation",
+      "at": "examples-generated/cluster/apishield/v1alpha1/apishieldoperation.yaml",
+      "origin": "generated",
+      "fields": [
+       "endpoint",
+       "host",
+       "method"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "APIShieldOperation",
+     "at": "config/cluster/apishield/config.go:19"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ApiShieldOperationSchemaValidationSettings",
+    "group": "api.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_api_shield_operation_schema_validation_settings",
+    "group": "apishield.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIShieldOperationSchemaValidationSettings",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:301"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/apishield/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "apishield/v1alpha1/apishieldoperationschemavalidationsettings",
+      "at": "examples-generated/cluster/apishield/v1alpha1/apishieldoperationschemavalidationsettings.yaml",
+      "origin": "generated",
+      "fields": [
+       "mitigation_action",
+       "operation_id"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "APIShieldOperationSchemaValidationSettings",
+     "at": "config/cluster/apishield/config.go:35"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ApiShieldSchema",
+    "group": "api.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_api_shield_schema",
+    "group": "apishield.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIShieldSchema",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:300"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/apishield/config.go:28"
+     }
+    ],
+    "examples": [
+     {
+      "id": "apishield/v1alpha1/apishieldschema",
+      "at": "examples-generated/cluster/apishield/v1alpha1/apishieldschema.yaml",
+      "origin": "generated",
+      "fields": [
+       "file",
+       "kind",
+       "name",
+       "validation_enabled"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "APIShieldSchema",
+     "at": "config/cluster/apishield/config.go:27"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ApiShieldSchemaValidationSettings",
+    "group": "api.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_api_shield_schema_validation_settings",
+    "group": "apishield.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIShieldSchemaValidationSettings",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:302"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/apishield/config.go:44"
+     }
+    ],
+    "examples": [
+     {
+      "id": "apishield/v1alpha1/apishieldschemavalidationsettings",
+      "at": "examples-generated/cluster/apishield/v1alpha1/apishieldschemavalidationsettings.yaml",
+      "origin": "generated",
+      "fields": [
+       "validation_default_mitigation_action",
+       "validation_override_mitigation_action"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "APIShieldSchemaValidationSettings",
+     "at": "config/cluster/apishield/config.go:43"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ApiToken",
+    "group": "api.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_api_token",
+    "group": "account.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "APIToken",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:18"
+    },
+    "examples": [
+     {
+      "id": "account/v1alpha1/apitoken",
+      "at": "examples-generated/cluster/account/v1alpha1/apitoken.yaml",
+      "origin": "generated",
+      "fields": [
+       "?policies.permissionGroups.meta",
+       "?policies.permissionGroups.meta.key",
+       "?policies.permissionGroups.meta.value",
+       "?policies.resources.foo",
+       "condition",
+       "condition.request_ip",
+       "condition.request_ip.in",
+       "condition.request_ip.not_in",
+       "expires_on",
+       "name",
+       "not_before",
+       "policies",
+       "policies.effect",
+       "policies.permission_groups",
+       "policies.permission_groups.id",
+       "policies.resources"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "APIToken",
+     "at": "config/cluster/account/config.go:30"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthenticatedOriginPulls",
+    "group": "authenticated.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_authenticated_origin_pulls",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "AuthenticatedOriginPulls",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:64"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:89"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/authenticatedoriginpulls",
+      "at": "examples-generated/cluster/certificate/v1alpha1/authenticatedoriginpulls.yaml",
+      "origin": "generated",
+      "fields": [
+       "config",
+       "config.cert_id",
+       "config.enabled",
+       "config.hostname"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "AuthenticatedOriginPulls",
+     "at": "config/cluster/certificate/config.go:88"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthenticatedOriginPullsCertificate",
+    "group": "authenticated.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_authenticated_origin_pulls_certificate",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "AuthenticatedOriginPullsCertificate",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:66"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:97"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/authenticatedoriginpullscertificate",
+      "at": "examples-generated/cluster/certificate/v1alpha1/authenticatedoriginpullscertificate.yaml",
+      "origin": "generated",
+      "fields": [
+       "certificate"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "AuthenticatedOriginPullsCertificate",
+     "at": "config/cluster/certificate/config.go:96"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "BotManagement",
+    "group": "bot.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_bot_management",
+    "group": "firewall.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "BotManagement",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:92"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/firewall/config.go:122"
+     }
+    ],
+    "examples": [
+     {
+      "id": "firewall/v1alpha1/botmanagement",
+      "at": "examples-generated/cluster/firewall/v1alpha1/botmanagement.yaml",
+      "origin": "generated",
+      "fields": [
+       "ai_bots_protection",
+       "cf_robots_variant",
+       "crawler_protection",
+       "enable_js",
+       "fight_mode",
+       "is_robots_txt_managed"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "BotManagement",
+     "at": "config/cluster/firewall/config.go:121"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ByoIpPrefix",
+    "group": "byo.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_byo_ip_prefix",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "BYOIPPrefix",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:306"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:31"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/byoipprefix",
+      "at": "examples-generated/cluster/misc/v1alpha1/byoipprefix.yaml",
+      "origin": "generated",
+      "fields": [
+       "asn",
+       "cidr",
+       "delegate_loa_creation",
+       "description",
+       "loa_document_id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "BYOIPPrefix",
+     "at": "config/cluster/misc/config.go:30"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "CallsSfuApp",
+    "group": "calls.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_calls_sfu_app",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CallsSFUApp",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:361"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:208"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/callssfuapp",
+      "at": "examples-generated/cluster/misc/v1alpha1/callssfuapp.yaml",
+      "origin": "generated",
+      "fields": [
+       "name"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CallsSFUApp",
+     "at": "config/cluster/misc/config.go:207"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "CallsTurnApp",
+    "group": "calls.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_calls_turn_app",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CallsTURNApp",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:362"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:216"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/callsturnapp",
+      "at": "examples-generated/cluster/misc/v1alpha1/callsturnapp.yaml",
+      "origin": "generated",
+      "fields": [
+       "name"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CallsTURNApp",
+     "at": "config/cluster/misc/config.go:215"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "CertificatePack",
+    "group": "certificate.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_certificate_pack",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CertificatePack",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:52"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:41"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/certificatepack",
+      "at": "examples-generated/cluster/certificate/v1alpha1/certificatepack.yaml",
+      "origin": "generated",
+      "fields": [
+       "certificate_authority",
+       "cloudflare_branding",
+       "hosts",
+       "type",
+       "validation_method",
+       "validity_days"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CertificatePack",
+     "at": "config/cluster/certificate/config.go:40"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "CloudConnectorRules",
+    "group": "cloud.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_cloud_connector_rules",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CloudConnectorRules",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:377"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:251"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/cloudconnectorrules",
+      "at": "examples-generated/cluster/misc/v1alpha1/cloudconnectorrules.yaml",
+      "origin": "generated",
+      "fields": [
+       "?rules.cloud_connector_rules_provider",
+       "rules",
+       "rules.description",
+       "rules.enabled",
+       "rules.expression",
+       "rules.parameters",
+       "rules.parameters.host"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CloudConnectorRules",
+     "at": "config/cluster/misc/config.go:250"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "CloudforceOneRequest",
+    "group": "cloudforce.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_cloudforce_one_request",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CloudforceOneRequest",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:352"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:166"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/cloudforceonerequest",
+      "at": "examples-generated/cluster/misc/v1alpha1/cloudforceonerequest.yaml",
+      "origin": "generated",
+      "fields": [
+       "content",
+       "priority",
+       "request_type",
+       "summary",
+       "tlp"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CloudforceOneRequest",
+     "at": "config/cluster/misc/config.go:165"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "CloudforceOneRequestAsset",
+    "group": "cloudforce.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_cloudforce_one_request_asset",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CloudforceOneRequestAsset",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:353"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:174"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/cloudforceonerequestasset",
+      "at": "examples-generated/cluster/misc/v1alpha1/cloudforceonerequestasset.yaml",
+      "origin": "generated",
+      "fields": [
+       "page",
+       "per_page",
+       "request_id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CloudforceOneRequestAsset",
+     "at": "config/cluster/misc/config.go:173"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "CloudforceOneRequestMessage",
+    "group": "cloudforce.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_cloudforce_one_request_message",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CloudforceOneRequestMessage",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:354"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:182"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/cloudforceonerequestmessage",
+      "at": "examples-generated/cluster/misc/v1alpha1/cloudforceonerequestmessage.yaml",
+      "origin": "generated",
+      "fields": [
+       "content",
+       "request_id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CloudforceOneRequestMessage",
+     "at": "config/cluster/misc/config.go:181"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "CloudforceOneRequestPriority",
+    "group": "cloudforce.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_cloudforce_one_request_priority",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CloudforceOneRequestPriority",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:355"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:190"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/cloudforceonerequestpriority",
+      "at": "examples-generated/cluster/misc/v1alpha1/cloudforceonerequestpriority.yaml",
+      "origin": "generated",
+      "fields": [
+       "labels",
+       "priority",
+       "requirement",
+       "tlp"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CloudforceOneRequestPriority",
+     "at": "config/cluster/misc/config.go:189"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ContentScanning",
+    "group": "content.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_content_scanning",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ContentScanning",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:373"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:234"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/contentscanning",
+      "at": "examples-generated/cluster/misc/v1alpha1/contentscanning.yaml",
+      "origin": "generated",
+      "fields": [
+       "value"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ContentScanning",
+     "at": "config/cluster/misc/config.go:233"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ContentScanningExpression",
+    "group": "content.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_content_scanning_expression",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ContentScanningExpression",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:374"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:242"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/contentscanningexpression",
+      "at": "examples-generated/cluster/misc/v1alpha1/contentscanningexpression.yaml",
+      "origin": "generated",
+      "fields": [
+       "body",
+       "body.payload"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ContentScanningExpression",
+     "at": "config/cluster/misc/config.go:241"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "CustomHostname",
+    "group": "custom.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_custom_hostname",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomHostname",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:44"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/customhostname",
+      "at": "examples-generated/cluster/certificate/v1alpha1/customhostname.yaml",
+      "origin": "generated",
+      "fields": [
+       "custom_metadata",
+       "hostname",
+       "ssl",
+       "ssl.bundle_method",
+       "ssl.certificate_authority",
+       "ssl.cloudflare_branding",
+       "ssl.custom_cert_bundle",
+       "ssl.custom_cert_bundle.custom_certificate",
+       "ssl.custom_certificate",
+       "ssl.method",
+       "ssl.settings",
+       "ssl.settings.ciphers",
+       "ssl.settings.early_hints",
+       "ssl.settings.http2",
+       "ssl.settings.min_tls_version",
+       "ssl.settings.tls_1_3",
+       "ssl.type",
+       "ssl.wildcard"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CustomHostname",
+     "at": "config/cluster/certificate/config.go:11"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "CustomHostnameFallbackOrigin",
+    "group": "custom.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_custom_hostname_fallback_origin",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomHostnameFallbackOrigin",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:46"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/customhostnamefallbackorigin",
+      "at": "examples-generated/cluster/certificate/v1alpha1/customhostnamefallbackorigin.yaml",
+      "origin": "generated",
+      "fields": [
+       "origin"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CustomHostnameFallbackOrigin",
+     "at": "config/cluster/certificate/config.go:19"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "CustomSsl",
+    "group": "custom.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_custom_ssl",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomSSL",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:48"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:28"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/customssl",
+      "at": "examples-generated/cluster/certificate/v1alpha1/customssl.yaml",
+      "origin": "generated",
+      "fields": [
+       "bundle_method",
+       "certificate",
+       "geo_restrictions",
+       "geo_restrictions.label",
+       "policy",
+       "type"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "CustomSSL",
+     "at": "config/cluster/certificate/config.go:27"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "D1Database",
+    "group": "d1.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_d1_database",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "D1Database",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "name",
+     "expr": "config.NameAsIdentifier",
+     "at": "config/external_name.go:339"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:139"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/d1database",
+      "at": "examples-generated/cluster/misc/v1alpha1/d1database.yaml",
+      "origin": "generated",
+      "fields": [
+       "jurisdiction",
+       "primary_location_hint"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "D1Database",
+     "at": "config/cluster/misc/config.go:138"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "DnsFirewall",
+    "group": "dns.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_dns_firewall",
+    "group": "dns.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "DNSFirewall",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:349"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/dns/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "dns/v1alpha1/dnsfirewall",
+      "at": "examples-generated/cluster/dns/v1alpha1/dnsfirewall.yaml",
+      "origin": "generated",
+      "fields": [
+       "attack_mitigation",
+       "attack_mitigation.enabled",
+       "attack_mitigation.only_when_upstream_unhealthy",
+       "deprecate_any_requests",
+       "ecs_fallback",
+       "maximum_cache_ttl",
+       "minimum_cache_ttl",
+       "name",
+       "negative_cache_ttl",
+       "ratelimit",
+       "retries",
+       "upstream_ips"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "DNSFirewall",
+     "at": "config/cluster/dns/config.go:35"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EmailRoutingAddress",
+    "group": "email.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_email_routing_address",
+    "group": "email.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "EmailRoutingAddress",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:285"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/email/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "email/v1alpha1/emailroutingaddress",
+      "at": "examples-generated/cluster/email/v1alpha1/emailroutingaddress.yaml",
+      "origin": "generated",
+      "fields": [
+       "email"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "EmailRoutingAddress",
+     "at": "config/cluster/email/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EmailRoutingCatchAll",
+    "group": "email.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_email_routing_catch_all",
+    "group": "email.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "EmailRoutingCatchAll",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:286"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/email/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "email/v1alpha1/emailroutingcatchall",
+      "at": "examples-generated/cluster/email/v1alpha1/emailroutingcatchall.yaml",
+      "origin": "generated",
+      "fields": [
+       "actions",
+       "actions.type",
+       "actions.value",
+       "enabled",
+       "matchers",
+       "matchers.type",
+       "name"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "EmailRoutingCatchAll",
+     "at": "config/cluster/email/config.go:19"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "EmailRoutingDns",
+    "group": "email.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_email_routing_dns",
+    "group": "email.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "EmailRoutingDNS",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:287"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/email/config.go:28"
+     }
+    ],
+    "examples": [
+     {
+      "id": "email/v1alpha1/emailroutingdns",
+      "at": "examples-generated/cluster/email/v1alpha1/emailroutingdns.yaml",
+      "origin": "generated",
+      "fields": [
+       "name"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "EmailRoutingDNS",
+     "at": "config/cluster/email/config.go:27"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "EmailRoutingRule",
+    "group": "email.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_email_routing_rule",
+    "group": "email.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "EmailRoutingRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:288"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/email/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "email/v1alpha1/emailroutingrule",
+      "at": "examples-generated/cluster/email/v1alpha1/emailroutingrule.yaml",
+      "origin": "generated",
+      "fields": [
+       "actions",
+       "actions.type",
+       "actions.value",
+       "enabled",
+       "matchers",
+       "matchers.field",
+       "matchers.type",
+       "matchers.value",
+       "name",
+       "priority"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "EmailRoutingRule",
+     "at": "config/cluster/email/config.go:35"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "EmailRoutingSettings",
+    "group": "email.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_email_routing_settings",
+    "group": "email.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "EmailRoutingSettings",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:289"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/email/config.go:44"
+     }
+    ],
+    "examples": [
+     {
+      "id": "email/v1alpha1/emailroutingsettings",
+      "at": "examples-generated/cluster/email/v1alpha1/emailroutingsettings.yaml",
+      "origin": "generated",
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "EmailRoutingSettings",
+     "at": "config/cluster/email/config.go:43"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "Healthcheck",
+    "group": "healthcheck.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_healthcheck",
+    "group": "healthcheck.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Healthcheck",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:263"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/healthcheck/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "healthcheck/v1alpha1/healthcheck",
+      "at": "examples-generated/cluster/healthcheck/v1alpha1/healthcheck.yaml",
+      "origin": "generated",
+      "fields": [
+       "address",
+       "check_regions",
+       "consecutive_fails",
+       "consecutive_successes",
+       "description",
+       "http_config",
+       "http_config.allow_insecure",
+       "http_config.expected_body",
+       "http_config.expected_codes",
+       "http_config.follow_redirects",
+       "http_config.header",
+       "http_config.method",
+       "http_config.path",
+       "http_config.port",
+       "interval",
+       "name",
+       "retries",
+       "suspended",
+       "tcp_config",
+       "tcp_config.method",
+       "tcp_config.port",
+       "timeout",
+       "type"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "Healthcheck",
+     "at": "config/cluster/healthcheck/config.go:11"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "HostnameTlsSetting",
+    "group": "hostname.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_hostname_tls_setting",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "HostnameTLSSetting",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:60"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:73"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/hostnametlssetting",
+      "at": "examples-generated/cluster/certificate/v1alpha1/hostnametlssetting.yaml",
+      "origin": "generated",
+      "fields": [
+       "hostname",
+       "setting_id",
+       "value"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "HostnameTLSSetting",
+     "at": "config/cluster/certificate/config.go:72"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "HyperdriveConfig",
+    "group": "hyperdrive.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_hyperdrive_config",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "HyperdriveConfig",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "name",
+     "expr": "config.NameAsIdentifier",
+     "at": "config/external_name.go:329"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:112"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/hyperdriveconfig",
+      "at": "examples-generated/cluster/misc/v1alpha1/hyperdriveconfig.yaml",
+      "origin": "generated",
+      "fields": [
+       "caching",
+       "caching.disabled",
+       "mtls",
+       "mtls.ca_certificate_id",
+       "mtls.mtls_certificate_id",
+       "mtls.sslmode",
+       "origin",
+       "origin.database",
+       "origin.host",
+       "origin.port",
+       "origin.scheme",
+       "origin.user",
+       "origin_connection_limit"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "HyperdriveConfig",
+     "at": "config/cluster/misc/config.go:111"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "KeylessCertificate",
+    "group": "keyless.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_keyless_certificate",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "KeylessCertificate",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:54"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:49"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/keylesscertificate",
+      "at": "examples-generated/cluster/certificate/v1alpha1/keylesscertificate.yaml",
+      "origin": "generated",
+      "fields": [
+       "bundle_method",
+       "certificate",
+       "host",
+       "name",
+       "port",
+       "tunnel",
+       "tunnel.private_ip",
+       "tunnel.vnet_id"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "KeylessCertificate",
+     "at": "config/cluster/certificate/config.go:48"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "LeakedCredentialCheck",
+    "group": "leaked.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_leaked_credential_check",
+    "group": "firewall.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LeakedCredentialCheck",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:94"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/firewall/config.go:130"
+     }
+    ],
+    "examples": [
+     {
+      "id": "firewall/v1alpha1/leakedcredentialcheck",
+      "at": "examples-generated/cluster/firewall/v1alpha1/leakedcredentialcheck.yaml",
+      "origin": "generated",
+      "fields": [
+       "enabled"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LeakedCredentialCheck",
+     "at": "config/cluster/firewall/config.go:129"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "LeakedCredentialCheckRule",
+    "group": "leaked.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_leaked_credential_check_rule",
+    "group": "firewall.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LeakedCredentialCheckRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:96"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/firewall/config.go:138"
+     }
+    ],
+    "examples": [
+     {
+      "id": "firewall/v1alpha1/leakedcredentialcheckrule",
+      "at": "examples-generated/cluster/firewall/v1alpha1/leakedcredentialcheckrule.yaml",
+      "origin": "generated",
+      "fields": [
+       "password",
+       "username"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LeakedCredentialCheckRule",
+     "at": "config/cluster/firewall/config.go:137"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "List",
+    "group": "list.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_list",
+    "group": "list.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "List",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:293"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/list/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "list/v1alpha1/list",
+      "at": "examples-generated/cluster/list/v1alpha1/list.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "items",
+       "items.ip",
+       "kind",
+       "name"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "List",
+     "at": "config/cluster/list/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ListItem",
+    "group": "list.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_list_item",
+    "group": "list.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ListItem",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:295"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/list/config.go:20"
+     },
+     {
+      "field": "list_id",
+      "target": "cloudflare_list",
+      "targetKind": "list.cloudflare.crossplane.io/List",
+      "source": "both",
+      "at": "config/cluster/list/config.go:23"
+     }
+    ],
+    "examples": [
+     {
+      "id": "list/v1alpha1/listitem",
+      "at": "examples-generated/cluster/list/v1alpha1/listitem.yaml",
+      "origin": "generated",
+      "fields": [
+       "ip"
+      ],
+      "refFields": [
+       "account_id",
+       "list_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ListItem",
+     "at": "config/cluster/list/config.go:19"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ],
+    "cloudflare_list": [
+     "list.cloudflare.hfl.dev/List"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "LoadBalancer",
+    "group": "load.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_load_balancer",
+    "group": "loadbalancer.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LoadBalancer",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:183"
+    },
+    "references": [
+     {
+      "field": "default_pool_ids",
+      "target": "cloudflare_load_balancer_pool",
+      "source": "config",
+      "at": "config/cluster/loadbalancer/config.go:15"
+     },
+     {
+      "field": "fallback_pool_id",
+      "target": "cloudflare_load_balancer_pool",
+      "source": "config",
+      "at": "config/cluster/loadbalancer/config.go:18"
+     },
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/loadbalancer/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "loadbalancer/v1alpha1/loadbalancer",
+      "at": "examples-generated/cluster/loadbalancer/v1alpha1/loadbalancer.yaml",
+      "origin": "generated",
+      "fields": [
+       "adaptive_routing",
+       "adaptive_routing.failover_across_pools",
+       "country_pools",
+       "default_pools",
+       "description",
+       "fallback_pool",
+       "location_strategy",
+       "location_strategy.mode",
+       "location_strategy.prefer_ecs",
+       "name",
+       "networks",
+       "pop_pools",
+       "proxied",
+       "random_steering",
+       "random_steering.default_weight",
+       "random_steering.pool_weights",
+       "region_pools",
+       "rules",
+       "rules.condition",
+       "rules.disabled",
+       "rules.fixed_response",
+       "rules.fixed_response.content_type",
+       "rules.fixed_response.location",
+       "rules.fixed_response.message_body",
+       "rules.fixed_response.status_code",
+       "rules.name",
+       "rules.overrides",
+       "rules.overrides.adaptive_routing",
+       "rules.overrides.adaptive_routing.failover_across_pools",
+       "rules.overrides.country_pools",
+       "rules.overrides.default_pools",
+       "rules.overrides.fallback_pool",
+       "rules.overrides.location_strategy",
+       "rules.overrides.location_strategy.mode",
+       "rules.overrides.location_strategy.prefer_ecs",
+       "rules.overrides.pop_pools",
+       "rules.overrides.random_steering",
+       "rules.overrides.random_steering.default_weight",
+       "rules.overrides.random_steering.pool_weights",
+       "rules.overrides.region_pools",
+       "rules.overrides.session_affinity",
+       "rules.overrides.session_affinity_attributes",
+       "rules.overrides.session_affinity_attributes.drain_duration",
+       "rules.overrides.session_affinity_attributes.headers",
+       "rules.overrides.session_affinity_attributes.require_all_headers",
+       "rules.overrides.session_affinity_attributes.samesite",
+       "rules.overrides.session_affinity_attributes.secure",
+       "rules.overrides.session_affinity_attributes.zero_downtime_failover",
+       "rules.overrides.session_affinity_ttl",
+       "rules.overrides.steering_policy",
+       "rules.overrides.ttl",
+       "rules.priority",
+       "rules.terminates",
+       "session_affinity",
+       "session_affinity_attributes",
+       "session_affinity_attributes.drain_duration",
+       "session_affinity_attributes.headers",
+       "session_affinity_attributes.require_all_headers",
+       "session_affinity_attributes.samesite",
+       "session_affinity_attributes.secure",
+       "session_affinity_attributes.zero_downtime_failover",
+       "session_affinity_ttl",
+       "steering_policy",
+       "ttl"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LoadBalancer",
+     "at": "config/cluster/loadbalancer/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_load_balancer_pool": [
+     "load.cloudflare.hfl.dev/LoadBalancerPool"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "LoadBalancerMonitor",
+    "group": "load.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_load_balancer_monitor",
+    "group": "loadbalancer.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LoadBalancerMonitor",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:187"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/loadbalancer/config.go:37"
+     }
+    ],
+    "examples": [
+     {
+      "id": "loadbalancer/v1alpha1/loadbalancermonitor",
+      "at": "examples-generated/cluster/loadbalancer/v1alpha1/loadbalancermonitor.yaml",
+      "origin": "generated",
+      "fields": [
+       "allow_insecure",
+       "consecutive_down",
+       "consecutive_up",
+       "description",
+       "expected_body",
+       "expected_codes",
+       "follow_redirects",
+       "header",
+       "interval",
+       "method",
+       "path",
+       "port",
+       "probe_zone",
+       "retries",
+       "timeout",
+       "type"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LoadBalancerMonitor",
+     "at": "config/cluster/loadbalancer/config.go:36"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "LoadBalancerPool",
+    "group": "load.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_load_balancer_pool",
+    "group": "loadbalancer.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LoadBalancerPool",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:185"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/loadbalancer/config.go:26"
+     },
+     {
+      "field": "monitor",
+      "target": "cloudflare_load_balancer_monitor",
+      "targetKind": "loadbalancer.cloudflare.crossplane.io/LoadBalancerMonitor",
+      "source": "both",
+      "at": "config/cluster/loadbalancer/config.go:29"
+     }
+    ],
+    "examples": [
+     {
+      "id": "loadbalancer/v1alpha1/loadbalancerpool",
+      "at": "examples-generated/cluster/loadbalancer/v1alpha1/loadbalancerpool.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "enabled",
+       "latitude",
+       "load_shedding",
+       "load_shedding.default_percent",
+       "load_shedding.default_policy",
+       "load_shedding.session_percent",
+       "load_shedding.session_policy",
+       "longitude",
+       "minimum_origins",
+       "monitor_group",
+       "name",
+       "notification_email",
+       "notification_filter",
+       "notification_filter.origin",
+       "notification_filter.origin.disable",
+       "notification_filter.origin.healthy",
+       "notification_filter.pool",
+       "notification_filter.pool.disable",
+       "notification_filter.pool.healthy",
+       "origin_steering",
+       "origin_steering.policy",
+       "origins",
+       "origins.address",
+       "origins.enabled",
+       "origins.header",
+       "origins.header.host",
+       "origins.name",
+       "origins.port",
+       "origins.virtual_network_id",
+       "origins.weight"
+      ],
+      "refFields": [
+       "account_id",
+       "monitor"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LoadBalancerPool",
+     "at": "config/cluster/loadbalancer/config.go:25"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ],
+    "cloudflare_load_balancer_monitor": [
+     "load.cloudflare.hfl.dev/LoadBalancerMonitor"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "LogpullRetention",
+    "group": "logpull.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_logpull_retention",
+    "group": "logpush.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LogpullRetention",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:256"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/logpush/config.go:23"
+     }
+    ],
+    "examples": [
+     {
+      "id": "logpush/v1alpha1/logpullretention",
+      "at": "examples-generated/cluster/logpush/v1alpha1/logpullretention.yaml",
+      "origin": "generated",
+      "fields": [
+       "flag"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LogpullRetention",
+     "at": "config/cluster/logpush/config.go:22"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "LogpushJob",
+    "group": "logpush.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_logpush_job",
+    "group": "logpush.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "LogpushJob",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:254"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/logpush/config.go:15"
+     },
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/logpush/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "logpush/v1alpha1/logpushjob",
+      "at": "examples-generated/cluster/logpush/v1alpha1/logpushjob.yaml",
+      "origin": "generated",
+      "fields": [
+       "dataset",
+       "destination_conf",
+       "enabled",
+       "filter",
+       "frequency",
+       "kind",
+       "logpull_options",
+       "max_upload_bytes",
+       "max_upload_interval_seconds",
+       "max_upload_records",
+       "name",
+       "output_options",
+       "output_options.batch_prefix",
+       "output_options.batch_suffix",
+       "output_options.cve_2021_44228",
+       "output_options.field_delimiter",
+       "output_options.field_names",
+       "output_options.output_type",
+       "output_options.record_delimiter",
+       "output_options.record_prefix",
+       "output_options.record_suffix",
+       "output_options.record_template",
+       "output_options.sample_rate",
+       "output_options.timestamp_format"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "LogpushJob",
+     "at": "config/cluster/logpush/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "MagicWanGreTunnel",
+    "group": "magic.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_magic_wan_gre_tunnel",
+    "group": "argo.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "MagicWANGRETunnel",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:245"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/argo/config.go:77"
+     }
+    ],
+    "examples": [
+     {
+      "id": "argo/v1alpha1/magicwangretunnel",
+      "at": "examples-generated/cluster/argo/v1alpha1/magicwangretunnel.yaml",
+      "origin": "generated",
+      "fields": [
+       "?automatic_return_routing",
+       "?bgp",
+       "?bgp.customer_asn",
+       "?bgp.extra_prefixes",
+       "?bgp.md5_key",
+       "cloudflare_gre_endpoint",
+       "customer_gre_endpoint",
+       "description",
+       "health_check",
+       "health_check.direction",
+       "health_check.enabled",
+       "health_check.rate",
+       "health_check.target",
+       "health_check.target.saved",
+       "health_check.type",
+       "interface_address",
+       "interface_address6",
+       "mtu",
+       "name",
+       "ttl"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "MagicWANGRETunnel",
+     "at": "config/cluster/argo/config.go:76"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "MagicWanIpsecTunnel",
+    "group": "magic.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_magic_wan_ipsec_tunnel",
+    "group": "argo.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "MagicWANIPSecTunnel",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:246"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/argo/config.go:85"
+     }
+    ],
+    "examples": [
+     {
+      "id": "argo/v1alpha1/magicwanipsectunnel",
+      "at": "examples-generated/cluster/argo/v1alpha1/magicwanipsectunnel.yaml",
+      "origin": "generated",
+      "fields": [
+       "?automatic_return_routing",
+       "?bgp",
+       "?bgp.customer_asn",
+       "?bgp.extra_prefixes",
+       "?bgp.md5_key",
+       "?custom_remote_identities",
+       "?custom_remote_identities.fqdn_id",
+       "cloudflare_endpoint",
+       "customer_endpoint",
+       "description",
+       "health_check",
+       "health_check.direction",
+       "health_check.enabled",
+       "health_check.rate",
+       "health_check.target",
+       "health_check.target.saved",
+       "health_check.type",
+       "interface_address",
+       "interface_address6",
+       "name",
+       "replay_protection"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "MagicWANIPSecTunnel",
+     "at": "config/cluster/argo/config.go:84"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "MagicWanStaticRoute",
+    "group": "magic.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_magic_wan_static_route",
+    "group": "argo.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "MagicWANStaticRoute",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:247"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/argo/config.go:93"
+     }
+    ],
+    "examples": [
+     {
+      "id": "argo/v1alpha1/magicwanstaticroute",
+      "at": "examples-generated/cluster/argo/v1alpha1/magicwanstaticroute.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "nexthop",
+       "prefix",
+       "priority",
+       "scope",
+       "scope.colo_names",
+       "scope.colo_regions",
+       "weight"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "MagicWANStaticRoute",
+     "at": "config/cluster/argo/config.go:92"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "MtlsCertificate",
+    "group": "mtls.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_mtls_certificate",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "MTLSCertificate",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:56"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:57"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/mtlscertificate",
+      "at": "examples-generated/cluster/certificate/v1alpha1/mtlscertificate.yaml",
+      "origin": "generated",
+      "fields": [
+       "ca",
+       "certificates",
+       "name"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "MTLSCertificate",
+     "at": "config/cluster/certificate/config.go:56"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "NotificationPolicy",
+    "group": "notification.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_notification_policy",
+    "group": "notification.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "NotificationPolicy",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:259"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/notification/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "notification/v1alpha1/notificationpolicy",
+      "at": "examples-generated/cluster/notification/v1alpha1/notificationpolicy.yaml",
+      "origin": "generated",
+      "fields": [
+       "alert_interval",
+       "alert_type",
+       "description",
+       "enabled",
+       "filters",
+       "filters.actions",
+       "filters.affected_asns",
+       "filters.affected_components",
+       "filters.affected_locations",
+       "filters.airport_code",
+       "filters.alert_trigger_preferences",
+       "filters.alert_trigger_preferences_value",
+       "filters.enabled",
+       "filters.environment",
+       "filters.event",
+       "filters.event_source",
+       "filters.event_type",
+       "filters.group_by",
+       "filters.health_check_id",
+       "filters.incident_impact",
+       "filters.input_id",
+       "filters.insight_class",
+       "filters.limit",
+       "filters.logo_tag",
+       "filters.megabits_per_second",
+       "filters.new_health",
+       "filters.new_status",
+       "filters.packets_per_second",
+       "filters.pool_id",
+       "filters.pop_names",
+       "filters.product",
+       "filters.project_id",
+       "filters.protocol",
+       "filters.query_tag",
+       "filters.requests_per_second",
+       "filters.selectors",
+       "filters.services",
+       "filters.slo",
+       "filters.status",
+       "filters.target_hostname",
+       "filters.target_ip",
+       "filters.target_zone_name",
+       "filters.traffic_exclusions",
+       "filters.tunnel_id",
+       "filters.tunnel_name",
+       "filters.type",
+       "filters.where",
+       "filters.zones",
+       "mechanisms",
+       "mechanisms.email",
+       "mechanisms.email.id",
+       "mechanisms.pagerduty",
+       "mechanisms.pagerduty.id",
+       "mechanisms.webhooks",
+       "mechanisms.webhooks.id",
+       "name"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "NotificationPolicy",
+     "at": "config/cluster/notification/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "NotificationPolicyWebhooks",
+    "group": "notification.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_notification_policy_webhooks",
+    "group": "notification.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "NotificationPolicyWebhooks",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:260"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/notification/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "notification/v1alpha1/notificationpolicywebhooks",
+      "at": "examples-generated/cluster/notification/v1alpha1/notificationpolicywebhooks.yaml",
+      "origin": "generated",
+      "fields": [
+       "name",
+       "url"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "NotificationPolicyWebhooks",
+     "at": "config/cluster/notification/config.go:19"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ObservatoryScheduledTest",
+    "group": "observatory.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_observatory_scheduled_test",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ObservatoryScheduledTest",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:345"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:157"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/observatoryscheduledtest",
+      "at": "examples-generated/cluster/misc/v1alpha1/observatoryscheduledtest.yaml",
+      "origin": "generated",
+      "fields": [
+       "url"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ObservatoryScheduledTest",
+     "at": "config/cluster/misc/config.go:156"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "PageRule",
+    "group": "page.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_page_rule",
+    "group": "firewall.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "PageRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:90"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/firewall/config.go:114"
+     }
+    ],
+    "examples": [
+     {
+      "id": "firewall/v1alpha1/pagerule",
+      "at": "examples-generated/cluster/firewall/v1alpha1/pagerule.yaml",
+      "origin": "generated",
+      "fields": [
+       "actions",
+       "actions.forwarding_url",
+       "actions.forwarding_url.status_code",
+       "actions.forwarding_url.url",
+       "priority",
+       "status",
+       "target"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "PageRule",
+     "at": "config/cluster/firewall/config.go:113"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "Queue",
+    "group": "queue.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_queue",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Queue",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "name",
+     "expr": "config.NameAsIdentifier",
+     "at": "config/external_name.go:324"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:92"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/queue",
+      "at": "examples-generated/cluster/misc/v1alpha1/queue.yaml",
+      "origin": "generated",
+      "fields": [
+       "queue_name"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "Queue",
+     "at": "config/cluster/misc/config.go:91"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "QueueConsumer",
+    "group": "queue.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_queue_consumer",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "QueueConsumer",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:325"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:100"
+     },
+     {
+      "field": "queue_id",
+      "target": "cloudflare_queue",
+      "targetKind": "misc.cloudflare.crossplane.io/Queue",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:103"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/queueconsumer",
+      "at": "examples-generated/cluster/misc/v1alpha1/queueconsumer.yaml",
+      "origin": "generated",
+      "fields": [
+       "dead_letter_queue",
+       "script_name",
+       "settings",
+       "settings.batch_size",
+       "settings.max_concurrency",
+       "settings.max_retries",
+       "settings.max_wait_time_ms",
+       "settings.retry_delay",
+       "type"
+      ],
+      "refFields": [
+       "account_id",
+       "queue_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "QueueConsumer",
+     "at": "config/cluster/misc/config.go:99"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ],
+    "cloudflare_queue": [
+     "queue.cloudflare.hfl.dev/Queue"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "R2BucketCors",
+    "group": "r2.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_r2_bucket_cors",
+    "group": "r2.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "R2BucketCORS",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:223"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:64"
+     },
+     {
+      "field": "bucket_name",
+      "target": "cloudflare_r2_bucket",
+      "targetKind": "r2.cloudflare.crossplane.io/R2Bucket",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:67"
+     }
+    ],
+    "examples": [
+     {
+      "id": "r2/v1alpha1/r2bucketcors",
+      "at": "examples-generated/cluster/r2/v1alpha1/r2bucketcors.yaml",
+      "origin": "generated",
+      "fields": [
+       "rules",
+       "rules.allowed",
+       "rules.allowed.headers",
+       "rules.allowed.methods",
+       "rules.allowed.origins",
+       "rules.expose_headers",
+       "rules.id",
+       "rules.max_age_seconds"
+      ],
+      "refFields": [
+       "account_id",
+       "bucket_name"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "R2BucketCORS",
+     "at": "config/cluster/r2/config.go:63"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "R2BucketLifecycle",
+    "group": "r2.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_r2_bucket_lifecycle",
+    "group": "r2.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "R2BucketLifecycle",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:221"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:53"
+     },
+     {
+      "field": "bucket_name",
+      "target": "cloudflare_r2_bucket",
+      "targetKind": "r2.cloudflare.crossplane.io/R2Bucket",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:56"
+     }
+    ],
+    "examples": [
+     {
+      "id": "r2/v1alpha1/r2bucketlifecycle",
+      "at": "examples-generated/cluster/r2/v1alpha1/r2bucketlifecycle.yaml",
+      "origin": "generated",
+      "fields": [
+       "rules",
+       "rules.abort_multipart_uploads_transition",
+       "rules.abort_multipart_uploads_transition.condition",
+       "rules.abort_multipart_uploads_transition.condition.max_age",
+       "rules.abort_multipart_uploads_transition.condition.type",
+       "rules.conditions",
+       "rules.conditions.prefix",
+       "rules.delete_objects_transition",
+       "rules.delete_objects_transition.condition",
+       "rules.delete_objects_transition.condition.max_age",
+       "rules.delete_objects_transition.condition.type",
+       "rules.enabled",
+       "rules.id",
+       "rules.storage_class_transitions",
+       "rules.storage_class_transitions.condition",
+       "rules.storage_class_transitions.condition.max_age",
+       "rules.storage_class_transitions.condition.type",
+       "rules.storage_class_transitions.storage_class"
+      ],
+      "refFields": [
+       "account_id",
+       "bucket_name"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "R2BucketLifecycle",
+     "at": "config/cluster/r2/config.go:52"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "R2BucketLock",
+    "group": "r2.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_r2_bucket_lock",
+    "group": "r2.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "R2BucketLock",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:219"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:42"
+     },
+     {
+      "field": "bucket_name",
+      "target": "cloudflare_r2_bucket",
+      "targetKind": "r2.cloudflare.crossplane.io/R2Bucket",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:45"
+     }
+    ],
+    "examples": [
+     {
+      "id": "r2/v1alpha1/r2bucketlock",
+      "at": "examples-generated/cluster/r2/v1alpha1/r2bucketlock.yaml",
+      "origin": "generated",
+      "fields": [
+       "rules",
+       "rules.condition",
+       "rules.condition.max_age_seconds",
+       "rules.condition.type",
+       "rules.enabled",
+       "rules.id",
+       "rules.prefix"
+      ],
+      "refFields": [
+       "account_id",
+       "bucket_name"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "R2BucketLock",
+     "at": "config/cluster/r2/config.go:41"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "R2BucketSippy",
+    "group": "r2.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_r2_bucket_sippy",
+    "group": "r2.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "R2BucketSippy",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:225"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:75"
+     },
+     {
+      "field": "bucket_name",
+      "target": "cloudflare_r2_bucket",
+      "targetKind": "r2.cloudflare.crossplane.io/R2Bucket",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:78"
+     }
+    ],
+    "examples": [
+     {
+      "id": "r2/v1alpha1/r2bucketsippy",
+      "at": "examples-generated/cluster/r2/v1alpha1/r2bucketsippy.yaml",
+      "origin": "generated",
+      "fields": [
+       "destination",
+       "destination.access_key_id",
+       "destination.cloud_provider",
+       "source",
+       "source.access_key_id",
+       "source.bucket",
+       "source.cloud_provider",
+       "source.region"
+      ],
+      "refFields": [
+       "account_id",
+       "bucket_name"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "R2BucketSippy",
+     "at": "config/cluster/r2/config.go:74"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "R2ManagedDomain",
+    "group": "r2.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_r2_managed_domain",
+    "group": "r2.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "R2ManagedDomain",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:217"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:31"
+     },
+     {
+      "field": "bucket_name",
+      "target": "cloudflare_r2_bucket",
+      "targetKind": "r2.cloudflare.crossplane.io/R2Bucket",
+      "source": "both",
+      "at": "config/cluster/r2/config.go:34"
+     }
+    ],
+    "examples": [
+     {
+      "id": "r2/v1alpha1/r2manageddomain",
+      "at": "examples-generated/cluster/r2/v1alpha1/r2manageddomain.yaml",
+      "origin": "generated",
+      "fields": [
+       "enabled"
+      ],
+      "refFields": [
+       "account_id",
+       "bucket_name"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "R2ManagedDomain",
+     "at": "config/cluster/r2/config.go:30"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "RegionalHostname",
+    "group": "regional.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_regional_hostname",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "RegionalHostname",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:309"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:40"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/regionalhostname",
+      "at": "examples-generated/cluster/misc/v1alpha1/regionalhostname.yaml",
+      "origin": "generated",
+      "fields": [
+       "hostname",
+       "region_key",
+       "routing"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "RegionalHostname",
+     "at": "config/cluster/misc/config.go:39"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "RegionalTieredCache",
+    "group": "regional.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_regional_tiered_cache",
+    "group": "argo.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "RegionalTieredCache",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:235"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/argo/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "argo/v1alpha1/regionaltieredcache",
+      "at": "examples-generated/cluster/argo/v1alpha1/regionaltieredcache.yaml",
+      "origin": "generated",
+      "fields": [
+       "value"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "RegionalTieredCache",
+     "at": "config/cluster/argo/config.go:35"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "Snippet",
+    "group": "snippet.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_snippet",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Snippet",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:312"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:49"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/snippet",
+      "at": "examples-generated/cluster/misc/v1alpha1/snippet.yaml",
+      "origin": "generated",
+      "fields": [
+       "files",
+       "files.content",
+       "files.name",
+       "metadata",
+       "metadata.main_module",
+       "snippet_name"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "Snippet",
+     "at": "config/cluster/misc/config.go:48"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "SnippetRules",
+    "group": "snippet.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_snippet_rules",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "SnippetRules",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:313"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:57"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/snippetrules",
+      "at": "examples-generated/cluster/misc/v1alpha1/snippetrules.yaml",
+      "origin": "generated",
+      "fields": [
+       "rules",
+       "rules.description",
+       "rules.enabled",
+       "rules.expression",
+       "rules.snippet_name"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "SnippetRules",
+     "at": "config/cluster/misc/config.go:56"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "SpectrumApplication",
+    "group": "spectrum.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_spectrum_application",
+    "group": "spectrum.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "SpectrumApplication",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:250"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/spectrum/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "spectrum/v1alpha1/spectrumapplication",
+      "at": "examples-generated/cluster/spectrum/v1alpha1/spectrumapplication.yaml",
+      "origin": "generated",
+      "fields": [
+       "argo_smart_routing",
+       "dns",
+       "dns.name",
+       "dns.type",
+       "edge_ips",
+       "edge_ips.connectivity",
+       "edge_ips.type",
+       "ip_firewall",
+       "origin_direct",
+       "origin_dns",
+       "origin_dns.name",
+       "origin_dns.ttl",
+       "origin_dns.type",
+       "origin_port",
+       "protocol",
+       "proxy_protocol",
+       "tls",
+       "traffic_type"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "SpectrumApplication",
+     "at": "config/cluster/spectrum/config.go:11"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "Stream",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Stream",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:275"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/stream",
+      "at": "examples-generated/cluster/stream/v1alpha1/stream.yaml",
+      "origin": "generated",
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "Stream",
+     "at": "config/cluster/stream/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "StreamAudioTrack",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream_audio_track",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "StreamAudioTrack",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:279"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:44"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/streamaudiotrack",
+      "at": "examples-generated/cluster/stream/v1alpha1/streamaudiotrack.yaml",
+      "origin": "generated",
+      "fields": [
+       "audio_identifier",
+       "default",
+       "identifier",
+       "label"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "StreamAudioTrack",
+     "at": "config/cluster/stream/config.go:43"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "StreamDownload",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream_download",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "StreamDownload",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:281"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:60"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/streamdownload",
+      "at": "examples-generated/cluster/stream/v1alpha1/streamdownload.yaml",
+      "origin": "generated",
+      "fields": [
+       "identifier"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "StreamDownload",
+     "at": "config/cluster/stream/config.go:59"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "StreamKey",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream_key",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "StreamKey",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:276"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/streamkey",
+      "at": "examples-generated/cluster/stream/v1alpha1/streamkey.yaml",
+      "origin": "generated",
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "StreamKey",
+     "at": "config/cluster/stream/config.go:19"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "StreamLiveInput",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream_live_input",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "StreamLiveInput",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:277"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:28"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/streamliveinput",
+      "at": "examples-generated/cluster/stream/v1alpha1/streamliveinput.yaml",
+      "origin": "generated",
+      "fields": [
+       "?meta.name",
+       "default_creator",
+       "delete_recording_after_days",
+       "meta",
+       "recording",
+       "recording.allowed_origins",
+       "recording.hide_live_viewer_count",
+       "recording.mode",
+       "recording.require_signed_urls",
+       "recording.timeout_seconds"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "StreamLiveInput",
+     "at": "config/cluster/stream/config.go:27"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "StreamWatermark",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream_watermark",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "StreamWatermark",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:282"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:68"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/streamwatermark",
+      "at": "examples-generated/cluster/stream/v1alpha1/streamwatermark.yaml",
+      "origin": "generated",
+      "fields": [
+       "file",
+       "name",
+       "opacity",
+       "padding",
+       "position",
+       "scale"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "StreamWatermark",
+     "at": "config/cluster/stream/config.go:67"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "StreamWebhook",
+    "group": "stream.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_stream_webhook",
+    "group": "stream.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "StreamWebhook",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:278"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/stream/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "stream/v1alpha1/streamwebhook",
+      "at": "examples-generated/cluster/stream/v1alpha1/streamwebhook.yaml",
+      "origin": "generated",
+      "fields": [
+       "notification_url"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "StreamWebhook",
+     "at": "config/cluster/stream/config.go:35"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "TieredCache",
+    "group": "tiered.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_tiered_cache",
+    "group": "argo.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "TieredCache",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:233"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/argo/config.go:28"
+     }
+    ],
+    "examples": [
+     {
+      "id": "argo/v1alpha1/tieredcache",
+      "at": "examples-generated/cluster/argo/v1alpha1/tieredcache.yaml",
+      "origin": "generated",
+      "fields": [
+       "value"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "TieredCache",
+     "at": "config/cluster/argo/config.go:27"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "TotalTls",
+    "group": "total.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_total_tls",
+    "group": "certificate.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "TotalTLS",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:58"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/certificate/config.go:65"
+     }
+    ],
+    "examples": [
+     {
+      "id": "certificate/v1alpha1/totaltls",
+      "at": "examples-generated/cluster/certificate/v1alpha1/totaltls.yaml",
+      "origin": "generated",
+      "fields": [
+       "certificate_authority",
+       "enabled"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "TotalTLS",
+     "at": "config/cluster/certificate/config.go:64"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "TurnstileWidget",
+    "group": "turnstile.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_turnstile_widget",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "TurnstileWidget",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:316"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:66"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/turnstilewidget",
+      "at": "examples-generated/cluster/misc/v1alpha1/turnstilewidget.yaml",
+      "origin": "generated",
+      "fields": [
+       "bot_fight_mode",
+       "clearance_level",
+       "domains",
+       "ephemeral_id",
+       "mode",
+       "name",
+       "offlabel",
+       "region"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "TurnstileWidget",
+     "at": "config/cluster/misc/config.go:65"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "UrlNormalizationSettings",
+    "group": "url.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_url_normalization_settings",
+    "group": "firewall.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "URLNormalizationSettings",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:86"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/firewall/config.go:98"
+     }
+    ],
+    "examples": [
+     {
+      "id": "firewall/v1alpha1/urlnormalizationsettings",
+      "at": "examples-generated/cluster/firewall/v1alpha1/urlnormalizationsettings.yaml",
+      "origin": "generated",
+      "fields": [
+       "scope",
+       "type"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "URLNormalizationSettings",
+     "at": "config/cluster/firewall/config.go:97"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "UserAgentBlockingRule",
+    "group": "user.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_user_agent_blocking_rule",
+    "group": "firewall.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "UserAgentBlockingRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:88"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/firewall/config.go:106"
+     }
+    ],
+    "examples": [
+     {
+      "id": "firewall/v1alpha1/useragentblockingrule",
+      "at": "examples-generated/cluster/firewall/v1alpha1/useragentblockingrule.yaml",
+      "origin": "generated",
+      "fields": [
+       "configuration",
+       "configuration.target",
+       "configuration.value",
+       "description",
+       "mode",
+       "paused"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "UserAgentBlockingRule",
+     "at": "config/cluster/firewall/config.go:105"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "WaitingRoom",
+    "group": "waiting.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_waiting_room",
+    "group": "waitingroom.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WaitingRoom",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:266"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/waitingroom/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "waitingroom/v1alpha1/waitingroom",
+      "at": "examples-generated/cluster/waitingroom/v1alpha1/waitingroom.yaml",
+      "origin": "generated",
+      "fields": [
+       "additional_routes",
+       "additional_routes.host",
+       "additional_routes.path",
+       "cookie_attributes",
+       "cookie_attributes.samesite",
+       "cookie_attributes.secure",
+       "cookie_suffix",
+       "custom_page_html",
+       "default_template_language",
+       "description",
+       "disable_session_renewal",
+       "enabled_origin_commands",
+       "host",
+       "json_response_enabled",
+       "name",
+       "new_users_per_minute",
+       "path",
+       "queue_all",
+       "queueing_method",
+       "queueing_status_code",
+       "session_duration",
+       "suspended",
+       "total_active_users",
+       "turnstile_action",
+       "turnstile_mode"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WaitingRoom",
+     "at": "config/cluster/waitingroom/config.go:11"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "WaitingRoomEvent",
+    "group": "waiting.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_waiting_room_event",
+    "group": "waitingroom.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WaitingRoomEvent",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:267"
+    },
+    "references": [
+     {
+      "field": "waiting_room_id",
+      "target": "cloudflare_waiting_room",
+      "targetKind": "waitingroom.cloudflare.crossplane.io/WaitingRoom",
+      "source": "both",
+      "at": "config/cluster/waitingroom/config.go:23"
+     },
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/waitingroom/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "waitingroom/v1alpha1/waitingroomevent",
+      "at": "examples-generated/cluster/waitingroom/v1alpha1/waitingroomevent.yaml",
+      "origin": "generated",
+      "fields": [
+       "custom_page_html",
+       "description",
+       "disable_session_renewal",
+       "event_end_time",
+       "event_start_time",
+       "name",
+       "new_users_per_minute",
+       "prequeue_start_time",
+       "queueing_method",
+       "session_duration",
+       "shuffle_at_event_start",
+       "suspended",
+       "total_active_users",
+       "turnstile_action",
+       "turnstile_mode"
+      ],
+      "refFields": [
+       "waiting_room_id",
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WaitingRoomEvent",
+     "at": "config/cluster/waitingroom/config.go:19"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_waiting_room": [
+     "waiting.cloudflare.hfl.dev/WaitingRoom"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "WaitingRoomRules",
+    "group": "waiting.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_waiting_room_rules",
+    "group": "waitingroom.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WaitingRoomRules",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:268"
+    },
+    "references": [
+     {
+      "field": "waiting_room_id",
+      "target": "cloudflare_waiting_room",
+      "targetKind": "waitingroom.cloudflare.crossplane.io/WaitingRoom",
+      "source": "both",
+      "at": "config/cluster/waitingroom/config.go:34"
+     },
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/waitingroom/config.go:31"
+     }
+    ],
+    "examples": [
+     {
+      "id": "waitingroom/v1alpha1/waitingroomrules",
+      "at": "examples-generated/cluster/waitingroom/v1alpha1/waitingroomrules.yaml",
+      "origin": "generated",
+      "fields": [
+       "rules",
+       "rules.action",
+       "rules.description",
+       "rules.enabled",
+       "rules.expression"
+      ],
+      "refFields": [
+       "waiting_room_id",
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WaitingRoomRules",
+     "at": "config/cluster/waitingroom/config.go:30"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_waiting_room": [
+     "waiting.cloudflare.hfl.dev/WaitingRoom"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "WaitingRoomSettings",
+    "group": "waiting.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_waiting_room_settings",
+    "group": "waitingroom.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WaitingRoomSettings",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:269"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/waitingroom/config.go:42"
+     }
+    ],
+    "examples": [
+     {
+      "id": "waitingroom/v1alpha1/waitingroomsettings",
+      "at": "examples-generated/cluster/waitingroom/v1alpha1/waitingroomsettings.yaml",
+      "origin": "generated",
+      "fields": [
+       "search_engine_crawler_bypass"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WaitingRoomSettings",
+     "at": "config/cluster/waitingroom/config.go:41"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "WebAnalyticsRule",
+    "group": "web.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_web_analytics_rule",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WebAnalyticsRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:320"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:83"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/webanalyticsrule",
+      "at": "examples-generated/cluster/misc/v1alpha1/webanalyticsrule.yaml",
+      "origin": "generated",
+      "fields": [
+       "host",
+       "inclusive",
+       "is_paused",
+       "paths",
+       "ruleset_id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WebAnalyticsRule",
+     "at": "config/cluster/misc/config.go:82"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "WebAnalyticsSite",
+    "group": "web.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_web_analytics_site",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WebAnalyticsSite",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:319"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:75"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/webanalyticssite",
+      "at": "examples-generated/cluster/misc/v1alpha1/webanalyticssite.yaml",
+      "origin": "generated",
+      "fields": [
+       "auto_install",
+       "host",
+       "zone_tag"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WebAnalyticsSite",
+     "at": "config/cluster/misc/config.go:74"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Web3Hostname",
+    "group": "web3.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_web3_hostname",
+    "group": "misc.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Web3Hostname",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:272"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/misc/config.go:13"
+     }
+    ],
+    "examples": [
+     {
+      "id": "misc/v1alpha1/web3hostname",
+      "at": "examples-generated/cluster/misc/v1alpha1/web3hostname.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "dnslink",
+       "name",
+       "target"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "Web3Hostname",
+     "at": "config/cluster/misc/config.go:12"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "WorkersKv",
+    "group": "workers.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_workers_kv",
+    "group": "workers.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WorkersKV",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:203"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/workers/config.go:72"
+     },
+     {
+      "field": "namespace_id",
+      "target": "cloudflare_workers_kv_namespace",
+      "targetKind": "workers.cloudflare.crossplane.io/WorkersKVNamespace",
+      "source": "both",
+      "at": "config/cluster/workers/config.go:75"
+     }
+    ],
+    "examples": [
+     {
+      "id": "workers/v1alpha1/workerskv",
+      "at": "examples-generated/cluster/workers/v1alpha1/workerskv.yaml",
+      "origin": "generated",
+      "fields": [
+       "key_name",
+       "metadata",
+       "value"
+      ],
+      "refFields": [
+       "account_id",
+       "namespace_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WorkersKV",
+     "at": "config/cluster/workers/config.go:71"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ],
+    "cloudflare_workers_kv_namespace": [
+     "workers.cloudflare.hfl.dev/WorkersKvNamespace"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "WorkersKvNamespace",
+    "group": "workers.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_workers_kv_namespace",
+    "group": "workers.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WorkersKVNamespace",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "name",
+     "expr": "config.NameAsIdentifier",
+     "at": "config/external_name.go:205"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/workers/config.go:83"
+     }
+    ],
+    "examples": [
+     {
+      "id": "workers/v1alpha1/workerskvnamespace",
+      "at": "examples-generated/cluster/workers/v1alpha1/workerskvnamespace.yaml",
+      "origin": "generated",
+      "fields": [
+       "title"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WorkersKVNamespace",
+     "at": "config/cluster/workers/config.go:82"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "WorkersScript",
+    "group": "workers.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_workers_script",
+    "group": "workers.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WorkersScript",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "name",
+     "expr": "config.NameAsIdentifier",
+     "at": "config/external_name.go:191"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/workers/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "workers/v1alpha1/workersscript",
+      "at": "examples-generated/cluster/workers/v1alpha1/workersscript.yaml",
+      "origin": "generated",
+      "fields": [
+       "assets",
+       "assets.config",
+       "assets.config.headers",
+       "assets.config.html_handling",
+       "assets.config.not_found_handling",
+       "assets.config.redirects",
+       "assets.config.run_worker_first",
+       "bindings",
+       "bindings.name",
+       "bindings.type",
+       "compatibility_date",
+       "compatibility_flags",
+       "content_file",
+       "content_sha256",
+       "keep_assets",
+       "keep_bindings",
+       "limits",
+       "limits.cpu_ms",
+       "logpush",
+       "main_module",
+       "migrations",
+       "migrations.deleted_classes",
+       "migrations.new_classes",
+       "migrations.new_sqlite_classes",
+       "migrations.new_tag",
+       "migrations.old_tag",
+       "migrations.renamed_classes",
+       "migrations.renamed_classes.from",
+       "migrations.renamed_classes.to",
+       "migrations.transferred_classes",
+       "migrations.transferred_classes.from",
+       "migrations.transferred_classes.from_script",
+       "migrations.transferred_classes.to",
+       "observability",
+       "observability.enabled",
+       "observability.head_sampling_rate",
+       "observability.logs",
+       "observability.logs.destinations",
+       "observability.logs.enabled",
+       "observability.logs.head_sampling_rate",
+       "observability.logs.invocation_logs",
+       "observability.logs.persist",
+       "placement",
+       "placement.mode",
+       "script_name",
+       "tail_consumers",
+       "tail_consumers.environment",
+       "tail_consumers.namespace",
+       "tail_consumers.service"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "WorkersScript",
+     "at": "config/cluster/workers/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustAccessShortLivedCertificate",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_access_short_lived_certificate",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustAccessShortLivedCertificate",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:164"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:173"
+     },
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:170"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustaccessshortlivedcertificate",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustaccessshortlivedcertificate.yaml",
+      "origin": "generated",
+      "fields": [
+       "app_id"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustAccessShortLivedCertificate",
+     "at": "config/cluster/zerotrust/config.go:169"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustDeviceManagedNetworks",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_device_managed_networks",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustDeviceManagedNetworks",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:146"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:90"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustdevicemanagednetworks",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustdevicemanagednetworks.yaml",
+      "origin": "generated",
+      "fields": [
+       "config",
+       "config.sha256",
+       "config.tls_sockaddr",
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustDeviceManagedNetworks",
+     "at": "config/cluster/zerotrust/config.go:89"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustDevicePostureIntegration",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_device_posture_integration",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustDevicePostureIntegration",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:142"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:74"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustdevicepostureintegration",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustdevicepostureintegration.yaml",
+      "origin": "generated",
+      "fields": [
+       "config",
+       "config.api_url",
+       "config.auth_url",
+       "config.client_id",
+       "interval",
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustDevicePostureIntegration",
+     "at": "config/cluster/zerotrust/config.go:73"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustDexTest",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_dex_test",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustDEXTest",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:150"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:106"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustdextest",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustdextest.yaml",
+      "origin": "generated",
+      "fields": [
+       "data",
+       "data.host",
+       "data.kind",
+       "data.method",
+       "description",
+       "enabled",
+       "interval",
+       "name",
+       "target_policies",
+       "target_policies.id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustDEXTest",
+     "at": "config/cluster/zerotrust/config.go:105"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustDlpCustomProfile",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_dlp_custom_profile",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustDLPCustomProfile",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:154"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:130"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustdlpcustomprofile",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustdlpcustomprofile.yaml",
+      "origin": "generated",
+      "fields": [
+       "ai_context_enabled",
+       "allowed_match_count",
+       "confidence_threshold",
+       "context_awareness",
+       "context_awareness.enabled",
+       "context_awareness.skip",
+       "context_awareness.skip.files",
+       "description",
+       "name",
+       "ocr_enabled",
+       "shared_entries",
+       "shared_entries.enabled",
+       "shared_entries.entry_id",
+       "shared_entries.entry_type"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustDLPCustomProfile",
+     "at": "config/cluster/zerotrust/config.go:129"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustDlpEntry",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_dlp_custom_entry",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustDLPCustomEntry",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:158"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:146"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustdlpcustomentry",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustdlpcustomentry.yaml",
+      "origin": "generated",
+      "fields": [
+       "enabled",
+       "name",
+       "pattern",
+       "pattern.regex",
+       "pattern.validation",
+       "profile_id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustDLPCustomEntry",
+     "at": "config/cluster/zerotrust/config.go:145"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustDlpEntry",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_dlp_entry",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustDLPEntry",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:156"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:138"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustdlpentry",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustdlpentry.yaml",
+      "origin": "generated",
+      "fields": [
+       "enabled",
+       "name",
+       "pattern",
+       "pattern.regex",
+       "pattern.validation",
+       "profile_id"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustDLPEntry",
+     "at": "config/cluster/zerotrust/config.go:137"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustGatewayCertificate",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_gateway_certificate",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustGatewayCertificate",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:166"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:181"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustgatewaycertificate",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustgatewaycertificate.yaml",
+      "origin": "generated",
+      "fields": [
+       "validity_period_days"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustGatewayCertificate",
+     "at": "config/cluster/zerotrust/config.go:180"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustRiskBehavior",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_risk_behavior",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustRiskBehavior",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:160"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:154"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustriskbehavior",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustriskbehavior.yaml",
+      "origin": "generated",
+      "fields": [
+       "behaviors"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustRiskBehavior",
+     "at": "config/cluster/zerotrust/config.go:153"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZeroTrustRiskScoringIntegration",
+    "group": "zerotrust.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zero_trust_risk_scoring_integration",
+    "group": "zerotrust.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZeroTrustRiskScoringIntegration",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:162"
+    },
+    "references": [
+     {
+      "field": "account_id",
+      "target": "cloudflare_account",
+      "targetKind": "account.cloudflare.crossplane.io/Account",
+      "source": "both",
+      "at": "config/cluster/zerotrust/config.go:162"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zerotrust/v1alpha1/zerotrustriskscoringintegration",
+      "at": "examples-generated/cluster/zerotrust/v1alpha1/zerotrustriskscoringintegration.yaml",
+      "origin": "generated",
+      "fields": [
+       "integration_type",
+       "reference_id",
+       "tenant_url"
+      ],
+      "refFields": [
+       "account_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZeroTrustRiskScoringIntegration",
+     "at": "config/cluster/zerotrust/config.go:161"
+    }
+   },
+   "targetsOurs": {
+    "cloudflare_account": [
+     "account.cloudflare.hfl.dev/Account"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZoneCacheReserve",
+    "group": "zone.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zone_cache_reserve",
+    "group": "zone.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZoneCacheReserve",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:32"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zone/config.go:52"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zone/v1alpha1/zonecachereserve",
+      "at": "examples-generated/cluster/zone/v1alpha1/zonecachereserve.yaml",
+      "origin": "generated",
+      "fields": [
+       "value"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZoneCacheReserve",
+     "at": "config/cluster/zone/config.go:51"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZoneCacheVariants",
+    "group": "zone.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zone_cache_variants",
+    "group": "zone.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZoneCacheVariants",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:34"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zone/config.go:60"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zone/v1alpha1/zonecachevariants",
+      "at": "examples-generated/cluster/zone/v1alpha1/zonecachevariants.yaml",
+      "origin": "generated",
+      "fields": [
+       "value",
+       "value.avif",
+       "value.bmp",
+       "value.gif",
+       "value.jp2",
+       "value.jpeg",
+       "value.jpg",
+       "value.jpg2",
+       "value.png",
+       "value.tif",
+       "value.tiff",
+       "value.webp"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZoneCacheVariants",
+     "at": "config/cluster/zone/config.go:59"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZoneDnssec",
+    "group": "zone.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zone_dnssec",
+    "group": "zone.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZoneDNSSEC",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:26"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zone/config.go:28"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zone/v1alpha1/zonednssec",
+      "at": "examples-generated/cluster/zone/v1alpha1/zonednssec.yaml",
+      "origin": "generated",
+      "fields": [
+       "dnssec_multi_signer",
+       "dnssec_presigned",
+       "dnssec_use_nsec3",
+       "status"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZoneDNSSEC",
+     "at": "config/cluster/zone/config.go:27"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZoneHold",
+    "group": "zone.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zone_hold",
+    "group": "zone.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZoneHold",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:30"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zone/config.go:44"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zone/v1alpha1/zonehold",
+      "at": "examples-generated/cluster/zone/v1alpha1/zonehold.yaml",
+      "origin": "generated",
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZoneHold",
+     "at": "config/cluster/zone/config.go:43"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZoneLockdown",
+    "group": "zone.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zone_lockdown",
+    "group": "zone.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZoneLockdown",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:28"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zone/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zone/v1alpha1/zonelockdown",
+      "at": "examples-generated/cluster/zone/v1alpha1/zonelockdown.yaml",
+      "origin": "generated",
+      "fields": [
+       "configurations",
+       "configurations.target",
+       "configurations.value",
+       "description",
+       "paused",
+       "priority",
+       "urls"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZoneLockdown",
+     "at": "config/cluster/zone/config.go:35"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "ZoneSetting",
+    "group": "zone.cloudflare.hfl.dev"
+   },
+   "facts": {
+    "terraform": "cloudflare_zone_setting",
+    "group": "zone.cloudflare.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ZoneSetting",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:24"
+    },
+    "references": [
+     {
+      "field": "zone_id",
+      "target": "cloudflare_zone",
+      "targetKind": "zone.cloudflare.crossplane.io/Zone",
+      "source": "both",
+      "at": "config/cluster/zone/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "zone/v1alpha1/zonesetting",
+      "at": "examples-generated/cluster/zone/v1alpha1/zonesetting.yaml",
+      "origin": "generated",
+      "fields": [
+       "setting_id",
+       "value"
+      ],
+      "refFields": [
+       "zone_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ZoneSetting",
+     "at": "config/cluster/zone/config.go:19"
+    }
+   }
+  }
+ ],
+ "noUpjet": [
+  "account.cloudflare.hfl.dev/AccountDnsSettings",
+  "account.cloudflare.hfl.dev/AccountDnsSettingsInternalView",
+  "account.cloudflare.hfl.dev/AccountSubscription",
+  "ai.cloudflare.hfl.dev/AiGatewayDynamicRouting",
+  "ai.cloudflare.hfl.dev/AiSearchInstance",
+  "ai.cloudflare.hfl.dev/AiSearchNamespace",
+  "ai.cloudflare.hfl.dev/AiSearchToken",
+  "ai.cloudflare.hfl.dev/AiSecurity",
+  "ai.cloudflare.hfl.dev/AiSecurityCustomTopics",
+  "api.cloudflare.hfl.dev/ApiShieldDiscoveryOperation",
+  "argo.cloudflare.hfl.dev/ArgoSmartRouting",
+  "argo.cloudflare.hfl.dev/ArgoTieredCaching",
+  "authenticated.cloudflare.hfl.dev/AuthenticatedOriginPullsHostnameCertificate",
+  "authenticated.cloudflare.hfl.dev/AuthenticatedOriginPullsSettings",
+  "certificate.cloudflare.hfl.dev/CertificateAuthoritiesHostnameAssociations",
+  "client.cloudflare.hfl.dev/ClientCertificate",
+  "connectivity.cloudflare.hfl.dev/ConnectivityDirectoryService",
+  "ct.cloudflare.hfl.dev/CtAlerting",
+  "custom.cloudflare.hfl.dev/CustomCsr",
+  "custom.cloudflare.hfl.dev/CustomOriginTrustStore",
+  "custom.cloudflare.hfl.dev/CustomPageAsset",
+  "custom.cloudflare.hfl.dev/CustomPages",
+  "dls.cloudflare.hfl.dev/DlsPrefixBinding",
+  "dns.cloudflare.hfl.dev/DnsZoneTransfersAcl",
+  "dns.cloudflare.hfl.dev/DnsZoneTransfersIncoming",
+  "dns.cloudflare.hfl.dev/DnsZoneTransfersOutgoing",
+  "dns.cloudflare.hfl.dev/DnsZoneTransfersPeer",
+  "dns.cloudflare.hfl.dev/DnsZoneTransfersTsig",
+  "email.cloudflare.hfl.dev/EmailSecurityAllowPolicy",
+  "email.cloudflare.hfl.dev/EmailSecurityBlockSender",
+  "email.cloudflare.hfl.dev/EmailSecurityDomain",
+  "email.cloudflare.hfl.dev/EmailSecurityImpersonationRegistry",
+  "email.cloudflare.hfl.dev/EmailSecurityTrustedDomains",
+  "email.cloudflare.hfl.dev/EmailSendingSubdomain",
+  "field.cloudflare.hfl.dev/FieldExtractor",
+  "flagship.cloudflare.hfl.dev/FlagshipApp",
+  "flagship.cloudflare.hfl.dev/FlagshipFlag",
+  "google.cloudflare.hfl.dev/GoogleTagGateway",
+  "image.cloudflare.hfl.dev/Image",
+  "image.cloudflare.hfl.dev/ImageVariant",
+  "load.cloudflare.hfl.dev/LoadBalancerMonitorGroup",
+  "log.cloudflare.hfl.dev/LogExplorerDataset",
+  "magic.cloudflare.hfl.dev/MagicNetworkMonitoringConfiguration",
+  "magic.cloudflare.hfl.dev/MagicNetworkMonitoringRule",
+  "magic.cloudflare.hfl.dev/MagicTransitCf1Site",
+  "magic.cloudflare.hfl.dev/MagicTransitConnector",
+  "magic.cloudflare.hfl.dev/MagicTransitSite",
+  "magic.cloudflare.hfl.dev/MagicTransitSiteAcl",
+  "magic.cloudflare.hfl.dev/MagicTransitSiteLan",
+  "magic.cloudflare.hfl.dev/MagicTransitSiteWan",
+  "magic.cloudflare.hfl.dev/MagicWanBgpFilterProfile",
+  "managed.cloudflare.hfl.dev/ManagedTransforms",
+  "monetization.cloudflare.hfl.dev/MonetizationRules",
+  "moq.cloudflare.hfl.dev/MoqRelay",
+  "nel.cloudflare.hfl.dev/NelSetting",
+  "oauth.cloudflare.hfl.dev/OauthClient",
+  "organization.cloudflare.hfl.dev/Organization",
+  "organization.cloudflare.hfl.dev/OrganizationProfile",
+  "origin.cloudflare.hfl.dev/OriginCloudRegion",
+  "origin.cloudflare.hfl.dev/OriginTlsComplianceModes",
+  "page.cloudflare.hfl.dev/PageShieldPolicy",
+  "pipeline.cloudflare.hfl.dev/Pipeline",
+  "pipeline.cloudflare.hfl.dev/PipelineSink",
+  "pipeline.cloudflare.hfl.dev/PipelineStream",
+  "precursor.cloudflare.hfl.dev/Precursor",
+  "r2.cloudflare.hfl.dev/R2DataCatalog",
+  "schema.cloudflare.hfl.dev/SchemaValidationOperationSettings",
+  "schema.cloudflare.hfl.dev/SchemaValidationSchemas",
+  "schema.cloudflare.hfl.dev/SchemaValidationSettings",
+  "secrets.cloudflare.hfl.dev/SecretsStore",
+  "secrets.cloudflare.hfl.dev/SecretsStoreSecret",
+  "share.cloudflare.hfl.dev/Share",
+  "share.cloudflare.hfl.dev/ShareRecipient",
+  "share.cloudflare.hfl.dev/ShareResource",
+  "sso.cloudflare.hfl.dev/SsoConnector",
+  "stream.cloudflare.hfl.dev/StreamCaptionLanguage",
+  "token.cloudflare.hfl.dev/TokenValidationConfig",
+  "token.cloudflare.hfl.dev/TokenValidationRules",
+  "universal.cloudflare.hfl.dev/UniversalSslSetting",
+  "user.cloudflare.hfl.dev/User",
+  "user.cloudflare.hfl.dev/UserGroup",
+  "user.cloudflare.hfl.dev/UserGroupMembers",
+  "vulnerability.cloudflare.hfl.dev/VulnerabilityScannerCredential",
+  "vulnerability.cloudflare.hfl.dev/VulnerabilityScannerCredentialSet",
+  "vulnerability.cloudflare.hfl.dev/VulnerabilityScannerTargetEnvironment",
+  "worker.cloudflare.hfl.dev/Worker",
+  "worker.cloudflare.hfl.dev/WorkerVersion",
+  "workers.cloudflare.hfl.dev/WorkersCronTrigger",
+  "workers.cloudflare.hfl.dev/WorkersCustomDomain",
+  "workers.cloudflare.hfl.dev/WorkersDeployment",
+  "workers.cloudflare.hfl.dev/WorkersForPlatformsDispatchNamespace",
+  "workers.cloudflare.hfl.dev/WorkersRoute",
+  "workers.cloudflare.hfl.dev/WorkersScriptSubdomain",
+  "workflow.cloudflare.hfl.dev/Workflow",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessAiControlsMcpPortal",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessAiControlsMcpServer",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessCustomPage",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessInfrastructureTarget",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessKeyConfiguration",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessMtlsCertificate",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessMtlsHostnameSettings",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustAccessTag",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCasbFindingType",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCasbIntegration",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCasbPolicy",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCasbWebhook",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustConnectivitySettings",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsBasicAuthCredential",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsBasicAuthSecret",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsDeployment",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsDomainAcl",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsPolicy",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsPolicySet",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsRegoMetadata",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsRegoModule",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsTenantStructure",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsTenantStructureNode",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustCwsWorkload",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceCustomProfileLocalDomainFallback",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceDefaultProfileCertificates",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceDefaultProfileLocalDomainFallback",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceDeploymentGroups",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceIpProfile",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceSettings",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDeviceSubnet",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDexRule",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpDataClass",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpDataTag",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpDataTagCategory",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpDataset",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpIntegrationEntry",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpPredefinedEntry",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpPredefinedProfile",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpProximityValidator",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpSensitivityGroup",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpSensitivityLevel",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpSensitivityLevelOrder",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDlpSettings",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustDnsLocation",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustGatewayLogging",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustGatewayPacfile",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustGatewayProxyEndpoint",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustNetworkHostnameRoute",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustOrganization",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustOrganizationTrustSettings",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustResourceLibraryApplication",
+  "zerotrust.cloudflare.hfl.dev/ZeroTrustTunnelWarpConnectorConfig",
+  "zone.cloudflare.hfl.dev/ZoneAutoOriginTlsKex",
+  "zone.cloudflare.hfl.dev/ZoneDnsSettings",
+  "zone.cloudflare.hfl.dev/ZoneSubscription",
+  "zone.cloudflare.hfl.dev/ZoneTracing",
+  "zone.cloudflare.hfl.dev/ZoneTracingRules"
+ ]
+}
