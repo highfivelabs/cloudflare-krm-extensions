@@ -2,7 +2,7 @@
 # examples/<Kind>/with-<Target>.yaml, but that don't hold here, with why.
 upjet:
   QueueConsumer: >-
-    its two references don't meet: accountID would come from a new Account,
-    while the Queue that queueID names is made in its own sample's account
-    (<accountId>), so Cloudflare would find no such queue in that account.
-    The fake doesn't scope a queue to its account, so it passes there.
+    its references now meet (the Queue takes the same Account as the
+    consumer), but the consumer's example is a worker consumer with no
+    script_name, which Cloudflare requires for type worker (the spec's
+    mq_worker-consumer-request). The fake takes it.
