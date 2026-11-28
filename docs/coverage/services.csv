@@ -1,0 +1,8 @@
+service,resources_total,resources_official,resources_ours_beyond,pct_covered
+accounts,335,0,165,49.3
+certificates,1,0,1,100.0
+memberships,1,0,0,0.0
+organizations,3,0,2,66.7
+subscriptions,1,0,0,0.0
+user,7,0,2,28.6
+zones,144,0,86,59.7
